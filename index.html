@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack Lab｜國立中山大學資訊管理學系 徐傑克實驗室</title>
+  <meta name="description" content="Jack Lab（徐傑克實驗室）隸屬國立中山大學資訊管理學系，聚焦人工智慧與數位轉型、神經科學與人機互動、個案研究與服務科學、fsQCA。Jack Lab at NSYSU Information Management." />
+  <meta name="theme-color" content="#272555" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#272555",
+            brand: {
+              50: "#eef5fc", 100: "#d8e8f7", 200: "#b6d2ef", 300: "#88b4e3",
+              400: "#5a93d4", 500: "#3b76c0", 600: "#2f5ea3", 700: "#284e84",
+              800: "#243f68", 900: "#1f3556",
+            },
+            sand: "#e9dac4",
+          },
+          fontFamily: {
+            sans: ['Inter', '"Noto Sans TC"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-white text-slate-800 antialiased">
+  <div id="root">
+    <div class="jl-loader">
+      <div class="jl-spin"></div>
+      <p>載入中… Loading…</p>
+    </div>
+  </div>
+  <noscript>
+    <div style="padding:2rem;text-align:center;font-family:sans-serif">
+      本網站需要啟用 JavaScript 才能瀏覽。<br />Please enable JavaScript to view this site.
+    </div>
+  </noscript>
+
+  <!-- React + Babel (no-build CDN setup) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- 內容資料（純資料，與元件分離）/ Content data (plain JS, separate from components) -->
+  <script src="js/data/site.js"></script>
+  <script src="js/data/members.js"></script>
+  <script src="js/data/research.js"></script>
+  <script src="js/data/publications.js"></script>
+  <script src="js/data/awards.js"></script>
+  <script src="js/data/news.js"></script>
+  <script src="js/data/activities.js"></script>
+  <script src="js/data/tools.js"></script>
+
+  <!-- 元件（JSX 由 Babel 於瀏覽器轉譯）/ Components (JSX transpiled in-browser) -->
+  <script type="text/babel" data-presets="react" src="js/core.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/ui.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/layout.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/pages.jsx"></script>
+  <script type="text/babel" data-presets="react" src="js/app.jsx"></script>
+</body>
+</html>

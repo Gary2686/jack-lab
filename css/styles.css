@@ -1,0 +1,83 @@
+/* =============================================================================
+ * styles.css — 自訂樣式：字體、進場動畫、背景紋理、捲軸
+ * Custom styles: typography, reveal/float animations, background texture.
+ * Tailwind utilities come from the Play CDN in index.html.
+ * ========================================================================== */
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* ---- 載入畫面 / Loading screen (replaced once React mounts) ---- */
+.jl-loader {
+  min-height: 100vh; display: grid; place-items: center; align-content: center;
+  gap: 1rem; color: #94a3b8; font-family: 'Inter', 'Noto Sans TC', sans-serif;
+}
+.jl-spin {
+  width: 38px; height: 38px; border-radius: 9999px;
+  border: 3px solid #e2e8f0; border-top-color: #3b76c0;
+  animation: jl-rotate 0.8s linear infinite;
+}
+@keyframes jl-rotate { to { transform: rotate(360deg); } }
+
+/* ---- 進場動畫 / Reveal on scroll ---- */
+.reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---- 浮動光暈 / Floating blobs in hero ---- */
+@keyframes jl-floaty {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18px, -22px) scale(1.06); }
+}
+@keyframes jl-floaty-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-24px, 16px) scale(1.08); }
+}
+.animate-floaty { animation: jl-floaty 11s ease-in-out infinite; }
+.animate-floaty-slow { animation: jl-floaty-slow 15s ease-in-out infinite; }
+
+/* ---- 彈出 / Modal pop & fade ---- */
+@keyframes jl-pop {
+  0% { opacity: 0; transform: translateY(12px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes jl-fade { from { opacity: 0; } to { opacity: 1; } }
+.animate-pop { animation: jl-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade { animation: jl-fade 0.2s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty, .animate-floaty-slow, .animate-pop, .animate-fade { animation: none; }
+}
+
+/* ---- 背景格線紋理 / Subtle grid texture for hero/headers ---- */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgba(39, 37, 85, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(39, 37, 85, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 55%, transparent 100%);
+}
+
+/* ---- 隱藏捲軸（頁籤列）/ Hide scrollbar for tab strips ---- */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---- 移除 <details> 預設箭頭 / Remove default details marker ---- */
+details summary::-webkit-details-marker { display: none; }
+summary { list-style: none; }
+
+/* ---- 全站捲軸 / Page scrollbar polish ---- */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; border: 3px solid #f1f5f9; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
