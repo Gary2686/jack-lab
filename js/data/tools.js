@@ -550,5 +550,10 @@ window.DATA.tools.deckFolderUrl = "https://drive.google.com/drive/folders/19TyIr
     "value-estimation": { type: "steps" },
     "trade-off": { type: "steps" },
   };
-  window.DATA.tools.items.forEach(function (it) { it.diagram = D[it.id] || { type: "pillars" }; });
+  window.DATA.tools.items.forEach(function (it) {
+    it.diagram = D[it.id] || { type: "pillars" };
+    // 每個工具對應自己的教學投影片 PDF（已壓縮放在 assets/tools/）
+    // Each tool maps to its own compressed teaching deck in assets/tools/.
+    it.deckUrl = "assets/tools/" + it.id + ".pdf";
+  });
 })();

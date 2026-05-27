@@ -33,6 +33,7 @@ window.JL = window.JL || {};
     menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
     close: '<path d="M6 6 18 18M18 6 6 18"/>',
     arrowUp: '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>',
+    download: '<path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/>',
     arrowRight: '<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
     chevronRight: '<path d="m9 6 6 6-6 6"/>',
     chevronDown: '<path d="m6 9 6 6 6-6"/>',
@@ -240,6 +241,63 @@ window.JL = window.JL || {};
     );
   }
 
+  /* --------------------- TechMotif（神經網絡動圖）-------------------- */
+  function prefersReduced() {
+    return typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function TechMotif(props) {
+    const reduce = prefersReduced();
+    const nodes = [[60, 80], [150, 52], [250, 88], [332, 60], [108, 168], [210, 178], [300, 200], [158, 278], [262, 288]];
+    const edges = [[0, 1], [1, 2], [2, 3], [0, 4], [1, 4], [1, 5], [2, 5], [2, 6], [3, 6], [4, 5], [5, 6], [4, 7], [5, 7], [5, 8], [6, 8], [7, 8]];
+    const sig = [[0, 4, 7], [3, 6, 8]];
+    return (
+      <svg viewBox="0 0 392 340" className={cx("h-auto w-full", props.className)} aria-hidden="true">
+        <g stroke="#88b4e3" strokeWidth="1.2" opacity="0.55">
+          {edges.map(function (e, i) {
+            const a = nodes[e[0]], b = nodes[e[1]];
+            return <line key={i} x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} className={reduce ? undefined : "jl-flow"} style={reduce ? undefined : { animationDelay: (i * 0.12) + "s" }} />;
+          })}
+        </g>
+        {nodes.map(function (n, i) {
+          return (
+            <g key={i}>
+              {reduce ? null : (
+                <circle cx={n[0]} cy={n[1]} r="5" fill="#3b76c0" opacity="0.5">
+                  <animate attributeName="r" values="5;15;5" dur="3.4s" begin={(i * 0.33) + "s"} repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.45;0;0.45" dur="3.4s" begin={(i * 0.33) + "s"} repeatCount="indefinite" />
+                </circle>
+              )}
+              <circle cx={n[0]} cy={n[1]} r="4.5" fill="#2f5ea3" />
+            </g>
+          );
+        })}
+        {reduce ? null : sig.map(function (p, i) {
+          const d = "M" + nodes[p[0]][0] + "," + nodes[p[0]][1] + " L" + nodes[p[1]][0] + "," + nodes[p[1]][1] + " L" + nodes[p[2]][0] + "," + nodes[p[2]][1];
+          return <circle key={i} r="3.4" fill="#1f3556"><animateMotion dur={(2.8 + i) + "s"} begin={(i * 0.7) + "s"} repeatCount="indefinite" path={d} /></circle>;
+        })}
+      </svg>
+    );
+  }
+
+  /* ------------------------ Waveform（腦波動圖）---------------------- */
+  function Waveform(props) {
+    const reduce = prefersReduced();
+    const pts = [[0, 20], [10, 20], [14, 8], [18, 32], [22, 20], [40, 20], [44, 14], [48, 26], [52, 20], [70, 20], [76, 6], [82, 34], [88, 20], [110, 20], [116, 16], [122, 24], [128, 20], [150, 20], [158, 10], [166, 30], [174, 20], [200, 20]];
+    function toD(off) { return "M" + pts.map(function (p) { return (p[0] + off) + "," + p[1]; }).join(" L"); }
+    const d = toD(0) + " " + toD(200);
+    return (
+      <svg viewBox="0 0 200 40" preserveAspectRatio="none" className={cx("w-full", props.className)} style={{ height: props.height || "34px" }} aria-hidden="true">
+        <g>
+          {reduce ? null : <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="-200 0" dur="7s" repeatCount="indefinite" />}
+          <path d={d} fill="none" stroke={props.color || "#5a93d4"} strokeWidth={props.strokeWidth || 2} strokeLinejoin="round" strokeLinecap="round" opacity={props.opacity != null ? props.opacity : 0.7} vectorEffect="non-scaling-stroke" />
+        </g>
+      </svg>
+    );
+  }
+
+  JL.TechMotif = TechMotif;
+  JL.Waveform = Waveform;
   JL.Icon = Icon;
   JL.Avatar = Avatar;
   JL.Card = Card;

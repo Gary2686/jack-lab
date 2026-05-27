@@ -40,6 +40,7 @@ window.JL = window.JL || {};
             {props.subtitle ? <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">{props.subtitle}</p> : null}
           </Reveal>
         </Container>
+        <div className="absolute inset-x-0 bottom-0 opacity-40 pointer-events-none"><JL.Waveform color="#b6d2ef" opacity={0.7} height="28px" /></div>
       </section>
     );
   }
@@ -105,7 +106,10 @@ window.JL = window.JL || {};
           <div className="absolute -top-32 -left-24 -z-10 h-96 w-96 rounded-full bg-brand-200/50 blur-3xl animate-floaty" />
           <div className="absolute top-10 -right-24 -z-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl animate-floaty-slow" />
           <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl animate-floaty" />
-          <Container className="py-20 sm:py-28">
+          <div className="hidden xl:block absolute right-0 2xl:right-6 top-1/2 -translate-y-1/2 w-[420px] opacity-90 pointer-events-none">
+            <JL.TechMotif />
+          </div>
+          <Container className="relative py-20 sm:py-28">
             <div className="max-w-3xl">
               <Reveal>
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/80 ring-1 ring-brand-100 px-3 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
@@ -138,6 +142,7 @@ window.JL = window.JL || {};
               </Reveal>
             </div>
           </Container>
+          <div className="relative"><JL.Waveform color="#88b4e3" opacity={0.5} height="40px" /></div>
         </section>
 
         {/* INTRO */}
@@ -1151,10 +1156,11 @@ window.JL = window.JL || {};
               <Card className="p-5" hover={false}>
                 <h3 className="font-bold text-navy mb-3">{ctx.lang === "zh" ? "教學資源" : "Teaching slides"}</h3>
                 {tool.deckUrl
-                  ? <Button href={tool.deckUrl} external icon="doc" className="w-full">{t(site.ui.viewSlides)}</Button>
-                  : (window.DATA.tools.deckFolderUrl
-                      ? <Button href={window.DATA.tools.deckFolderUrl} external variant="secondary" icon="doc" className="w-full">{ctx.lang === "zh" ? "教學投影片（雲端資料夾）" : "Teaching slides (Drive folder)"}</Button>
-                      : <div className="flex items-center gap-2 text-sm text-slate-400"><Icon name="doc" size={16} />{t(site.ui.slidesComingSoon)}</div>)}
+                  ? <div className="space-y-2">
+                      <Button href={tool.deckUrl} external icon="doc" className="w-full">{t(site.ui.viewSlides)}</Button>
+                      <a href={tool.deckUrl} download className="flex items-center justify-center gap-1.5 rounded-xl border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:border-brand-300 hover:text-brand-700 transition-colors"><Icon name="download" size={15} />{ctx.lang === "zh" ? "下載 PDF" : "Download PDF"}</a>
+                    </div>
+                  : <div className="flex items-center gap-2 text-sm text-slate-400"><Icon name="doc" size={16} />{t(site.ui.slidesComingSoon)}</div>}
                 {tool.references && tool.references.length ? (
                   <div className="mt-4 pt-4 border-t border-slate-100">
                     <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">{t(site.ui.references)}</div>

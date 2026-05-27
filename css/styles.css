@@ -81,3 +81,12 @@ summary { list-style: none; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; border: 3px solid #f1f5f9; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ---- 科技感動效 / Tech motifs: neural-net flow + scrolling EEG wave ---- */
+@keyframes jl-flow { to { stroke-dashoffset: -24; } }
+@keyframes jl-wave-scroll { from { transform: translateX(0); } to { transform: translateX(-200px); } }
+.jl-flow { stroke-dasharray: 4 8; animation: jl-flow 1.8s linear infinite; }
+.jl-wave-track { animation: jl-wave-scroll 7s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .jl-flow, .jl-wave-track { animation: none; }
+}

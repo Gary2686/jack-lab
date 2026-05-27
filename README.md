@@ -53,8 +53,9 @@ jack-lab/
 `photo: "assets/hsu.jpg"`、`photos: ["assets/retreat-1.jpg"]`、`image: "assets/news-1.jpg"`。
 
 ### 教學投影片（策略工具 PDF）
-26 份原始投影片較大（每份約 13MB），**不放進 repo**。請在 Google 雲端硬碟設定共用後，
-把分享連結填入 `js/data/tools.js` 對應工具的 `deckUrl`，頁面上的「檢視教學投影片」按鈕即會啟用。
+26 份投影片已壓縮（約 13MB→~2MB／份，共約 47MB）並放在 `assets/tools/<工具id>.pdf`，
+每個工具頁面可直接「檢視投影片」與「下載 PDF」。要更新某份投影片，替換 `assets/tools/` 內對應 PDF 即可
+（壓縮腳本使用 PyMuPDF 將投影片以螢幕解析度重繪）。原始高解析檔在 Google 雲端硬碟（見 `tools.deckFolderUrl`）。
 
 ### ⚠ 待確認的暫定資料 / Placeholders to verify
 - 部分成員的 **英文姓名、Email、Google Scholar 連結** 為暫定，請於 `members.js` 更新。
