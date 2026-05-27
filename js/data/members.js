@@ -75,7 +75,7 @@ window.DATA.members = {
       members: [
         {
           id: "gary-yeh",
-          name: { zh: "葉欲禾", en: "Gary Yu-Ho Yeh" },
+          name: { zh: "葉欲禾", en: "Yeh Yu-Ho (Gary)" },
           title: { zh: "博士候選人", en: "Ph.D. Candidate" },
           photo: "",
           interests: {
@@ -97,14 +97,14 @@ window.DATA.members = {
       layout: "compact",
       label: { zh: "碩士成員", en: "Master's Students" },
       members: [
-        { id: "lin-jing-wei", name: { zh: "林京緯", en: "Lin Ching-Wei" }, photo: "", email: "" },
-        { id: "lin-chen-wei", name: { zh: "林宸煒", en: "Lin Chen-Wei" }, photo: "", email: "" },
-        { id: "tseng-shu-huan", name: { zh: "曾書桓", en: "Tseng Shu-Huan" }, photo: "", email: "" },
-        { id: "wu-cheng-chien", name: { zh: "吳呈堅", en: "Wu Cheng-Chien" }, photo: "", email: "" },
-        { id: "kung-sung-yu", name: { zh: "孔菘羽", en: "Kung Sung-Yu" }, photo: "", email: "" },
-        { id: "li-yu-chen", name: { zh: "李瑀蓁", en: "Li Yu-Chen" }, photo: "", email: "" },
-        { id: "hsu-chih-hao", name: { zh: "徐稚皓", en: "Hsu Chih-Hao" }, photo: "", email: "" },
-        { id: "su-wen-feng", name: { zh: "蘇彣丰", en: "Su Wen-Feng" }, photo: "", email: "" },
+        { id: "lin-jing-wei", name: { zh: "林京緯", en: "Lin Jing-Wei" }, photo: "", email: "" },
+        { id: "lin-chen-wei", name: { zh: "林宸煒", en: "Lin Chen-Wei" }, photo: "", email: "linwilson671@gmail.com" },
+        { id: "tseng-shu-huan", name: { zh: "曾書桓", en: "Zeng Shu-Huan" }, photo: "", email: "s392983978@gmail.com" },
+        { id: "wu-cheng-chien", name: { zh: "吳呈堅", en: "Wu Cheng-Jian" }, photo: "", email: "chengjianwu678@gmail.com" },
+        { id: "kung-sung-yu", name: { zh: "孔崧羽", en: "Kong Song-Yu" }, photo: "", email: "kongsongyu9012@gmail.com" },
+        { id: "li-yu-chen", name: { zh: "李瑀蓁", en: "Lee Yu-Chen" }, photo: "", email: "lyzchry1771@gmail.com" },
+        { id: "hsu-chih-hao", name: { zh: "徐稚皓", en: "Hsu Chih-Hao" }, photo: "", email: "howard120330@gmail.com" },
+        { id: "su-wen-feng", name: { zh: "蘇彣丰", en: "Su Wen-Feng" }, photo: "", email: "wenfeng.taipei@gmail.com" },
       ],
     },
     {
@@ -112,9 +112,9 @@ window.DATA.members = {
       layout: "alumni",
       label: { zh: "畢業成員", en: "Alumni" },
       members: [
-        { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Kuan-Hung" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
+        { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Guan-Hong" }, photo: "", email: "zxc1030123@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
-        { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
+        { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "", email: "alex20010122@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "chien-yun-ting", name: { zh: "簡筠庭", en: "Chien Yun-Ting" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "yang-chu-chun", name: { zh: "楊筑鈞", en: "Yang Chu-Chun" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "hsu-te-yen", name: { zh: "徐德諺", en: "Hsu Te-Yen" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },

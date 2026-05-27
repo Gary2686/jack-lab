@@ -523,3 +523,32 @@ window.DATA.tools = {
     },
   ],
 };
+
+/* ---- 教學投影片雲端資料夾（各工具原始檔在此；deckUrl 為空時的後備連結）----
+       Drive folder with all decks (fallback when a tool's deckUrl is empty) ---- */
+window.DATA.tools.deckFolderUrl = "https://drive.google.com/drive/folders/19TyIrAjPRcY_znNrDTd7RXacguBhQPTc?usp=sharing";
+
+/* ---- 各工具的「架構概念圖」型別（由 ToolDiagram 以 SVG/CSS 繪製）----
+       Diagram type per tool, rendered as SVG/CSS by ToolDiagram.
+       type: quadrant | radial | canvas | fit | steps | curve | pillars(預設) ---- */
+(function () {
+  var D = {
+    swot: { type: "quadrant", center: "SWOT", axes: { zh: "縱軸：內部 ↔ 外部　橫軸：正面 ↔ 負面", en: "Vertical: Internal ↔ External · Horizontal: Helpful ↔ Harmful" } },
+    tows: { type: "quadrant", center: "TOWS", axes: { zh: "優勢 / 劣勢 × 機會 / 威脅 的配對策略", en: "Strengths/Weaknesses paired with Opportunities/Threats" } },
+    ansoff: { type: "quadrant", cells: [0, 2, 1, 3], axes: { zh: "縱軸：市場 既有 ↔ 新　橫軸：產品 既有 ↔ 新", en: "Market (existing↔new) × Product (existing↔new)" } },
+    "blue-ocean": { type: "quadrant", center: { zh: "價值創新", en: "Value Innovation" } },
+    "power-interest": { type: "quadrant", cells: [1, 0, 3, 2], axes: { zh: "縱軸：權力 高 ↔ 低　橫軸：利益 低 ↔ 高", en: "Power (high↔low) × Interest (low↔high)" } },
+    "five-forces": { type: "radial", centerIndex: 0 },
+    "dynamic-competition": { type: "radial", center: { zh: "競爭對手分析", en: "Competitor analysis" } },
+    ecosystem: { type: "radial", centerIndex: 0 },
+    "balanced-scorecard": { type: "radial", center: { zh: "願景與策略", en: "Vision & Strategy" } },
+    bmc: { type: "canvas" },
+    vpc: { type: "fit" },
+    kano: { type: "curve" },
+    "innovation-diffusion": { type: "steps" },
+    cvp: { type: "steps" },
+    "value-estimation": { type: "steps" },
+    "trade-off": { type: "steps" },
+  };
+  window.DATA.tools.items.forEach(function (it) { it.diagram = D[it.id] || { type: "pillars" }; });
+})();

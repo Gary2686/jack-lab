@@ -136,7 +136,14 @@ window.DATA.research = {
           name: { zh: "個案連結", en: "Case Links" },
           intro: { zh: "教學個案、研究個案、企業案例與個案教材的連結與索引。", en: "Links and index for teaching cases, research cases, corporate cases, and case materials." },
           sections: [
-            { id: "list", title: { zh: "個案資源", en: "Case resources" }, type: "links", items: [ { title: { zh: "教學個案（範例）", en: "Teaching case (sample)" }, desc: { zh: "個案標題、產業與連結待補充。", en: "Case title, industry and link to be added." }, url: "" } ] },
+            { id: "hbr", title: { zh: "哈佛商業評論教學個案", en: "Harvard Business Review Cases" }, type: "links", items: [
+              { title: { zh: "上市前的資訊系統抉擇", en: "Information System Decisions Before IPO" }, desc: { zh: "徐士傑、葉欲禾（2025）·《哈佛商業評論》", en: "Hsu, S.-C. & Yeh, G. (2025) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/24149/information-system-decisions-before-ipo" },
+              { title: { zh: "新加坡是下一個開拓據點嗎？", en: "Is Singapore Next?" }, desc: { zh: "徐士傑、葉欲禾（2025）·《哈佛商業評論》", en: "Hsu, S.-C. & Yeh, G. (2025) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/23950/is-singapore-next" },
+              { title: { zh: "下一哩該如何計程？", en: "What's the Next Mile?" }, desc: { zh: "徐士傑、葉欲禾（2024）·《哈佛商業評論》", en: "Hsu, S.-C. & Yeh, G. (2024) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/23554/whats-the-next-mile" },
+              { title: { zh: "進軍海外市場，該射哪支箭？", en: "How to Expand into Overseas Markets" }, desc: { zh: "徐士傑、張簡郁庭（2023）·《哈佛商業評論》", en: "Hsu, S.-C. & Chang-Chien, Y.-T. (2023) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/22506/how-to-expand-into-overseas-markets" },
+              { title: { zh: "邁向企業成長之路", en: "Toward Corporate Growth" }, desc: { zh: "徐士傑、張簡郁庭（2023）·《哈佛商業評論》", en: "Hsu, S.-C. & Chang-Chien, Y.-T. (2023) · HBR (Chinese Edition)" }, url: "https://service.hbrtaiwan.com/search?searchtext=%E5%BE%90%E5%A3%AB%E5%82%91&templateSlug=case-study" },
+              { title: { zh: "站在成長的叉路口，該選擇哪種商業模式？", en: "Which Business Model Leads to Success?" }, desc: { zh: "徐士傑、許惠媚（2022）·《哈佛商業評論》", en: "Hsu, S.-C. & Hsu, H.-M. (2022) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/21267/which-business-modal-can-make-success" },
+            ] },
           ],
         },
         {

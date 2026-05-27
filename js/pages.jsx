@@ -903,6 +903,159 @@ window.JL = window.JL || {};
     );
   }
 
+  /* ===================== TOOL DIAGRAM (架構概念圖) ===================== */
+  function ToolDiagram(props) {
+    const ctx = JL.useLang(); const t = ctx.t;
+    const tool = props.tool;
+    const c = toolColor(props.color);
+    const d = tool.diagram || { type: "pillars" };
+    const fw = tool.framework || [];
+    const zh = ctx.lang === "zh";
+    const COLS = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-3", 4: "grid-cols-2 sm:grid-cols-4", 5: "grid-cols-2 sm:grid-cols-5", 6: "grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" };
+    const QUAD = ["bg-emerald-50 text-emerald-800 ring-emerald-100", "bg-rose-50 text-rose-800 ring-rose-100", "bg-sky-50 text-sky-800 ring-sky-100", "bg-amber-50 text-amber-800 ring-amber-100"];
+    const cText = function (v) { return typeof v === "string" ? v : t(v); };
+
+    function Pillars() {
+      return (
+        <div className={cx("grid grid-cols-2 gap-3", COLS[fw.length] || "sm:grid-cols-3")}>
+          {fw.map(function (f, i) {
+            return (
+              <div key={i} className={cx("rounded-xl p-4 text-center ring-1", c.soft, c.ring)}>
+                <div className={cx("mx-auto mb-2 grid place-items-center h-7 w-7 rounded-full text-white text-xs font-bold", c.dot)}>{i + 1}</div>
+                <div className="font-semibold text-navy text-sm leading-tight">{t(f.title)}</div>
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
+
+    function Steps() {
+      return (
+        <div className="flex flex-col sm:flex-row sm:items-stretch gap-2">
+          {fw.map(function (f, i) {
+            return (
+              <React.Fragment key={i}>
+                <div className={cx("flex-1 rounded-xl p-4 ring-1 text-center flex flex-col items-center justify-center", c.soft, c.ring)}>
+                  <div className={cx("mb-2 grid place-items-center h-7 w-7 rounded-full text-white text-xs font-bold", c.dot)}>{i + 1}</div>
+                  <div className="font-semibold text-navy text-sm leading-tight">{t(f.title)}</div>
+                </div>
+                {i < fw.length - 1 ? <div className="grid place-items-center text-slate-300"><Icon name="arrowRight" size={18} className="hidden sm:block" /><Icon name="chevronDown" size={18} className="sm:hidden" /></div> : null}
+              </React.Fragment>
+            );
+          })}
+        </div>
+      );
+    }
+
+    function Quadrant() {
+      const cells = d.cells || [0, 1, 2, 3];
+      return (
+        <div>
+          <div className="relative grid grid-cols-2 gap-3">
+            {cells.map(function (idx, pos) {
+              const f = fw[idx]; if (!f) return null;
+              return (
+                <div key={pos} className={cx("rounded-xl p-4 sm:p-5 min-h-[92px] flex flex-col justify-center ring-1", QUAD[pos % 4])}>
+                  <div className="font-bold text-sm sm:text-base leading-tight">{t(f.title)}</div>
+                  <div className="mt-1 text-xs opacity-80 leading-snug">{t(f.desc)}</div>
+                </div>
+              );
+            })}
+            {d.center ? <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center h-14 w-14 rounded-full bg-navy text-white text-[11px] font-bold ring-4 ring-white shadow text-center leading-tight px-1">{cText(d.center)}</div> : null}
+          </div>
+          {d.axes ? <div className="mt-3 text-center text-xs text-slate-400">{t(d.axes)}</div> : null}
+        </div>
+      );
+    }
+
+    function Radial() {
+      const hasIdx = typeof d.centerIndex === "number";
+      const centerLabel = hasIdx ? t(fw[d.centerIndex].title) : (d.center ? cText(d.center) : "");
+      const outer = hasIdx ? fw.filter(function (_, i) { return i !== d.centerIndex; }) : fw;
+      const n = outer.length || 1;
+      const R = 38;
+      const pts = outer.map(function (f, i) { const a = (-90 + i * 360 / n) * Math.PI / 180; return { x: 50 + R * Math.cos(a), y: 50 + R * Math.sin(a), f: f }; });
+      return (
+        <div className="relative mx-auto" style={{ maxWidth: "460px", height: "320px" }}>
+          <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
+            {pts.map(function (p, i) { return <line key={i} x1="50%" y1="50%" x2={p.x + "%"} y2={p.y + "%"} stroke="#cbd5e1" strokeWidth="1.5" strokeDasharray="4 4" />; })}
+          </svg>
+          <div className={cx("absolute grid place-items-center rounded-full text-white text-center text-xs font-bold px-2 leading-tight shadow-md", c.dot)} style={{ left: "50%", top: "50%", height: "88px", width: "88px", transform: "translate(-50%,-50%)" }}>{centerLabel}</div>
+          {pts.map(function (p, i) {
+            return <div key={i} className={cx("absolute rounded-xl bg-white px-3 py-2 text-center text-xs font-semibold text-navy ring-1 shadow-sm", c.ring)} style={{ left: p.x + "%", top: p.y + "%", maxWidth: "120px", transform: "translate(-50%,-50%)" }}>{t(p.f.title)}</div>;
+          })}
+        </div>
+      );
+    }
+
+    function Fit() {
+      const value = [fw[3], fw[4], fw[5]].filter(Boolean);
+      const cust = [fw[0], fw[1], fw[2]].filter(Boolean);
+      function panel(title, items, extra) {
+        return (
+          <div className={cx("flex-1 rounded-2xl ring-1 p-5", c.soft, c.ring, extra)}>
+            <div className="text-sm font-bold text-navy mb-3 text-center">{title}</div>
+            <div className="space-y-2">{items.map(function (f, i) { return <div key={i} className="rounded-lg bg-white/80 px-3 py-2 text-xs font-medium text-navy text-center">{t(f.title)}</div>; })}</div>
+          </div>
+        );
+      }
+      return (
+        <div className="flex flex-col sm:flex-row items-stretch gap-3">
+          {panel(zh ? "價值地圖" : "Value Map", value, "")}
+          <div className="grid place-items-center text-slate-300"><Icon name="link" size={22} /></div>
+          {panel(zh ? "顧客素描" : "Customer Profile", cust, "sm:rounded-[42px]")}
+        </div>
+      );
+    }
+
+    function Canvas() {
+      const map = [
+        { i: 7, gc: "1 / 3", gr: "1 / 3" }, { i: 6, gc: "3 / 5", gr: "1 / 2" }, { i: 5, gc: "3 / 5", gr: "2 / 3" },
+        { i: 1, gc: "5 / 7", gr: "1 / 3" }, { i: 3, gc: "7 / 9", gr: "1 / 2" }, { i: 2, gc: "7 / 9", gr: "2 / 3" },
+        { i: 0, gc: "9 / 11", gr: "1 / 3" }, { i: 8, gc: "1 / 6", gr: "3 / 4" }, { i: 4, gc: "6 / 11", gr: "3 / 4" },
+      ];
+      return (
+        <div className="overflow-x-auto pb-2">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(10, minmax(0,1fr))", gridAutoRows: "minmax(58px,auto)", gap: "6px", minWidth: "620px" }}>
+            {map.map(function (m, k) {
+              const f = fw[m.i]; if (!f) return null; const hl = m.i === 1;
+              return <div key={k} style={{ gridColumn: m.gc, gridRow: m.gr }} className={cx("rounded-lg p-3 ring-1 flex items-start", hl ? cx(c.soft, c.ring, "ring-2") : "bg-slate-50 ring-slate-100")}><div className={cx("text-xs font-bold leading-tight", hl ? c.text : "text-navy")}>{t(f.title)}</div></div>;
+            })}
+          </div>
+        </div>
+      );
+    }
+
+    function Curve() {
+      return (
+        <div className="mx-auto" style={{ maxWidth: "460px" }}>
+          <svg viewBox="0 0 320 220" className="h-auto w-full">
+            <line x1="20" y1="110" x2="306" y2="110" stroke="#cbd5e1" strokeWidth="1.5" />
+            <line x1="40" y1="14" x2="40" y2="206" stroke="#cbd5e1" strokeWidth="1.5" />
+            <path d="M45,200 C95,160 130,118 165,110 C220,109 270,108 305,108" fill="none" stroke="#e11d48" strokeWidth="2.5" />
+            <path d="M45,198 L305,22" fill="none" stroke="#2f5ea3" strokeWidth="2.5" />
+            <path d="M40,113 C120,112 150,110 165,110 C210,108 262,52 305,18" fill="none" stroke="#059669" strokeWidth="2.5" />
+            <text x="248" y="103" fill="#e11d48" fontSize="11" fontWeight="700">{zh ? "必備" : "Must-be"}</text>
+            <text x="252" y="40" fill="#2f5ea3" fontSize="11" fontWeight="700">{zh ? "一維" : "1-D"}</text>
+            <text x="176" y="30" fill="#059669" fontSize="11" fontWeight="700">{zh ? "魅力" : "Delight"}</text>
+            <text x="46" y="24" fill="#64748b" fontSize="9">{zh ? "滿意" : "Satisfied"}</text>
+            <text x="46" y="204" fill="#64748b" fontSize="9">{zh ? "不滿" : "Dissatisfied"}</text>
+            <text x="242" y="125" fill="#64748b" fontSize="9">{zh ? "功能完善" : "Functional"}</text>
+          </svg>
+        </div>
+      );
+    }
+
+    if (d.type === "quadrant") return Quadrant();
+    if (d.type === "radial") return Radial();
+    if (d.type === "canvas") return Canvas();
+    if (d.type === "fit") return Fit();
+    if (d.type === "steps") return Steps();
+    if (d.type === "curve") return Curve();
+    return Pillars();
+  }
+
   /* =========================== TOOL DETAIL =========================== */
   function ToolDetailPage(props) {
     const ctx = JL.useLang(); const t = ctx.t;
@@ -944,6 +1097,12 @@ window.JL = window.JL || {};
 
         <Container className="py-12 grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-10">
+            <Reveal>
+              <h2 className="text-lg font-bold text-navy mb-4">{ctx.lang === "zh" ? "架構概念圖" : "Framework at a glance"}</h2>
+              <div className="rounded-2xl border border-slate-100 bg-white p-5 sm:p-6 shadow-sm">
+                <ToolDiagram tool={tool} color={color} />
+              </div>
+            </Reveal>
             <Reveal>
               <h2 className="text-lg font-bold text-navy mb-3">{t(site.ui.definition)}</h2>
               <p className="text-slate-600 leading-relaxed">{t(tool.definition)}</p>
@@ -993,7 +1152,9 @@ window.JL = window.JL || {};
                 <h3 className="font-bold text-navy mb-3">{ctx.lang === "zh" ? "教學資源" : "Teaching slides"}</h3>
                 {tool.deckUrl
                   ? <Button href={tool.deckUrl} external icon="doc" className="w-full">{t(site.ui.viewSlides)}</Button>
-                  : <div className="flex items-center gap-2 text-sm text-slate-400"><Icon name="doc" size={16} />{t(site.ui.slidesComingSoon)}</div>}
+                  : (window.DATA.tools.deckFolderUrl
+                      ? <Button href={window.DATA.tools.deckFolderUrl} external variant="secondary" icon="doc" className="w-full">{ctx.lang === "zh" ? "教學投影片（雲端資料夾）" : "Teaching slides (Drive folder)"}</Button>
+                      : <div className="flex items-center gap-2 text-sm text-slate-400"><Icon name="doc" size={16} />{t(site.ui.slidesComingSoon)}</div>)}
                 {tool.references && tool.references.length ? (
                   <div className="mt-4 pt-4 border-t border-slate-100">
                     <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">{t(site.ui.references)}</div>
