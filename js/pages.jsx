@@ -507,15 +507,15 @@ window.JL = window.JL || {};
         <Modal open={!!active} onClose={function () { setActive(null); }}>
           {active ? (
             <div>
-              <div className="relative bg-gradient-to-br from-brand-600 to-navy h-28">
+              {/* 純文字版 modal：相片在卡片上已大圖呈現，這裡專注呈現姓名／頭銜／研究興趣／簡介 */}
+              <div className="relative bg-gradient-to-br from-brand-600 to-navy px-6 py-5">
                 <button onClick={function () { setActive(null); }} className="absolute top-3 right-3 grid place-items-center h-9 w-9 rounded-full bg-white/20 text-white hover:bg-white/30" aria-label="Close"><Icon name="close" size={18} /></button>
+                <div className="text-xl font-bold text-white pr-12">{t(active.name)} <span className="text-base font-medium text-white/70">{active.name.en}</span></div>
+                <Pill className="mt-2 bg-white/15 text-white ring-1 ring-white/30">{t(active.title)}</Pill>
               </div>
-              <div className="px-6 pb-6 -mt-12">
-                <Avatar name={t(active.name)} photo={active.photo} size={140} position={active.photoPosition || "top"} />
-                <div className="mt-3 text-xl font-bold text-navy">{t(active.name)} <span className="text-base font-medium text-slate-400">{active.name.en}</span></div>
-                <Pill className="mt-1.5 bg-brand-50 text-brand-700">{t(active.title)}</Pill>
+              <div className="px-6 pb-6 pt-5">
                 {active.interests ? (
-                  <div className="mt-4">
+                  <div>
                     <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">{t(site.ui.interests)}</div>
                     <div className="flex flex-wrap gap-1.5">
                       {active.interests[ctx.lang].map(function (it, i) {
