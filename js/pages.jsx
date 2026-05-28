@@ -380,9 +380,10 @@ window.JL = window.JL || {};
   }
 
   // 統一處理成員相片：有 src 顯示，無 src 顯示灰底使用者圖示
+  // object-top 確保頭部優先顯示（避免人臉被裁切）
   function MemberPhoto(props) {
     if (props.photo) {
-      return <img src={props.photo} alt={props.name || ""} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />;
+      return <img src={props.photo} alt={props.name || ""} className="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />;
     }
     return (
       <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400">
@@ -414,20 +415,18 @@ window.JL = window.JL || {};
       );
     }
     if (layout === "alumni") {
+      // 校友卡保留原本小圓頭像 + 文字並排的精簡版型
       return (
-        <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
-          <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-            <MemberPhoto photo={m.photo} name={t(m.name)} />
-          </div>
-          <div className="p-4 flex flex-col gap-1">
-            <div className="font-semibold text-navy text-base leading-tight">{t(m.name)}</div>
-            <div className="text-xs text-slate-400">{m.name.en}</div>
+        <Card className="p-5 flex items-start gap-4 jl-card-tech">
+          <Avatar name={t(m.name)} photo={m.photo} size={84} />
+          <div className="min-w-0">
+            <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
             {m.currentPosition && t(m.currentPosition) ? (
               <div className="mt-1 text-xs text-slate-500 flex items-start gap-1">
                 <Icon name="briefcase" size={13} className="mt-0.5 text-slate-300" />{t(m.currentPosition)}
               </div>
             ) : null}
-            {m.email ? <a href={"mailto:" + m.email} className="mt-1 inline-block text-xs text-brand-600 hover:underline truncate" title={m.email}>{m.email}</a> : null}
+            {m.email ? <a href={"mailto:" + m.email} className="mt-1 inline-block text-xs text-brand-600 hover:underline">{m.email}</a> : null}
           </div>
         </Card>
       );
@@ -467,10 +466,10 @@ window.JL = window.JL || {};
     const [active, setActive] = useState(null);
 
     function gridFor(layout) {
-      // 統一改為每排 2–3 張大相片卡，相片清楚可辨識
+      // 完整卡與碩士卡用大相片版型，每排 2–3 張；校友卡保留小圓圖精簡密度
       if (layout === "full") return "grid sm:grid-cols-2 lg:grid-cols-3 gap-6";
       if (layout === "compact") return "grid grid-cols-2 md:grid-cols-3 gap-5";
-      return "grid grid-cols-2 md:grid-cols-3 gap-5"; // alumni
+      return "grid sm:grid-cols-2 lg:grid-cols-3 gap-4"; // alumni（小圓圖）
     }
 
     return (
