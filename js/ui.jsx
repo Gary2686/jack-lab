@@ -6,7 +6,7 @@
 window.JL = window.JL || {};
 
 (function () {
-  const { useState, useEffect } = React;
+  const { useState, useEffect, useRef } = React;
   const cx = JL.cx;
   const useLang = JL.useLang;
   const navigate = JL.navigate;
@@ -296,8 +296,152 @@ window.JL = window.JL || {};
     );
   }
 
+  /* ----------- ParticleField（互動式神經網絡背景 / cursor-reactive） ---------- */
+  function ParticleField(props) {
+    const canvasRef = useRef(null);
+    useEffect(function () {
+      const canvas = canvasRef.current; if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const reduce = prefersReduced();
+      const host = canvas.parentElement;
+      let w = 0, h = 0, raf = null;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let parts = [];
+      const mouse = { x: -9999, y: -9999 };
+      const LINK = 124, NEAR = 168;
+
+      function build() {
+        const rect = canvas.getBoundingClientRect();
+        w = rect.width; h = rect.height;
+        canvas.width = Math.max(1, w * dpr); canvas.height = Math.max(1, h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const n = Math.max(22, Math.min(68, Math.floor(w / 24)));
+        parts = [];
+        for (let i = 0; i < n; i++) parts.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.32, vy: (Math.random() - 0.5) * 0.32 });
+      }
+      function frame(move) {
+        ctx.clearRect(0, 0, w, h);
+        for (let i = 0; i < parts.length; i++) {
+          const p = parts[i];
+          if (move) {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > w) p.vx *= -1;
+            if (p.y < 0 || p.y > h) p.vy *= -1;
+            const mx = mouse.x - p.x, my = mouse.y - p.y, md = Math.hypot(mx, my);
+            if (md < NEAR && md > 0.5) { p.x += (mx / md) * 0.45; p.y += (my / md) * 0.45; }
+          }
+          ctx.beginPath(); ctx.arc(p.x, p.y, 1.8, 0, 6.2832); ctx.fillStyle = "rgba(47,94,163,0.55)"; ctx.fill();
+          for (let j = i + 1; j < parts.length; j++) {
+            const q = parts[j], dx = p.x - q.x, dy = p.y - q.y, d = Math.hypot(dx, dy);
+            if (d < LINK) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = "rgba(59,118,192," + (0.16 * (1 - d / LINK)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
+          }
+          const mdx = mouse.x - p.x, mdy = mouse.y - p.y, mdd = Math.hypot(mdx, mdy);
+          if (mdd < NEAR) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.strokeStyle = "rgba(59,118,192," + (0.26 * (1 - mdd / NEAR)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
+        }
+      }
+      function loop() { frame(true); raf = requestAnimationFrame(loop); }
+      function onMove(e) { const r = canvas.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; }
+      function onLeave() { mouse.x = -9999; mouse.y = -9999; }
+      function onResize() { build(); if (reduce) frame(false); }
+
+      build();
+      window.addEventListener("resize", onResize);
+      if (host) { host.addEventListener("mousemove", onMove); host.addEventListener("mouseleave", onLeave); }
+
+      let io = null;
+      if (reduce) {
+        frame(false);
+      } else {
+        io = new IntersectionObserver(function (ents) {
+          ents.forEach(function (en) {
+            if (en.isIntersecting) { if (!raf) loop(); }
+            else if (raf) { cancelAnimationFrame(raf); raf = null; }
+          });
+        });
+        io.observe(canvas);
+      }
+      return function () {
+        if (raf) cancelAnimationFrame(raf);
+        window.removeEventListener("resize", onResize);
+        if (host) { host.removeEventListener("mousemove", onMove); host.removeEventListener("mouseleave", onLeave); }
+        if (io) io.disconnect();
+      };
+    }, []);
+    return <canvas ref={canvasRef} className={cx("absolute inset-0 h-full w-full", props.className)} aria-hidden="true" />;
+  }
+
+  /* --------------- RobotMascot（眼睛跟著游標 / eyes follow cursor） -------------- */
+  function RobotMascot(props) {
+    const reduce = prefersReduced();
+    const rootRef = useRef(null), lp = useRef(null), rp = useRef(null);
+    useEffect(function () {
+      function onMove(e) {
+        const el = rootRef.current; if (!el) return;
+        const r = el.getBoundingClientRect();
+        const cx0 = r.left + r.width / 2, cy0 = r.top + r.height * 0.42;
+        const ang = Math.atan2(e.clientY - cy0, e.clientX - cx0);
+        const dist = Math.min(3.4, Math.hypot(e.clientX - cx0, e.clientY - cy0) / 45);
+        const tf = "translate(" + (Math.cos(ang) * dist).toFixed(2) + "," + (Math.sin(ang) * dist).toFixed(2) + ")";
+        if (lp.current) lp.current.setAttribute("transform", tf);
+        if (rp.current) rp.current.setAttribute("transform", tf);
+      }
+      window.addEventListener("mousemove", onMove);
+      return function () { window.removeEventListener("mousemove", onMove); };
+    }, []);
+    return (
+      <svg ref={rootRef} viewBox="0 0 240 244" className={cx("h-auto w-full", !reduce && "animate-floaty", props.className)} aria-hidden="true">
+        <defs>
+          <linearGradient id="jlRobEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5a93d4" /><stop offset="1" stopColor="#2f5ea3" /></linearGradient>
+        </defs>
+        <line x1="120" y1="46" x2="120" y2="24" stroke="#2f5ea3" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="120" cy="17" r="6" fill="#3b76c0">{reduce ? null : <animate attributeName="opacity" values="1;0.3;1" dur="1.7s" repeatCount="indefinite" />}</circle>
+        <rect x="38" y="92" width="12" height="34" rx="6" fill="#88b4e3" />
+        <rect x="190" y="92" width="12" height="34" rx="6" fill="#88b4e3" />
+        <rect x="50" y="46" width="140" height="120" rx="30" fill="#ffffff" stroke="url(#jlRobEdge)" strokeWidth="3.5" />
+        <rect x="66" y="66" width="108" height="74" rx="22" fill="#272555" />
+        {reduce ? null : <rect x="70" y="70" width="100" height="6" rx="3" fill="#5a93d4" opacity="0.35"><animate attributeName="y" values="71;130;71" dur="3.6s" repeatCount="indefinite" /></rect>}
+        <circle cx="100" cy="103" r="15" fill="#bfe3ff" />
+        <circle cx="140" cy="103" r="15" fill="#bfe3ff" />
+        <g ref={lp}><circle cx="100" cy="103" r="6.5" fill="#1f3556" /></g>
+        <g ref={rp}><circle cx="140" cy="103" r="6.5" fill="#1f3556" /></g>
+        <rect x="106" y="148" width="28" height="6" rx="3" fill="#3b76c0" />
+        <rect x="106" y="166" width="28" height="12" fill="#b6d2ef" />
+        <rect x="78" y="178" width="84" height="26" rx="13" fill="#d8e8f7" />
+      </svg>
+    );
+  }
+
+  /* ------------------ CountUp（數字捲動 / count-up on scroll） ------------------ */
+  function CountUp(props) {
+    const r = JL.useReveal();
+    const ref = r[0], shown = r[1];
+    const [val, setVal] = useState(0);
+    useEffect(function () {
+      if (!shown) return;
+      const target = props.to || 0;
+      if (prefersReduced()) { setVal(target); return; }
+      const dur = props.duration || 1300;
+      const start = performance.now();
+      let raf, fb;
+      function tick(now) {
+        const t = Math.min(1, (now - start) / dur);
+        const e = 1 - Math.pow(1 - t, 3);
+        setVal(Math.round(target * e));
+        if (t < 1) raf = requestAnimationFrame(tick);
+      }
+      raf = requestAnimationFrame(tick);
+      // 後備：rAF 未運作時仍顯示最終數字 / ensure final value shows even if rAF is dormant
+      fb = setTimeout(function () { setVal(target); }, dur + 200);
+      return function () { if (raf) cancelAnimationFrame(raf); clearTimeout(fb); };
+    }, [shown]);
+    return <span ref={ref} className={props.className}>{val}{props.suffix || ""}</span>;
+  }
+
   JL.TechMotif = TechMotif;
   JL.Waveform = Waveform;
+  JL.ParticleField = ParticleField;
+  JL.RobotMascot = RobotMascot;
+  JL.CountUp = CountUp;
   JL.Icon = Icon;
   JL.Avatar = Avatar;
   JL.Card = Card;

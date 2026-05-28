@@ -81,16 +81,25 @@ window.JL = window.JL || {};
     const ref = useRef(null);
     const [shown, setShown] = useState(false);
     useEffect(function () {
-      const el = ref.current;
-      if (!el) return;
-      if (!("IntersectionObserver" in window)) { setShown(true); return; }
-      const obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) { setShown(true); obs.unobserve(entry.target); }
-        });
-      }, options || { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-      obs.observe(el);
-      return function () { obs.disconnect(); };
+      if (shown) return;
+      const margin = (options && options.margin) || 60;
+      let raf, fb, ticks = 0;
+      function check() {
+        ticks++;
+        const el = ref.current;
+        if (el && ticks % 3 === 0) {
+          const b = el.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight || 0;
+          // 進入視窗即顯示（rAF 視窗偵測，比 IntersectionObserver 更穩定可靠）
+          if (vh > 0 && b.top < vh - margin && b.bottom > 0) { setShown(true); return; }
+        }
+        raf = requestAnimationFrame(check);
+      }
+      raf = requestAnimationFrame(check);
+      // 後備：若 rAF 未運作（背景分頁/特殊渲染環境），用計時器確保內容仍會顯示
+      // Fallback: if rAF never ticks, a timer still reveals so content is never stuck hidden.
+      fb = setTimeout(function () { if (ticks < 2) setShown(true); }, 1200);
+      return function () { if (raf) cancelAnimationFrame(raf); clearTimeout(fb); };
     }, []);
     return [ref, shown];
   }

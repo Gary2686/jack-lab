@@ -110,6 +110,7 @@ window.JL = window.JL || {};
     const year = new Date().getFullYear();
     return (
       <footer className="mt-20 bg-navy text-slate-300">
+        <div className="opacity-30"><JL.Waveform color="#5a93d4" opacity={0.7} height="26px" /></div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3 mb-4">

@@ -33,7 +33,8 @@ window.JL = window.JL || {};
       <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/70 via-white to-white">
         <div className="absolute inset-0 -z-10 hero-grid opacity-60" />
         <div className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
-        <Container className="py-14 sm:py-16">
+        {props.motif ? <div className="hidden lg:block absolute right-3 top-1/2 -translate-y-1/2 w-[230px] opacity-80 pointer-events-none"><JL.TechMotif /></div> : null}
+        <Container className="relative z-10 py-14 sm:py-16">
           <Reveal>
             {props.eyebrow ? <div className="text-xs font-semibold uppercase tracking-wide text-brand-600 mb-3">{props.eyebrow}</div> : null}
             <h1 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">{props.title}</h1>
@@ -98,6 +99,17 @@ window.JL = window.JL || {};
     const featuredList = featured.length ? featured : pubs.slice(0, 4);
     const chips = ["AI", "Generative AI", "EEG", "Eye Tracking", "Service Science", "fsQCA"];
 
+    const statAreas = areas.length;
+    const statTools = window.DATA.tools.items.length;
+    const statMembers = members.reduce(function (s, g) { return s + g.members.length; }, 0);
+    const caseArea = areas.find(function (a) { return a.id === "case"; });
+    const statCases = (function () {
+      if (!caseArea || !caseArea.subAreas) return 0;
+      const sa = caseArea.subAreas.find(function (x) { return x.id === "case-links"; });
+      const sec = sa && sa.sections && sa.sections[0];
+      return sec && sec.items ? sec.items.length : 0;
+    })();
+
     return (
       <div>
         {/* HERO */}
@@ -106,10 +118,11 @@ window.JL = window.JL || {};
           <div className="absolute -top-32 -left-24 -z-10 h-96 w-96 rounded-full bg-brand-200/50 blur-3xl animate-floaty" />
           <div className="absolute top-10 -right-24 -z-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl animate-floaty-slow" />
           <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl animate-floaty" />
-          <div className="hidden xl:block absolute right-0 2xl:right-6 top-1/2 -translate-y-1/2 w-[420px] opacity-90 pointer-events-none">
-            <JL.TechMotif />
+          <JL.ParticleField className="pointer-events-none opacity-70" />
+          <div className="hidden xl:block absolute right-2 2xl:right-12 top-1/2 -translate-y-1/2 w-[300px] pointer-events-none">
+            <JL.RobotMascot />
           </div>
-          <Container className="relative py-20 sm:py-28">
+          <Container className="relative z-10 py-20 sm:py-28">
             <div className="max-w-3xl">
               <Reveal>
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/80 ring-1 ring-brand-100 px-3 py-1.5 text-xs font-semibold text-brand-700 shadow-sm">
@@ -158,8 +171,10 @@ window.JL = window.JL || {};
                 <div className="mt-3 text-2xl font-bold">{t(site.brand.short)}</div>
                 <div className="text-sm text-white/70 mt-1">{t(site.brand.org)}</div>
                 <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold">4</div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "研究主軸" : "Pillars"}</div></div>
-                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold">26</div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "分析工具" : "Tools"}</div></div>
+                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statAreas} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "研究主軸" : "Pillars"}</div></div>
+                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statTools} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "分析工具" : "Tools"}</div></div>
+                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statMembers} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "團隊成員" : "Members"}</div></div>
+                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statCases} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "教學個案" : "Cases"}</div></div>
                 </div>
               </Card>
             </Reveal>
@@ -174,9 +189,12 @@ window.JL = window.JL || {};
               const c = toolColor(AREA_COLOR[a.id]);
               return (
                 <Reveal key={a.id} delay={i * 80}>
-                  <Card onClick={function () { navigate("/research/" + a.id); }} className="p-6 h-full flex flex-col">
-                    <div className={cx("h-12 w-12 rounded-xl grid place-items-center mb-4", c.icon)}>
-                      <Icon name={AREA_ICON[a.id] || "flask"} />
+                  <Card onClick={function () { navigate("/research/" + a.id); }} className="group p-6 h-full flex flex-col">
+                    <div className="relative mb-4 h-12 w-12">
+                      <span className={cx("absolute inset-0 rounded-xl jl-ping", c.soft)} />
+                      <div className={cx("relative h-12 w-12 rounded-xl grid place-items-center transition-transform duration-300 group-hover:scale-110", c.icon)}>
+                        <Icon name={AREA_ICON[a.id] || "flask"} />
+                      </div>
                     </div>
                     <h3 className="font-bold text-navy text-lg leading-snug">{t(a.name)}</h3>
                     <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">{t(a.tagline)}</p>
@@ -249,7 +267,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(about.hero.subtitle)} title={t(about.hero.title)} subtitle={t(about.hero.subtitle)} />
+        <PageHero motif eyebrow={t(about.hero.subtitle)} title={t(about.hero.title)} subtitle={t(about.hero.subtitle)} />
         <Container className="py-16 grid lg:grid-cols-2 gap-12">
           <Reveal>
             <h2 className="text-2xl font-bold text-navy">{t(about.intro.title)}</h2>

@@ -87,6 +87,12 @@ summary { list-style: none; }
 @keyframes jl-wave-scroll { from { transform: translateX(0); } to { transform: translateX(-200px); } }
 .jl-flow { stroke-dasharray: 4 8; animation: jl-flow 1.8s linear infinite; }
 .jl-wave-track { animation: jl-wave-scroll 7s linear infinite; }
+
+/* pulsing ring behind icons (ping) */
+@keyframes jl-ping { 0% { transform: scale(0.85); opacity: 0.5; } 70% { transform: scale(1.3); opacity: 0; } 100% { opacity: 0; } }
+.jl-ping { animation: jl-ping 3.4s cubic-bezier(0, 0, 0.2, 1) infinite; transform-origin: center; }
+
 @media (prefers-reduced-motion: reduce) {
   .jl-flow, .jl-wave-track { animation: none; }
+  .jl-ping { animation: none; opacity: 0; }
 }
