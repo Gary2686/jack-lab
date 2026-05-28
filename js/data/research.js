@@ -120,7 +120,59 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 3. 電子商務與數位服務 ===================== */
+    /* ===================== 3. 資訊安全 ===================== */
+    {
+      id: "security",
+      icon: "shield",
+      name: { zh: "資訊安全", en: "Information Security" },
+      tagline: { zh: "研究資安政策遵循、資安疲勞與安全壓力管理", en: "Studying security-policy compliance, security fatigue, and security stress" },
+      intro: {
+        zh: "本主軸聚焦資訊安全政策遵循、資安疲勞、資安壓力、違規合理化與事件後補償等議題，探討員工如何理解、接受或抗拒組織的資訊安全要求，以及組織如何設計更有效且更具人性的安全治理機制。",
+        en: "This pillar focuses on information security policy compliance, security fatigue, security stress, neutralization, and post-breach compensation. We examine how employees understand, accept, or resist organizational security requirements, and how organizations can design more effective and humane security governance.",
+      },
+      sections: [
+        {
+          id: "topics",
+          title: { zh: "研究主題", en: "Research topics" },
+          type: "tags",
+          items: [
+            { zh: "資訊安全政策遵循", en: "Information security policy compliance" },
+            { zh: "資安疲勞", en: "Security fatigue" },
+            { zh: "資訊安全壓力", en: "Information security stress" },
+            { zh: "違規合理化", en: "Neutralization" },
+            { zh: "事件後補償", en: "Post-breach compensation" },
+            { zh: "承諾與自我效能", en: "Commitment and self-efficacy" },
+          ],
+        },
+        {
+          id: "outcomes",
+          title: { zh: "代表性成果", en: "Selected outcomes" },
+          type: "cards",
+          items: [
+            { title: { zh: "員工資安政策遵循意圖", en: "Employees' security-policy compliance intention" }, desc: { zh: "探討 loafing 與承諾如何影響員工遵循資訊安全政策的意圖。", en: "Examining how loafing and commitment shape employees' intention to comply with information security policies." } },
+            { title: { zh: "資安疲勞的形成與緩解", en: "Formation and alleviation of security fatigue" }, desc: { zh: "以工作需求與資源理論理解資安疲勞如何形成，以及組織可如何降低其負面影響。", en: "Using job demands-resources theory to understand how security fatigue emerges and how organizations can alleviate it." } },
+            { title: { zh: "資安壓力、正念與安全行為", en: "Security stress, mindfulness, and secure behavior" }, desc: { zh: "研究資安壓力、正念、自我效能與保護動機如何影響安全政策遵循。", en: "Studying how security stress, mindfulness, self-efficacy, and protection motivation influence security-policy compliance." } },
+          ],
+        },
+        {
+          id: "applications",
+          title: { zh: "實務應用", en: "Practical applications" },
+          type: "cards",
+          items: [
+            { title: { zh: "資安治理與訓練設計", en: "Security governance and training design" }, desc: { zh: "協助組織從員工行為與心理負荷角度設計更有效的資安政策、教育訓練與提醒機制。", en: "Helping organizations design policies, training, and reminders that account for employee behavior and psychological load." } },
+            { title: { zh: "資安疲勞與壓力診斷", en: "Security-fatigue and stress diagnosis" }, desc: { zh: "評估資安規範、工作需求與組織支持之間的落差，降低員工抗拒與違規風險。", en: "Assessing gaps among security requirements, work demands, and organizational support to reduce resistance and violation risk." } },
+          ],
+        },
+        {
+          id: "related",
+          title: { zh: "相關發表", en: "Related publications" },
+          type: "note",
+          note: { zh: "完整論文清單請見「學術發表」頁面，可依資訊安全主題篩選資安政策遵循、資安疲勞與安全壓力相關研究。", en: "See the Publications page for the full list; filter by Information Security for studies on compliance, fatigue, and security stress." },
+        },
+      ],
+    },
+
+    /* ===================== 4. 電子商務與數位服務 ===================== */
     {
       id: "ecommerce",
       icon: "globe",
@@ -173,7 +225,7 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 4. 團隊與專案管理 ===================== */
+    /* ===================== 5. 團隊與專案管理 ===================== */
     {
       id: "team",
       icon: "users",
@@ -224,7 +276,7 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 5. 哈佛教學個案 ===================== */
+    /* ===================== 6. 哈佛教學個案 ===================== */
     {
       id: "case",
       icon: "briefcase",
@@ -253,7 +305,7 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 6. 模糊集質性比較分析 fsQCA ===================== */
+    /* ===================== 7. 模糊集質性比較分析 fsQCA ===================== */
     {
       id: "fsqca",
       icon: "diagram",

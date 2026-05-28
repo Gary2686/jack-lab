@@ -21,6 +21,7 @@ window.DATA.publications = {
   topics: [
     { id: "ai", label: { zh: "AI 與數位轉型", en: "AI & Digital Transformation" } },
     { id: "neuro", label: { zh: "神經科學與人機互動", en: "Neuroscience & HCI" } },
+    { id: "security", label: { zh: "資訊安全", en: "Information Security" } },
     { id: "ecommerce", label: { zh: "電子商務與數位服務", en: "E-Commerce & Digital Services" } },
     { id: "team", label: { zh: "團隊與專案管理", en: "Team & Project Management" } },
     { id: "case", label: { zh: "哈佛教學個案", en: "Harvard Teaching Cases" } },
@@ -28,7 +29,7 @@ window.DATA.publications = {
   ],
   items: [
     {
-      id: "j-2025-security-policy-loafing-commitment", type: "journal", year: 2025, topics: ["neuro"], featured: true,
+      id: "j-2025-security-policy-loafing-commitment", type: "journal", year: 2025, topics: ["security"], featured: true,
       title: { zh: "Employees' intention to comply with information security policies: The impacts of loafing and commitment", en: "Employees' intention to comply with information security policies: The impacts of loafing and commitment" },
       authors: { zh: "Chiu, C. M., Cheng, H. L., Hsu, J. S. C.*, Tan, C. M., & Huang, C. H.", en: "Chiu, C. M., Cheng, H. L., Hsu, J. S. C.*, Tan, C. M., & Huang, C. H." },
       venue: { zh: "International Journal of Human-Computer Interaction", en: "International Journal of Human-Computer Interaction" },
@@ -84,7 +85,7 @@ window.DATA.publications = {
       doi: "10.1080/10919392.2024.2315714", url: "",
     },
     {
-      id: "j-2024-information-security-fatigue", type: "journal", year: 2024, topics: ["neuro"], featured: false,
+      id: "j-2024-information-security-fatigue", type: "journal", year: 2024, topics: ["security"], featured: false,
       title: { zh: "Examining formation and alleviation of information security fatigue by using job demands-resources theory", en: "Examining formation and alleviation of information security fatigue by using job demands-resources theory" },
       authors: { zh: "Hsu, J. S. C., Hung, Y. W., Hsieh, P. J., & Chiu, C. M.", en: "Hsu, J. S. C., Hung, Y. W., Hsieh, P. J., & Chiu, C. M." },
       venue: { zh: "Information Systems Journal", en: "Information Systems Journal" },
@@ -116,7 +117,7 @@ window.DATA.publications = {
       doi: "", url: "http://jecr.org/sites/default/files/2022vol23no2_Paper4.pdf",
     },
     {
-      id: "c-amcis-2025-relative-deprivation", type: "conference", year: 2025, topics: ["neuro"], featured: true,
+      id: "c-amcis-2025-relative-deprivation", type: "conference", year: 2025, topics: ["security"], featured: true,
       title: { zh: "Beyond Expectations: Relative Deprivation in Post-Breach Compensation", en: "Beyond Expectations: Relative Deprivation in Post-Breach Compensation" },
       authors: { zh: "Jacob Chun Cheng, Jack Shih-Chieh Hsu", en: "Jacob Chun Cheng, Jack Shih-Chieh Hsu" },
       venue: { zh: "Americas Conference on Information Systems (AMCIS) 2025", en: "Americas Conference on Information Systems (AMCIS) 2025" },
@@ -148,7 +149,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-pacis-2024-stress-self-efficacy-isp", type: "conference", year: 2024, topics: ["neuro"], featured: false,
+      id: "c-pacis-2024-stress-self-efficacy-isp", type: "conference", year: 2024, topics: ["security"], featured: false,
       title: { zh: "Effects of Stress and Self-Efficacy on Information Security Policy Compliance", en: "Effects of Stress and Self-Efficacy on Information Security Policy Compliance" },
       authors: { zh: "Hsieh-Hong Huang, Jian-Wei Lin, Jack Shih-Chieh Hsu", en: "Hsieh-Hong Huang, Jian-Wei Lin, Jack Shih-Chieh Hsu" },
       venue: { zh: "Pacific Asia Conference on Information Systems (PACIS) 2024", en: "Pacific Asia Conference on Information Systems (PACIS) 2024" },
@@ -156,7 +157,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-amcis-2023-neutralization-isp", type: "conference", year: 2023, topics: ["neuro"], featured: false,
+      id: "c-amcis-2023-neutralization-isp", type: "conference", year: 2023, topics: ["security"], featured: false,
       title: { zh: "The Effect of Neutralization: Before and After Employee Violating ISP", en: "The Effect of Neutralization: Before and After Employee Violating ISP" },
       authors: { zh: "Jack Shih-Chieh Hsu, Kuang-Ting Cheng, Yu-Ting Chang-Chien", en: "Jack Shih-Chieh Hsu, Kuang-Ting Cheng, Yu-Ting Chang-Chien" },
       venue: { zh: "Americas Conference on Information Systems (AMCIS) 2023", en: "Americas Conference on Information Systems (AMCIS) 2023" },
@@ -172,7 +173,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-pacis-2022-isp-loafing-commitment", type: "conference", year: 2022, topics: ["neuro"], featured: false,
+      id: "c-pacis-2022-isp-loafing-commitment", type: "conference", year: 2022, topics: ["security"], featured: false,
       title: { zh: "Examining Employees' Intention to Comply with Information Security Policies: The Roles of Loafing and Commitment", en: "Examining Employees' Intention to Comply with Information Security Policies: The Roles of Loafing and Commitment" },
       authors: { zh: "Chao-Min Chiu, Hsiang-Lan Cheng, Jack Shih-Chieh Hsu, Chiung-Hui Huang", en: "Chao-Min Chiu, Hsiang-Lan Cheng, Jack Shih-Chieh Hsu, Chiung-Hui Huang" },
       venue: { zh: "Pacific Asia Conference on Information Systems (PACIS) 2022", en: "Pacific Asia Conference on Information Systems (PACIS) 2022" },
@@ -204,7 +205,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-pacis-2019-mindfulness-security-stress", type: "conference", year: 2019, topics: ["neuro"], featured: false,
+      id: "c-pacis-2019-mindfulness-security-stress", type: "conference", year: 2019, topics: ["security"], featured: false,
       title: { zh: "Exploring the Role of Mindfulness on Easing the Negative Impacts of Information Security Stress", en: "Exploring the Role of Mindfulness on Easing the Negative Impacts of Information Security Stress" },
       authors: { zh: "Prasanthi Yepuru, Jack Shih-Chieh Hsu", en: "Prasanthi Yepuru, Jack Shih-Chieh Hsu" },
       venue: { zh: "Pacific Asia Conference on Information Systems (PACIS) 2019", en: "Pacific Asia Conference on Information Systems (PACIS) 2019" },
@@ -212,7 +213,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-hicss-2018-mobile-permission", type: "conference", year: 2018, topics: ["neuro"], featured: false,
+      id: "c-hicss-2018-mobile-permission", type: "conference", year: 2018, topics: ["security"], featured: false,
       title: { zh: "The Impacts of Requested Permission on Mobile App Adoption: The Insights Based on an Experiment in Taiwan", en: "The Impacts of Requested Permission on Mobile App Adoption: The Insights Based on an Experiment in Taiwan" },
       authors: { zh: "Hsiangchu Lai, Jack Shih-Chieh Hsu, Min-Xun Wu", en: "Hsiangchu Lai, Jack Shih-Chieh Hsu, Min-Xun Wu" },
       venue: { zh: "51st Hawaii International Conference on System Sciences (HICSS-51)", en: "51st Hawaii International Conference on System Sciences (HICSS-51)" },
@@ -220,7 +221,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-pacis-2018-security-stress-pmt", type: "conference", year: 2018, topics: ["neuro"], featured: false,
+      id: "c-pacis-2018-security-stress-pmt", type: "conference", year: 2018, topics: ["security"], featured: false,
       title: { zh: "The Influence of Information Security Stress on Security Policy Compliance: A Protection Motivation Theory Perspective", en: "The Influence of Information Security Stress on Security Policy Compliance: A Protection Motivation Theory Perspective" },
       authors: { zh: "Shih-Hsien Chang, Hui-Mei Hsu, Yuzhu Li, Jack Shih-Chieh Hsu", en: "Shih-Hsien Chang, Hui-Mei Hsu, Yuzhu Li, Jack Shih-Chieh Hsu" },
       venue: { zh: "Pacific Asia Conference on Information Systems (PACIS) 2018", en: "Pacific Asia Conference on Information Systems (PACIS) 2018" },
@@ -236,7 +237,7 @@ window.DATA.publications = {
       doi: "", url: "",
     },
     {
-      id: "c-pacis-2018-mindfulness-countermeasures", type: "conference", year: 2018, topics: ["neuro"], featured: false,
+      id: "c-pacis-2018-mindfulness-countermeasures", type: "conference", year: 2018, topics: ["security"], featured: false,
       title: { zh: "Dealing with Security Related Stress: Mindfulness on Countermeasures", en: "Dealing with Security Related Stress: Mindfulness on Countermeasures" },
       authors: { zh: "Prasanthi Yepuru, Jack Shih-Chieh Hsu, Yuzhu Li", en: "Prasanthi Yepuru, Jack Shih-Chieh Hsu, Yuzhu Li" },
       venue: { zh: "Pacific Asia Conference on Information Systems (PACIS) 2018", en: "Pacific Asia Conference on Information Systems (PACIS) 2018" },

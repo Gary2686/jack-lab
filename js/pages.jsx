@@ -19,8 +19,8 @@ window.JL = window.JL || {};
   const toolColor = JL.toolColor;
   const navigate = JL.navigate;
 
-  const AREA_ICON = { ai: "cpu", neuro: "brain", ecommerce: "globe", team: "users", case: "briefcase", fsqca: "diagram" };
-  const AREA_COLOR = { ai: "blue", neuro: "indigo", ecommerce: "sky", team: "amber", case: "teal", fsqca: "violet" };
+  const AREA_ICON = { ai: "cpu", neuro: "brain", security: "shield", ecommerce: "globe", team: "users", case: "briefcase", fsqca: "diagram" };
+  const AREA_COLOR = { ai: "blue", neuro: "indigo", security: "emerald", ecommerce: "sky", team: "amber", case: "teal", fsqca: "violet" };
   const TOOLCAT_ICON = { positioning: "target", growth: "trendingUp", customer: "users", channel: "share", performance: "barChart", decision: "scale" };
 
   /* ----------------------------- helpers ----------------------------- */
@@ -103,7 +103,7 @@ window.JL = window.JL || {};
 
     const featured = pubs.filter(function (p) { return p.featured && !p.draft; }).slice(0, 4);
     const featuredList = featured.length ? featured : pubs.filter(function (p) { return !p.draft; }).slice(0, 4);
-    const chips = ["AI & Digital Transformation", "Neuroscience & HCI", "E-Commerce & Digital Services", "Team & Project Management", "Harvard Cases", "fsQCA"];
+    const chips = ["AI & Digital Transformation", "Neuroscience & HCI", "Information Security", "E-Commerce & Digital Services", "Team & Project Management", "Harvard Cases", "fsQCA"];
 
     const statAreas = areas.length;
     const statTools = window.DATA.tools.items.length;
@@ -675,7 +675,7 @@ window.JL = window.JL || {};
           <Reveal delay={80} className="mb-10">
             <JL.InteractiveFlow
               labels={ctx.lang === "zh" ? ["感知問題", "建模分析", "互動驗證", "管理應用"] : ["Sense", "Model", "Interact", "Apply"]}
-              icons={area.id === "neuro" ? ["eye", "brain", "activity", "sparkles"] : area.id === "ai" ? ["cpu", "bot", "diagram", "trendingUp"] : ["target", "diagram", "users", "check"]}
+              icons={area.id === "neuro" ? ["eye", "brain", "activity", "sparkles"] : area.id === "security" ? ["shield", "check", "activity", "target"] : area.id === "ai" ? ["cpu", "bot", "diagram", "trendingUp"] : ["target", "diagram", "users", "check"]}
             />
           </Reveal>
 
