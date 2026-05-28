@@ -25,7 +25,7 @@ window.DATA.activities = {
         zh: "實驗室成員齊聚，回顧本學期的研究進度與學習收穫，並規劃下階段的研究方向。（活動心得與照片待補充）",
         en: "Lab members gathered to review the semester's research progress and plan the next phase. (Reflections and photos to be added.)",
       },
-      photos: [],
+      photos: [], draft: true,
     },
     {
       id: "act-2", date: "2026-02-10",
@@ -36,7 +36,7 @@ window.DATA.activities = {
         zh: "成員實際操作腦波與眼動設備，學習實驗設計、資料蒐集與分析流程。（活動心得與照片待補充）",
         en: "Members hands-on with EEG and eye-tracking equipment, learning experimental design, data collection, and analysis. (Reflections and photos to be added.)",
       },
-      photos: [],
+      photos: [], draft: true,
     },
     {
       id: "act-3", date: "2025-11-15",
@@ -47,7 +47,7 @@ window.DATA.activities = {
         zh: "成員參與學術研討會並發表研究成果，與國內外學者交流。（活動心得與照片待補充）",
         en: "Members presented research at an academic conference and exchanged ideas with scholars. (Reflections and photos to be added.)",
       },
-      photos: [],
+      photos: [], draft: true,
     },
   ],
 };

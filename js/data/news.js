@@ -28,35 +28,44 @@ window.DATA.news = {
   ],
   items: [
     {
-      id: "n-1", category: "labNews", date: "2026-05-01", pinned: true, tags: ["recruiting"],
-      title: { zh: "（範例）Jack Lab 招收碩士生", en: "(Sample) Jack Lab is recruiting master's students" },
-      summary: { zh: "歡迎對 AI、數位轉型、神經科學與人機互動有興趣的同學加入。", en: "We welcome students interested in AI, digital transformation, and neuroscience & HCI." },
-      body: { zh: "詳細招生資訊與聯絡方式待補充。", en: "Detailed recruiting information and contact to be added." },
+      id: "n-1", category: "labNews", date: "2026-05-28", pinned: true, tags: ["recruiting"],
+      title: {
+        zh: "Jack Lab 招生：徵求碩士生與博士生加入",
+        en: "Jack Lab is Recruiting Master's and Ph.D. Students",
+      },
+      summary: {
+        zh: "Jack Lab 持續招收對人工智慧與數位轉型、神經科學與人機互動、個案研究與服務科學，以及模糊集質性比較分析（fsQCA）感興趣的同學，碩士生與博士生皆歡迎加入。",
+        en: "Jack Lab is recruiting Master's and Ph.D. students interested in AI & digital transformation, neuroscience & HCI, case studies & service science, or fuzzy-set Qualitative Comparative Analysis (fsQCA).",
+      },
+      body: {
+        zh: "Jack Lab（國立中山大學資訊管理學系徐傑克實驗室）是一個跨領域研究團隊，研究橫跨人工智慧、數位轉型、神經科學與人機互動、服務科學、個案研究與 fsQCA 方法論。\n\n我們提供：\n• 腦波（EEG）與眼動追蹤實驗設備，支援行為與認知層面的研究設計\n• 國際期刊與頂尖研討會（AMCIS、PACIS、HICSS、ICIS、ECIS 等）的發表機會與經驗\n• 跨領域研究訓練、產學合作專案與個案教學\n• 完整的策略分析工具與教學資源，協助學生系統化建立分析思維\n\n歡迎對嚴謹研究方法、真實管理問題與新興科技同時感興趣的同學加入。報名與洽詢請聯絡指導教授徐士傑主任或實驗室成員，亦可參考本網站「研究領域與成果」、「學術發表」與「團隊成員」頁面進一步了解實驗室方向。",
+        en: "Jack Lab (Department of Information Management, National Sun Yat-sen University) is an interdisciplinary research team working at the intersection of AI, digital transformation, neuroscience & HCI, service science, case research, and fsQCA methodology.\n\nWhat we offer:\n• EEG and eye-tracking facilities for behavioral and cognitive studies\n• Publication opportunities at top venues (AMCIS, PACIS, HICSS, ICIS, ECIS, and SSCI / SCIE journals)\n• Interdisciplinary training, university–industry projects, and case-based teaching\n• A curated toolkit of strategy frameworks and teaching resources\n\nWe welcome students who care about both rigorous methodology and real-world management problems. To apply or inquire, please contact Prof. Shih-Chieh Hsu (Chair) or any Jack Lab member; the Research, Publications, and Team pages on this site provide more detail about our directions.",
+      },
       image: "", url: "",
     },
     {
-      id: "n-2", category: "labNews", date: "2026-04-15", pinned: false, tags: ["paper", "ai"],
+      id: "n-2", category: "labNews", date: "2026-04-15", pinned: false, draft: true, tags: ["paper", "ai"],
       title: { zh: "（範例）實驗室論文獲期刊接受", en: "(Sample) Lab paper accepted by a journal" },
       summary: { zh: "一篇關於生成式 AI 與企業績效的研究獲接受刊登。", en: "A study on generative AI and firm performance has been accepted." },
       body: { zh: "論文資訊待補充，後續可連結至「學術發表」頁面。", en: "Paper details to be added; can later link to the Publications page." },
       image: "", url: "",
     },
     {
-      id: "n-3", category: "trends", date: "2026-03-20", pinned: false, tags: ["ai", "fsqca"],
+      id: "n-3", category: "trends", date: "2026-03-20", pinned: false, draft: true, tags: ["ai", "fsqca"],
       title: { zh: "（範例）趨勢：生成式 AI 與組態研究方法", en: "(Sample) Trend: Generative AI and configurational methods" },
       summary: { zh: "整理近期 AI 與 fsQCA 在資訊管理研究中的應用趨勢。", en: "A roundup of recent trends in AI and fsQCA within IM research." },
       body: { zh: "趨勢內文待補充。", en: "Trend article to be added." },
       image: "", url: "",
     },
     {
-      id: "n-4", category: "events", date: "2026-02-10", pinned: false, tags: ["workshop", "neuro"],
+      id: "n-4", category: "events", date: "2026-02-10", pinned: false, draft: true, tags: ["workshop", "neuro"],
       title: { zh: "（範例）腦波與眼動研究方法工作坊", en: "(Sample) EEG & eye-tracking methods workshop" },
       summary: { zh: "實驗室舉辦神經科學研究方法工作坊，分享實驗設計與資料分析。", en: "The lab held a workshop on neuroscience research methods." },
       body: { zh: "活動紀錄與照片待補充。", en: "Event notes and photos to be added." },
       image: "", url: "",
     },
     {
-      id: "n-5", category: "media", date: "2026-01-05", pinned: false, tags: ["talk"],
+      id: "n-5", category: "media", date: "2026-01-05", pinned: false, draft: true, tags: ["talk"],
       title: { zh: "（範例）媒體報導／外部連結", en: "(Sample) Media coverage / external link" },
       summary: { zh: "相關報導、外部平台文章或學術社群連結。", en: "Related coverage, external articles, or academic-community links." },
       body: { zh: "連結待補充。", en: "Link to be added." },

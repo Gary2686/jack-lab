@@ -372,7 +372,7 @@ window.DATA.publications = {
       doi: "", url: "https://www.books.com.tw/products/0010986415",
     },
     {
-      id: "p-sample-1", type: "project", year: 2025, topics: ["ai"], featured: true,
+      id: "p-sample-1", type: "project", year: 2025, topics: ["ai"], featured: true, draft: true,
       title: { zh: "（範例）AI 賦能數位轉型之研究", en: "(Sample) AI-Enabled Digital Transformation" },
       authors: { zh: "主持人：徐士傑", en: "PI: Shih-Chieh Hsu" },
       venue: { zh: "國科會 / 產學合作（補助單位待補充）", en: "NSTC / Industry (funder TBA)" },
@@ -381,7 +381,7 @@ window.DATA.publications = {
       abstract: { zh: "計畫摘要待補充。", en: "Project abstract to be added." },
     },
     {
-      id: "t-sample-1", type: "thesis", year: 2024, topics: ["neuro"], featured: false,
+      id: "t-sample-1", type: "thesis", year: 2024, topics: ["neuro"], featured: false, draft: true,
       title: { zh: "（範例）眼動指標於介面設計評估之應用", en: "(Sample) Eye-Tracking Metrics for Interface Evaluation" },
       authors: { zh: "學生：劉冠宏　指導教授：徐士傑", en: "Student: Liu, K.-H.　Advisor: Hsu, S.-C." },
       venue: { zh: "國立中山大學 資訊管理學系 碩士論文", en: "M.B.A. Thesis, Dept. of IM, NSYSU" },

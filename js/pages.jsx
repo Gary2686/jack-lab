@@ -96,13 +96,13 @@ window.JL = window.JL || {};
       if (g && g.members[0]) leaders.push({ group: g, member: g.members[0] });
     });
 
-    const latestNews = news.slice().sort(function (a, b) {
+    const latestNews = news.filter(function (n) { return !n.draft; }).sort(function (a, b) {
       if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
       return a.date < b.date ? 1 : -1;
     }).slice(0, 3);
 
-    const featured = pubs.filter(function (p) { return p.featured; }).slice(0, 4);
-    const featuredList = featured.length ? featured : pubs.slice(0, 4);
+    const featured = pubs.filter(function (p) { return p.featured && !p.draft; }).slice(0, 4);
+    const featuredList = featured.length ? featured : pubs.filter(function (p) { return !p.draft; }).slice(0, 4);
     const chips = ["AI & Digital Transformation", "Neuroscience & HCI", "E-Commerce & Digital Services", "Team & Project Management", "Harvard Cases", "fsQCA"];
 
     const statAreas = areas.length;
@@ -747,6 +747,7 @@ window.JL = window.JL || {};
     const filtered = useMemo(function () {
       const ql = q.trim().toLowerCase();
       return data.items.filter(function (p) {
+        if (p.draft) return false;
         if (type !== "all" && p.type !== type) return false;
         if (topic !== "all" && (!p.topics || p.topics.indexOf(topic) < 0)) return false;
         if (ql) {
@@ -892,6 +893,7 @@ window.JL = window.JL || {};
     const [tag, setTag] = useState("all");
 
     const filtered = data.items.filter(function (n) {
+      if (n.draft) return false;
       if (cat !== "all" && n.category !== cat) return false;
       if (tag !== "all" && (!n.tags || n.tags.indexOf(tag) < 0)) return false;
       return true;
@@ -928,7 +930,7 @@ window.JL = window.JL || {};
   function ActivitiesPage() {
     const ctx = JL.useLang(); const t = ctx.t;
     const site = window.DATA.site;
-    const items = window.DATA.activities.items.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    const items = window.DATA.activities.items.filter(function (a) { return !a.draft; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     return (
       <div>
         <PageHero visual="robot" eyebrow={t(site.pages.activities.subtitle)} title={t(site.pages.activities.title)} subtitle={t(site.pages.activities.subtitle)} />
