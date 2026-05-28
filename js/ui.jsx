@@ -230,6 +230,10 @@ window.JL = window.JL || {};
   function ImagePlaceholder(props) {
     const ctx = useLang();
     const site = window.DATA.site;
+    // 無圖且有 kind 時，渲染主題化 CategoryBanner，取代灰底
+    if (!props.src && props.kind) {
+      return <CategoryBanner kind={props.kind} label={props.label} className={cx("relative overflow-hidden", props.className)} />;
+    }
     return (
       <div className={cx("relative grid place-items-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-400 overflow-hidden", props.className)}>
         {props.src ? (
@@ -243,6 +247,167 @@ window.JL = window.JL || {};
       </div>
     );
   }
+
+  /* -------- CategoryBanner（依分類產生統一風格的彩色橫幅，取代灰底 / themed SVG banner per category） -------- */
+  const BANNER_VARIANTS = {
+    // News categories
+    labNews:  { from: "#3b76c0", to: "#1f3556", accent: "#bfe3ff", icon: "sparkles",    pattern: "dots",    label: "LAB NEWS" },
+    trends:   { from: "#5a93d4", to: "#272555", accent: "#88b4e3", icon: "trendingUp", pattern: "wave",    label: "TRENDS" },
+    events:   { from: "#2f5ea3", to: "#1f3556", accent: "#88b4e3", icon: "calendar",   pattern: "grid",    label: "EVENTS" },
+    media:    { from: "#272555", to: "#3b76c0", accent: "#bfe3ff", icon: "news",       pattern: "scan",    label: "MEDIA" },
+    // Activities / generic
+    activity: { from: "#5a93d4", to: "#272555", accent: "#bfe3ff", icon: "activity",   pattern: "network", label: "ACTIVITY" },
+    // Lab feature kinds
+    ai:       { from: "#3b76c0", to: "#1f3556", accent: "#bfe3ff", icon: "cpu",        pattern: "grid",    label: "AI" },
+    neuro:    { from: "#5a93d4", to: "#1f3556", accent: "#bfe3ff", icon: "brain",      pattern: "network", label: "NEURO" },
+    hci:      { from: "#5a93d4", to: "#284e84", accent: "#bfe3ff", icon: "eye",        pattern: "dots",    label: "HCI" },
+    security: { from: "#2f5ea3", to: "#1f3556", accent: "#bfe3ff", icon: "shield",     pattern: "grid",    label: "SECURITY" },
+    ecom:     { from: "#5a93d4", to: "#2f5ea3", accent: "#bfe3ff", icon: "globe",      pattern: "dots",    label: "DIGITAL" },
+    consult:  { from: "#284e84", to: "#1f3556", accent: "#bfe3ff", icon: "briefcase",  pattern: "wave",    label: "ADVISORY" },
+  };
+
+  function CategoryBanner(props) {
+    const reduce = prefersReduced();
+    const v = BANNER_VARIANTS[props.kind] || BANNER_VARIANTS.labNews;
+    const uid = (props.kind || "labNews") + "_" + Math.random().toString(36).slice(2, 7);
+    const gradId = "jlGrd_" + uid;
+    const patId = "jlPat_" + uid;
+    return (
+      <div className={cx("relative overflow-hidden", props.className)} aria-hidden="true">
+        <svg viewBox="0 0 320 160" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
+          <defs>
+            <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor={v.from} />
+              <stop offset="1" stopColor={v.to} />
+            </linearGradient>
+            {v.pattern === "dots" ? (
+              <pattern id={patId} width="14" height="14" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.22)" />
+              </pattern>
+            ) : null}
+            {v.pattern === "grid" ? (
+              <pattern id={patId} width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="0.6" />
+              </pattern>
+            ) : null}
+            {v.pattern === "network" ? (
+              <pattern id={patId} width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="6" cy="6" r="1.4" fill="rgba(255,255,255,0.28)" />
+                <circle cx="32" cy="14" r="1.2" fill="rgba(255,255,255,0.22)" />
+                <circle cx="18" cy="30" r="1" fill="rgba(255,255,255,0.18)" />
+                <line x1="6" y1="6" x2="32" y2="14" stroke="rgba(255,255,255,0.16)" strokeWidth="0.4" />
+                <line x1="32" y1="14" x2="18" y2="30" stroke="rgba(255,255,255,0.16)" strokeWidth="0.4" />
+              </pattern>
+            ) : null}
+            {v.pattern === "wave" ? (
+              <pattern id={patId} width="80" height="30" patternUnits="userSpaceOnUse">
+                <path d="M0 15 Q20 5 40 15 T80 15" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="0.7" />
+              </pattern>
+            ) : null}
+            {v.pattern === "scan" ? (
+              <pattern id={patId} width="6" height="6" patternUnits="userSpaceOnUse">
+                <path d="M0 0 L6 6" stroke="rgba(255,255,255,0.14)" strokeWidth="0.6" />
+              </pattern>
+            ) : null}
+          </defs>
+          <rect width="320" height="160" fill={"url(#" + gradId + ")"} />
+          <rect width="320" height="160" fill={"url(#" + patId + ")"} />
+          {/* 底部漸層襯 */}
+          <path d="M0 110 Q80 90 160 110 T320 110 V160 H0 Z" fill={v.accent} opacity="0.12" />
+          {/* 動態掃描光帶 */}
+          {reduce ? null : (
+            <rect x="-60" y="0" width="60" height="160" fill="rgba(255,255,255,0.10)">
+              <animate attributeName="x" values="-60;380" dur="6s" repeatCount="indefinite" />
+            </rect>
+          )}
+          {/* 微亮點脈衝 */}
+          {reduce ? null : (
+            <g>
+              <circle cx="50" cy="40" r="2.5" fill="rgba(255,255,255,0.85)">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="270" cy="55" r="2" fill="rgba(255,255,255,0.7)">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="3.1s" begin="0.6s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="240" cy="125" r="2.4" fill="rgba(255,255,255,0.75)">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" begin="1.1s" repeatCount="indefinite" />
+              </circle>
+            </g>
+          )}
+        </svg>
+        <div className="relative h-full">
+          {/* 右上角分類小標 */}
+          <div className="absolute right-3 top-3 text-[10px] font-bold tracking-[0.18em] text-white/80">
+            {props.label || v.label}
+          </div>
+          {/* 左下角 JACK LAB 浮水印 */}
+          <div className="absolute left-3 bottom-3 text-[10px] font-bold tracking-[0.2em] text-white/70">
+            JACK LAB
+          </div>
+          {/* 中央 icon */}
+          <div className="absolute inset-0 grid place-items-center">
+            <div className="relative">
+              {reduce ? null : (
+                <span className="absolute inset-0 rounded-2xl bg-white/20 jl-ping" />
+              )}
+              <div className="relative grid h-16 w-16 place-items-center rounded-2xl bg-white/15 backdrop-blur-sm ring-1 ring-white/30 text-white shadow-lg">
+                <Icon name={v.icon} size={30} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /* -------- LabFeatureRibbon（眼動/腦波/AI/資安/數位轉型/顧問/fsQCA 互動小卡） -------- */
+  function LabFeatureRibbon(props) {
+    const ctx = useLang();
+    const items = [
+      { icon: "eye",         label: { zh: "眼動",     en: "Eye Tracking" },    tone: "emerald", to: "/research/neuro" },
+      { icon: "brain",       label: { zh: "腦波 EEG", en: "EEG" },             tone: "indigo",  to: "/research/neuro" },
+      { icon: "cpu",         label: { zh: "AI",       en: "AI" },              tone: "blue",    to: "/research/ai" },
+      { icon: "shield",      label: { zh: "資訊安全", en: "Security" },        tone: "violet",  to: "/research/security" },
+      { icon: "trendingUp",  label: { zh: "數位轉型", en: "Digital Transform" },tone: "sky",     to: "/research/ai" },
+      { icon: "briefcase",   label: { zh: "顧問服務", en: "Advisory" },        tone: "teal",    to: "/research/case" },
+      { icon: "diagram",     label: { zh: "fsQCA",    en: "fsQCA" },           tone: "amber",   to: "/research/fsqca" },
+    ];
+    return (
+      <div className={cx("relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-white via-brand-50/40 to-white", props.className)}>
+        <div className="absolute inset-0 hero-grid opacity-30 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400 to-transparent jl-scan-x" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5 relative">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {items.map(function (it, i) {
+              const c = toolColor(it.tone);
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={function () { if (it.to) navigate(it.to); }}
+                  className={cx(
+                    "group flex items-center gap-2 rounded-full px-3 py-1.5 ring-1 ring-slate-100 bg-white/80 backdrop-blur-sm shadow-sm transition-all duration-300",
+                    "hover:-translate-y-0.5 hover:shadow-md hover:ring-brand-200",
+                    c.text
+                  )}
+                  title={ctx.t(it.label)}
+                >
+                  <span className={cx("relative grid h-7 w-7 place-items-center rounded-lg", c.icon)}>
+                    <Icon name={it.icon} size={15} />
+                    <span className={cx("absolute inset-0 rounded-lg jl-ping", c.soft)} style={{ animationDelay: (i * 0.35) + "s" }} />
+                  </span>
+                  <span className="text-xs font-semibold whitespace-nowrap">{ctx.t(it.label)}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  JL.CategoryBanner = CategoryBanner;
+  JL.LabFeatureRibbon = LabFeatureRibbon;
 
   /* --------------------- TechMotif（神經網絡動圖）-------------------- */
   function prefersReduced() {

@@ -31,32 +31,36 @@ window.JL = window.JL || {};
   function PageHero(props) {
     const visual = props.visual || (props.motif ? "ai" : null);
     return (
-      <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/70 via-white to-white">
-        <div className="absolute inset-0 -z-10 hero-grid opacity-60" />
-        <div className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
-        {visual ? <JL.ParticleField className="pointer-events-none opacity-30" /> : null}
-        {/* 漂浮的 AI / 腦 / 眼 / 機器人 圖示星座（裝飾，不可點擊）*/}
-        <JL.IconConstellation className="opacity-70" />
-        {/* 眼動熱區圖薄背景（neuro 視覺主題時更強）*/}
-        {visual === "mind" || visual === "robot" ? (
-          <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-multiply">
-            <JL.GazeHeatmap />
-          </div>
-        ) : null}
-        {visual ? (
-          <div className="hidden lg:block absolute right-4 xl:right-14 top-16 w-[280px] origin-top-right" style={{ transform: "scale(0.55)" }}>
-            <JL.SignalPanel mode={visual} />
-          </div>
-        ) : null}
-        <Container className="relative z-10 py-14 sm:py-16">
-          <Reveal className={visual ? "max-w-2xl" : ""}>
-            {props.eyebrow ? <div className="text-xs font-semibold uppercase tracking-wide text-brand-600 mb-3">{props.eyebrow}</div> : null}
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">{props.title}</h1>
-            {props.subtitle ? <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">{props.subtitle}</p> : null}
-          </Reveal>
-        </Container>
-        <div className="absolute inset-x-0 bottom-0 opacity-40 pointer-events-none"><JL.Waveform color="#b6d2ef" opacity={0.7} height="28px" /></div>
-      </section>
+      <React.Fragment>
+        <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/70 via-white to-white">
+          <div className="absolute inset-0 -z-10 hero-grid opacity-60" />
+          <div className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
+          {visual ? <JL.ParticleField className="pointer-events-none opacity-30" /> : null}
+          {/* 漂浮的 AI / 腦 / 眼 / 機器人 圖示星座（裝飾，不可點擊）*/}
+          <JL.IconConstellation className="opacity-70" />
+          {/* 眼動熱區圖薄背景（neuro 視覺主題時更強）*/}
+          {visual === "mind" || visual === "robot" ? (
+            <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-multiply">
+              <JL.GazeHeatmap />
+            </div>
+          ) : null}
+          {visual ? (
+            <div className="hidden lg:block absolute right-4 xl:right-14 top-16 w-[280px] origin-top-right" style={{ transform: "scale(0.55)" }}>
+              <JL.SignalPanel mode={visual} />
+            </div>
+          ) : null}
+          <Container className="relative z-10 py-14 sm:py-16">
+            <Reveal className={visual ? "max-w-2xl" : ""}>
+              {props.eyebrow ? <div className="text-xs font-semibold uppercase tracking-wide text-brand-600 mb-3">{props.eyebrow}</div> : null}
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">{props.title}</h1>
+              {props.subtitle ? <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">{props.subtitle}</p> : null}
+            </Reveal>
+          </Container>
+          <div className="absolute inset-x-0 bottom-0 opacity-40 pointer-events-none"><JL.Waveform color="#b6d2ef" opacity={0.7} height="28px" /></div>
+        </section>
+        {/* 實驗室特色互動條：眼動 / 腦波 / AI / 資安 / 數位轉型 / 顧問 / fsQCA */}
+        <JL.LabFeatureRibbon />
+      </React.Fragment>
     );
   }
 
@@ -172,6 +176,9 @@ window.JL = window.JL || {};
           </Container>
           <div className="relative"><JL.Waveform color="#88b4e3" opacity={0.5} height="40px" /></div>
         </section>
+
+        {/* 實驗室特色互動條 */}
+        <JL.LabFeatureRibbon />
 
         {/* INTRO */}
         <Container className="py-16">
@@ -820,6 +827,12 @@ window.JL = window.JL || {};
       <div>
         <PageHero visual="award" eyebrow={t(site.pages.awards.subtitle)} title={t(site.pages.awards.title)} subtitle={t(site.pages.awards.subtitle)} />
         <Container className="py-12">
+          <Reveal className="mb-8">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["投入研究", "學術發表", "競賽肯定", "培育人才"] : ["Research", "Publish", "Compete", "Mentor"]}
+              icons={["flask", "doc", "award", "users"]}
+            />
+          </Reveal>
           <div className="mb-10"><FilterChips options={data.types} value={type} onChange={setType} allLabel={site.ui.all} /></div>
 
           {filtered.length ? (
@@ -869,7 +882,7 @@ window.JL = window.JL || {};
     const tagDefs = window.DATA.news.tags;
     return (
       <Card className="overflow-hidden h-full flex flex-col jl-card-tech" hover={false}>
-        <ImagePlaceholder src={n.image} className="h-40" icon="news" />
+        <ImagePlaceholder src={n.image} kind={n.category} className="h-40" icon="news" />
         <div className="p-5 flex flex-col flex-1">
           <div className="flex items-center gap-2 mb-2 flex-wrap">
             {n.pinned ? <span className="inline-flex items-center gap-1 rounded-md bg-brand-600 text-white px-2 py-0.5 text-[11px] font-semibold"><Icon name="pin" size={11} />{t(window.DATA.site.ui.pinned)}</span> : null}
@@ -917,6 +930,12 @@ window.JL = window.JL || {};
       <div>
         <PageHero visual="news" eyebrow={t(site.pages.news.subtitle)} title={t(site.pages.news.title)} subtitle={t(site.pages.news.subtitle)} />
         <Container className="py-12">
+          <Reveal className="mb-8">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["訊號掃描", "主題篩選", "脈絡解讀", "知識擴散"] : ["Scan", "Filter", "Interpret", "Share"]}
+              icons={["activity", "search", "brain", "share"]}
+            />
+          </Reveal>
           <div className="space-y-4 mb-8">
             <div>
               <div className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">{t(site.ui.category)}</div>
@@ -946,6 +965,12 @@ window.JL = window.JL || {};
       <div>
         <PageHero visual="robot" eyebrow={t(site.pages.activities.subtitle)} title={t(site.pages.activities.title)} subtitle={t(site.pages.activities.subtitle)} />
         <Container className="py-12 space-y-10">
+          <Reveal className="mb-2">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["共同參與", "實驗操作", "心得分享", "成果累積"] : ["Engage", "Hands-on", "Reflect", "Grow"]}
+              icons={["users", "flask", "quote", "trendingUp"]}
+            />
+          </Reveal>
           {items.map(function (a, idx) {
             const photos = a.photos && a.photos.length ? a.photos : [null, null, null];
             return (
@@ -954,7 +979,7 @@ window.JL = window.JL || {};
                   <div className="grid md:grid-cols-5">
                     <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
                       {photos.slice(0, 4).map(function (src, i) {
-                        return <ImagePlaceholder key={i} src={src || undefined} className={cx("aspect-[4/3] rounded-lg", i === 0 ? "col-span-2" : "")} icon="activity" />;
+                        return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className={cx("aspect-[4/3] rounded-lg", i === 0 ? "col-span-2" : "")} icon="activity" />;
                       })}
                     </div>
                     <div className="md:col-span-3 p-6">

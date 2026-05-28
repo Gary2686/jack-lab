@@ -50,8 +50,8 @@ window.DATA.news = {
         en: "Bnext｜Has the software-singularity arrived? Claude Code lead: AI is starting to self-iterate, traditional SaaS moats are eroding",
       },
       summary: {
-        zh: "AI Agent 技術正在改變軟體開發模式，傳統 SaaS 產品的競爭優勢面臨挑戰，自我迭代能力成為新的關鍵——對應 Jack Lab「AI 與數位轉型」研究方向。",
-        en: "AI Agents are reshaping software development; traditional SaaS competitive moats face new pressure as self-iteration becomes the key. Relevant to Jack Lab's AI & Digital Transformation pillar.",
+        zh: "Claude Code 負責人 Boris Cherny 指出，AI Agent 已能自我迭代並承擔大量程式撰寫工作，正在動搖傳統 SaaS 產品的競爭護城河。",
+        en: "Claude Code lead Boris Cherny argues that AI Agents can now self-iterate and shoulder much of the coding workload, eroding the moat of traditional SaaS products.",
       },
       image: "",
       url: "https://www.bnext.com.tw/article/91052/boris-cherny-ai-agent-saas",
@@ -63,8 +63,8 @@ window.DATA.news = {
         en: "Bnext｜Stop giving AI an SOP — the 'muggle-style' prompting trick even veterans miss to unlock AI's full potential",
       },
       summary: {
-        zh: "與 AI 有效互動需要更開放、貼近自然語言的溝通策略，呼應 Jack Lab 神經科學與人機互動主軸對「人–AI 對話」的關注。",
-        en: "Effective human–AI interaction benefits from open, natural-language strategies — relevant to Jack Lab's Neuroscience & HCI work on human–AI dialogue.",
+        zh: "資深工作者習慣寫 SOP 式指令，反而限制了 AI 的發揮；文章分享更貼近自然對話、給予情境與目的的提示寫法，才能引出 AI 完整能力。",
+        en: "Veterans tend to write SOP-like prompts that cap AI's potential; the article shows that natural, context-rich dialogue unlocks the model's full capability.",
       },
       image: "",
       url: "https://www.bnext.com.tw/article/91059/ai-prompt-tips-senior-vs-junior",
