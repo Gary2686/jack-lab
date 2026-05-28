@@ -85,11 +85,11 @@ window.JL = window.JL || {};
     const style = { width: size, height: size };
     if (props.photo) {
       return <img src={props.photo} alt={props.name || ""} style={style}
-        className={cx("rounded-full object-cover ring-4 ring-white shadow-md", props.className)} />;
+        className={cx("shrink-0 rounded-full object-cover ring-4 ring-white shadow-md", props.className)} />;
     }
     return (
       <div style={style}
-        className={cx("rounded-full bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400 grid place-items-center ring-4 ring-white shadow-md", props.className)}
+        className={cx("shrink-0 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400 grid place-items-center ring-4 ring-white shadow-md", props.className)}
         aria-label={props.name || "placeholder"}>
         <Icon name="user" size={Math.round(size * 0.5)} strokeWidth={1.5} />
       </div>

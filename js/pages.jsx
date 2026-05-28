@@ -222,7 +222,7 @@ window.JL = window.JL || {};
               return (
                 <Reveal key={l.member.id} delay={i * 80}>
                   <Card className="p-6 text-center h-full">
-                    <div className="flex justify-center"><Avatar name={t(l.member.name)} photo={l.member.photo} size={88} /></div>
+                    <div className="flex justify-center"><Avatar name={t(l.member.name)} photo={l.member.photo} size={104} /></div>
                     <div className="mt-4 font-bold text-navy">{t(l.member.name)}</div>
                     <div className="text-sm text-slate-400">{t(l.member.name) !== l.member.name.en ? l.member.name.en : ""}</div>
                     <Pill className="mt-3 bg-brand-50 text-brand-700">{t(l.member.title)}</Pill>
@@ -310,7 +310,7 @@ window.JL = window.JL || {};
             <Reveal>
               <Card className="p-8 max-w-3xl mx-auto">
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                  <Avatar name={t(advisor.name)} photo={advisor.photo} size={120} />
+                  <Avatar name={t(advisor.name)} photo={advisor.photo} size={140} />
                   <div className="text-center sm:text-left">
                     <div className="text-xl font-bold text-navy">{t(advisor.name)} <span className="text-slate-400 text-base font-medium">{advisor.name.en}</span></div>
                     <Pill className="mt-2 bg-brand-50 text-brand-700">{t(advisor.title)}</Pill>
@@ -362,7 +362,7 @@ window.JL = window.JL || {};
     if (layout === "compact") {
       return (
         <Card className="p-5 flex items-center gap-4 jl-card-tech">
-          <Avatar name={t(m.name)} photo={m.photo} size={56} />
+          <Avatar name={t(m.name)} photo={m.photo} size={72} />
           <div className="min-w-0">
             <div className="font-semibold text-navy truncate">{t(m.name)}</div>
             <div className="text-xs text-slate-400 truncate">{m.name.en}</div>
@@ -375,7 +375,7 @@ window.JL = window.JL || {};
     if (layout === "alumni") {
       return (
         <Card className="p-5 flex items-start gap-4 jl-card-tech">
-          <Avatar name={t(m.name)} photo={m.photo} size={56} />
+          <Avatar name={t(m.name)} photo={m.photo} size={72} />
           <div className="min-w-0">
             <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
             <div className="mt-1 text-xs text-slate-500 flex items-start gap-1">
@@ -390,7 +390,7 @@ window.JL = window.JL || {};
     return (
       <Card onClick={function () { props.onOpen(m); }} className="p-6 h-full flex flex-col jl-card-tech">
         <div className="flex items-center gap-4">
-          <Avatar name={t(m.name)} photo={m.photo} size={72} />
+          <Avatar name={t(m.name)} photo={m.photo} size={92} />
           <div>
             <div className="font-bold text-navy text-lg leading-tight">{t(m.name)}</div>
             <div className="text-sm text-slate-400">{m.name.en}</div>
@@ -456,7 +456,7 @@ window.JL = window.JL || {};
                 <button onClick={function () { setActive(null); }} className="absolute top-3 right-3 grid place-items-center h-9 w-9 rounded-full bg-white/20 text-white hover:bg-white/30" aria-label="Close"><Icon name="close" size={18} /></button>
               </div>
               <div className="px-6 pb-6 -mt-12">
-                <Avatar name={t(active.name)} photo={active.photo} size={96} />
+                <Avatar name={t(active.name)} photo={active.photo} size={116} />
                 <div className="mt-3 text-xl font-bold text-navy">{t(active.name)} <span className="text-base font-medium text-slate-400">{active.name.en}</span></div>
                 <Pill className="mt-1.5 bg-brand-50 text-brand-700">{t(active.title)}</Pill>
                 {active.interests ? (
