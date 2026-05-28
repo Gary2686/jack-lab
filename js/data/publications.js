@@ -22,7 +22,8 @@ window.DATA.publications = {
     { id: "ai", label: { zh: "AI 與數位轉型", en: "AI & Digital Transformation" } },
     { id: "neuro", label: { zh: "神經科學與人機互動", en: "Neuroscience & HCI" } },
     { id: "ecommerce", label: { zh: "電子商務與數位服務", en: "E-Commerce & Digital Services" } },
-    { id: "case", label: { zh: "個案研究與服務科學", en: "Case Studies & Service Science" } },
+    { id: "team", label: { zh: "團隊與專案管理", en: "Team & Project Management" } },
+    { id: "case", label: { zh: "哈佛教學個案", en: "Harvard Teaching Cases" } },
     { id: "fsqca", label: { zh: "fsQCA", en: "fsQCA" } },
   ],
   items: [
@@ -43,7 +44,7 @@ window.DATA.publications = {
       doi: "10.1080/10447318.2025.2589862", url: "",
     },
     {
-      id: "j-2025-team-resilience-isd", type: "journal", year: 2025, topics: ["case"], featured: true,
+      id: "j-2025-team-resilience-isd", type: "journal", year: 2025, topics: ["team"], featured: true,
       title: { zh: "Team resilience capability in information systems development (ISD) project teams", en: "Team resilience capability in information systems development (ISD) project teams" },
       authors: { zh: "Jack Shih-Chieh Hsu, Kuang-Ting Cheng, Yuzhu Li, & Ryan Brading", en: "Jack Shih-Chieh Hsu, Kuang-Ting Cheng, Yuzhu Li, & Ryan Brading" },
       venue: { zh: "Technological Forecasting and Social Change", en: "Technological Forecasting and Social Change" },
@@ -99,7 +100,7 @@ window.DATA.publications = {
       doi: "10.1108/INTR-06-2022-0390", url: "",
     },
     {
-      id: "j-2022-intellectual-capital-team-resilience", type: "journal", year: 2022, topics: ["case"], featured: false,
+      id: "j-2022-intellectual-capital-team-resilience", type: "journal", year: 2022, topics: ["team"], featured: false,
       title: { zh: "Intellectual capital and team resilience capability of information system development project teams", en: "Intellectual capital and team resilience capability of information system development project teams" },
       authors: { zh: "Kuang-Ting Cheng, Jack Shih-Chieh Hsu*, Yuzhu Li, & Ryan Brading", en: "Kuang-Ting Cheng, Jack Shih-Chieh Hsu*, Yuzhu Li, & Ryan Brading" },
       venue: { zh: "Information & Management", en: "Information & Management" },

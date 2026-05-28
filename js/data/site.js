@@ -75,8 +75,8 @@ window.DATA.site = {
         en: "Bridging information systems theory, digital technology, and user behavior — research with both scholarly and practical impact.",
       },
       intro: {
-        zh: "我們結合人工智慧與數位轉型、神經科學與人機互動、電子商務與數位服務、個案研究與服務科學，以及模糊集質性比較分析（fsQCA），探討科技如何改變組織與人的決策與行為。",
-        en: "We integrate AI & digital transformation, neuroscience & human–computer interaction, e-commerce & digital services, case studies & service science, and fuzzy-set Qualitative Comparative Analysis (fsQCA) to study how technology reshapes the decisions and behavior of organizations and people.",
+        zh: "我們結合人工智慧與數位轉型、神經科學與人機互動、電子商務與數位服務、團隊與專案管理、哈佛教學個案，以及模糊集質性比較分析（fsQCA），探討科技如何改變組織與人的決策與行為。",
+        en: "We integrate AI & digital transformation, neuroscience & human–computer interaction, e-commerce & digital services, team & project management, Harvard teaching cases, and fuzzy-set Qualitative Comparative Analysis (fsQCA) to study how technology reshapes the decisions and behavior of organizations and people.",
       },
       ctaPrimary: { zh: "認識研究領域", en: "Explore research" },
       ctaSecondary: { zh: "認識團隊", en: "Meet the team" },
@@ -91,7 +91,7 @@ window.DATA.site = {
     sections: {
       research: {
         title: { zh: "研究方向", en: "Research areas" },
-        subtitle: { zh: "五大主軸，點擊卡片進入完整內容", en: "Five pillars — click a card for full content" },
+        subtitle: { zh: "六大主軸，點擊卡片進入完整內容", en: "Six pillars — click a card for full content" },
       },
       team: {
         title: { zh: "團隊成員", en: "Our team" },
@@ -120,8 +120,8 @@ window.DATA.site = {
     intro: {
       title: { zh: "實驗室簡介", en: "Who we are" },
       body: {
-        zh: "Jack Lab（徐傑克實驗室）隸屬於國立中山大學資訊管理學系，聚焦於人工智慧、數位轉型、神經科學與人機互動、電子商務與數位服務、服務科學、個案研究與模糊集質性比較分析（fsQCA）等研究領域。我們以資訊管理為核心，串聯科技、行為與管理三個面向，探討數位時代下組織與個人如何採用、使用並從科技中創造價值。",
-        en: "Jack Lab, in the Department of Information Management at National Sun Yat-sen University, focuses on artificial intelligence, digital transformation, neuroscience & human–computer interaction, e-commerce & digital services, service science, case research, and fuzzy-set Qualitative Comparative Analysis (fsQCA). Anchored in information management, we connect technology, behavior, and management to study how organizations and individuals adopt, use, and create value from technology in the digital era.",
+        zh: "Jack Lab（徐傑克實驗室）隸屬於國立中山大學資訊管理學系，聚焦於人工智慧、數位轉型、神經科學與人機互動、電子商務與數位服務、團隊與專案管理、哈佛教學個案與模糊集質性比較分析（fsQCA）等領域。我們以資訊管理為核心，串聯科技、行為與管理三個面向，探討數位時代下組織與個人如何採用、使用並從科技中創造價值。",
+        en: "Jack Lab, in the Department of Information Management at National Sun Yat-sen University, focuses on artificial intelligence, digital transformation, neuroscience & human–computer interaction, e-commerce & digital services, team & project management, Harvard teaching cases, and fuzzy-set Qualitative Comparative Analysis (fsQCA). Anchored in information management, we connect technology, behavior, and management to study how organizations and individuals adopt, use, and create value from technology in the digital era.",
       },
     },
     vision: {
@@ -181,7 +181,7 @@ window.DATA.site = {
     },
     research: {
       title: { zh: "研究領域與成果", en: "Research & Outcomes" },
-      subtitle: { zh: "五大研究主軸與代表性成果", en: "Five research pillars and selected outcomes" },
+      subtitle: { zh: "六大主軸與代表性成果", en: "Six pillars and selected outcomes" },
     },
     publications: {
       title: { zh: "學術發表", en: "Publications" },

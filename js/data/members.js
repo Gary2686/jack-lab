@@ -31,12 +31,12 @@ window.DATA.members = {
           title: { zh: "教授 兼 系主任", en: "Professor & Department Chair" },
           photo: "",
           interests: {
-            zh: ["人工智慧與數位轉型", "神經科學與人機互動", "服務科學", "個案研究", "fsQCA"],
-            en: ["AI & Digital Transformation", "Neuroscience & HCI", "Service Science", "Case Research", "fsQCA"],
+            zh: ["人工智慧與數位轉型", "神經科學與人機互動", "電子商務與數位服務", "團隊與專案管理", "哈佛教學個案", "fsQCA"],
+            en: ["AI & Digital Transformation", "Neuroscience & HCI", "E-Commerce & Digital Services", "Team & Project Management", "Harvard Teaching Cases", "fsQCA"],
           },
           bio: {
-            zh: "徐士傑主任為 Jack Lab 指導教授，研究橫跨人工智慧與數位轉型、神經科學與人機互動、服務科學及模糊集質性比較分析。致力於將嚴謹的研究方法與企業管理實務結合，並長期投入個案教學與研究人才培育。（完整學術簡介待補充）",
-            en: "Prof. Shih-Chieh Hsu, Chair of the department, leads Jack Lab with research spanning AI & digital transformation, neuroscience & HCI, service science, and fuzzy-set QCA. He combines rigorous methodology with management practice, and has long been dedicated to case-based teaching and mentoring researchers. (Full biography to be added.)",
+            zh: "徐士傑主任為 Jack Lab 指導教授，研究橫跨人工智慧與數位轉型、神經科學與人機互動、電子商務與數位服務、團隊與專案管理及模糊集質性比較分析，並長期投入哈佛教學個案與研究人才培育。（完整學術簡介待補充）",
+            en: "Prof. Shih-Chieh Hsu, Chair of the department, leads Jack Lab with research spanning AI & digital transformation, neuroscience & HCI, e-commerce & digital services, team & project management, and fuzzy-set QCA, with long-term dedication to Harvard teaching cases and mentoring researchers. (Full biography to be added.)",
           },
           email: "",
           scholar: "",

@@ -173,21 +173,72 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 4. 個案研究與服務科學 ===================== */
+    /* ===================== 4. 團隊與專案管理 ===================== */
+    {
+      id: "team",
+      icon: "users",
+      name: { zh: "團隊與專案管理", en: "Team & Project Management" },
+      tagline: { zh: "研究資訊系統開發團隊的韌性、知識資本與專案績效", en: "Studying resilience, intellectual capital, and project performance in ISD teams" },
+      intro: {
+        zh: "本主軸聚焦資訊系統開發（ISD）專案團隊、團隊韌性、知識資本、專案協作與組織支持等議題，探討團隊如何在不確定、高壓與快速變動的科技專案環境中維持績效、調適能力與持續交付。",
+        en: "This pillar focuses on information systems development (ISD) project teams, team resilience, intellectual capital, project collaboration, and organizational support. We study how teams sustain performance, adaptability, and delivery in uncertain, high-pressure, and fast-changing technology project environments.",
+      },
+      sections: [
+        {
+          id: "topics",
+          title: { zh: "研究主題", en: "Research topics" },
+          type: "tags",
+          items: [
+            { zh: "資訊系統開發專案團隊", en: "ISD project teams" },
+            { zh: "團隊韌性能力", en: "Team resilience capability" },
+            { zh: "智慧資本", en: "Intellectual capital" },
+            { zh: "專案協作", en: "Project collaboration" },
+            { zh: "團隊調適與復原", en: "Team adaptation and recovery" },
+            { zh: "專案績效", en: "Project performance" },
+          ],
+        },
+        {
+          id: "outcomes",
+          title: { zh: "代表性成果", en: "Selected outcomes" },
+          type: "cards",
+          items: [
+            { title: { zh: "ISD 專案團隊韌性能力", en: "Team resilience capability in ISD project teams" }, desc: { zh: "探討資訊系統開發團隊如何形成韌性能力，以因應專案壓力、不確定性與變動。", en: "Examining how ISD project teams build resilience capability to respond to project stress, uncertainty, and change." } },
+            { title: { zh: "智慧資本與團隊韌性", en: "Intellectual capital and team resilience" }, desc: { zh: "分析人力、結構與關係資本如何支持團隊韌性與專案成果。", en: "Analyzing how human, structural, and relational capital support team resilience and project outcomes." } },
+          ],
+        },
+        {
+          id: "applications",
+          title: { zh: "實務應用", en: "Practical applications" },
+          type: "cards",
+          items: [
+            { title: { zh: "科技專案團隊診斷", en: "Technology project-team diagnosis" }, desc: { zh: "協助組織檢視專案團隊的知識資本、協作方式與韌性缺口。", en: "Helping organizations assess project teams' intellectual capital, collaboration patterns, and resilience gaps." } },
+            { title: { zh: "團隊韌性培育", en: "Team-resilience development" }, desc: { zh: "將研究成果轉化為團隊管理、專案治理與人才培育的實務建議。", en: "Translating research into practical guidance for team management, project governance, and talent development." } },
+          ],
+        },
+        {
+          id: "related",
+          title: { zh: "相關發表", en: "Related publications" },
+          type: "note",
+          note: { zh: "完整論文清單請見「學術發表」頁面，可依團隊與專案管理主題篩選相關研究。", en: "See the Publications page for the full list; filter by Team & Project Management for related studies." },
+        },
+      ],
+    },
+
+    /* ===================== 5. 哈佛教學個案 ===================== */
     {
       id: "case",
       icon: "briefcase",
-      name: { zh: "個案研究與服務科學", en: "Case Studies & Service Science" },
-      tagline: { zh: "從真實個案到分析工具，連結管理理論與實務", en: "From real cases to analytical tools — linking theory and practice" },
+      name: { zh: "哈佛教學個案", en: "Harvard Teaching Cases" },
+      tagline: { zh: "整理 Jack Lab 發表於《哈佛商業評論》的教學個案", en: "Curating Jack Lab teaching cases published in Harvard Business Review" },
       intro: {
-        zh: "本主軸聚焦個案研究、服務科學、管理實務、教學個案與產學連結。我們將真實企業情境轉化為教學與研究素材，並整理一套策略分析工具與教學資源，協助學生與研究者系統化地分析管理問題。",
-        en: "This pillar focuses on case research, service science, management practice, teaching cases, and university–industry links. We turn real business situations into teaching and research materials, and curate a toolkit of strategy frameworks and teaching resources for systematic analysis.",
+        zh: "本頁集中整理 Jack Lab 發表於《哈佛商業評論》的教學個案。個案頁以教學個案連結與摘要為主，不放置研究論文分類；與團隊、專案管理相關的研究已移至「團隊與專案管理」主題。",
+        en: "This page curates Jack Lab teaching cases published in Harvard Business Review. It focuses on teaching-case links and summaries, not research-paper categorization; studies related to teams and project management are now under Team & Project Management.",
       },
       subAreas: [
         {
           id: "case-links",
-          name: { zh: "個案連結", en: "Case Links" },
-          intro: { zh: "教學個案、研究個案、企業案例與個案教材的連結與索引。", en: "Links and index for teaching cases, research cases, corporate cases, and case materials." },
+          name: { zh: "哈佛個案連結", en: "Harvard Case Links" },
+          intro: { zh: "Jack Lab 相關哈佛教學個案的連結與索引。", en: "Links and index for Jack Lab Harvard teaching cases." },
           sections: [
             { id: "hbr", title: { zh: "哈佛商業評論教學個案", en: "Harvard Business Review Cases" }, type: "links", items: [
               { title: { zh: "上市前的資訊系統抉擇", en: "Information System Decisions Before IPO" }, desc: { zh: "徐士傑、葉欲禾（2025）·《哈佛商業評論》", en: "Hsu, S.-C. & Yeh, G. (2025) · HBR (Chinese Edition)" }, url: "https://www.hbrtaiwan.com/case-study/24149/information-system-decisions-before-ipo" },
@@ -199,19 +250,10 @@ window.DATA.research = {
             ] },
           ],
         },
-        {
-          id: "tools-resources",
-          name: { zh: "分析工具與教學資源", en: "Analysis Tools & Resources" },
-          intro: {
-            zh: "整合實驗室常用的策略分析工具與教學資源。每個工具皆有獨立介紹頁，包含方法簡介、使用情境、核心構面與應用案例，並可連結原始教學投影片。",
-            en: "A curated set of strategy tools and teaching resources used in the lab. Each tool has its own page with an overview, when-to-use, core framework, and an example, with links to the original teaching slides.",
-          },
-          toolHub: true,
-        },
       ],
     },
 
-    /* ===================== 5. 模糊集質性比較分析 fsQCA ===================== */
+    /* ===================== 6. 模糊集質性比較分析 fsQCA ===================== */
     {
       id: "fsqca",
       icon: "diagram",
