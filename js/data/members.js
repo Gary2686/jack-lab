@@ -30,6 +30,7 @@ window.DATA.members = {
           name: { zh: "徐士傑", en: "Shih-Chieh Hsu" },
           title: { zh: "教授 兼 系主任", en: "Professor & Department Chair" },
           photo: "assets/members/hsu-shih-chieh.jpg",
+          photoPosition: "top",
           pet: "owl",
           interests: {
             zh: ["人工智慧與數位轉型", "神經科學與人機互動", "資訊安全", "電子商務與數位服務", "團隊與專案管理", "哈佛教學個案", "fsQCA"],
