@@ -19,8 +19,8 @@ window.JL = window.JL || {};
   const toolColor = JL.toolColor;
   const navigate = JL.navigate;
 
-  const AREA_ICON = { ai: "cpu", neuro: "brain", case: "briefcase", fsqca: "diagram" };
-  const AREA_COLOR = { ai: "blue", neuro: "indigo", case: "teal", fsqca: "violet" };
+  const AREA_ICON = { ai: "cpu", neuro: "brain", ecommerce: "globe", case: "briefcase", fsqca: "diagram" };
+  const AREA_COLOR = { ai: "blue", neuro: "indigo", ecommerce: "sky", case: "teal", fsqca: "violet" };
   const TOOLCAT_ICON = { positioning: "target", growth: "trendingUp", customer: "users", channel: "share", performance: "barChart", decision: "scale" };
 
   /* ----------------------------- helpers ----------------------------- */
@@ -103,7 +103,7 @@ window.JL = window.JL || {};
 
     const featured = pubs.filter(function (p) { return p.featured; }).slice(0, 4);
     const featuredList = featured.length ? featured : pubs.slice(0, 4);
-    const chips = ["AI", "Generative AI", "EEG", "Eye Tracking", "Service Science", "fsQCA"];
+    const chips = ["AI & Digital Transformation", "Neuroscience & HCI", "E-Commerce & Digital Services", "Case & Service Science", "fsQCA"];
 
     const statAreas = areas.length;
     const statTools = window.DATA.tools.items.length;
@@ -190,7 +190,7 @@ window.JL = window.JL || {};
         {/* RESEARCH QUICK LINKS */}
         <Container className="py-8">
           <SectionHeading eyebrow={t(site.home.sections.research.title)} title={t(site.home.sections.research.title)} subtitle={t(site.home.sections.research.subtitle)} center />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {areas.map(function (a, i) {
               const c = toolColor(AREA_COLOR[a.id]);
               return (

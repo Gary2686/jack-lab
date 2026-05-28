@@ -120,7 +120,60 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 3. 個案研究與服務科學 ===================== */
+    /* ===================== 3. 電子商務與數位服務 ===================== */
+    {
+      id: "ecommerce",
+      icon: "globe",
+      name: { zh: "電子商務與數位服務", en: "E-Commerce & Digital Services" },
+      tagline: { zh: "探索數位平台、線上服務與消費者採用行為", en: "Exploring digital platforms, online services, and consumer adoption" },
+      intro: {
+        zh: "本主軸聚焦電子商務、社群商務、直播商務、金融科技、訂閱服務與數位內容平台等情境，研究消費者如何評估、採用與持續使用數位服務，以及信任、服務品質、規範、任務科技配適等因素如何影響線上行為。",
+        en: "This pillar focuses on e-commerce, social commerce, live-streaming commerce, fintech, subscription services, and digital-content platforms. We study how consumers evaluate, adopt, and continue using digital services, and how trust, service quality, norms, and task-technology fit shape online behavior.",
+      },
+      sections: [
+        {
+          id: "topics",
+          title: { zh: "研究主題", en: "Research topics" },
+          type: "tags",
+          items: [
+            { zh: "電子商務", en: "E-commerce" },
+            { zh: "社群商務", en: "Social commerce" },
+            { zh: "直播商務", en: "Live-streaming commerce" },
+            { zh: "數位銀行與金融科技", en: "Digital banking & fintech" },
+            { zh: "訂閱服務", en: "Subscription services" },
+            { zh: "數位內容與平台服務", en: "Digital content & platform services" },
+            { zh: "信任移轉與服務採用", en: "Trust transfer & service adoption" },
+          ],
+        },
+        {
+          id: "outcomes",
+          title: { zh: "代表性成果", en: "Selected outcomes" },
+          type: "cards",
+          items: [
+            { title: { zh: "線上 AI 客服品質屬性", en: "Quality attributes of online AI customer service" }, desc: { zh: "建構 AI 客服服務品質屬性，理解使用者如何感知智慧化服務互動。", en: "Constructing service-quality attributes for AI customer service and how users perceive intelligent service interactions." } },
+            { title: { zh: "直播商務與規範違反", en: "Live-streaming commerce and norm violation" }, desc: { zh: "探討推力與阻力如何影響直播電商中的規範違反行為。", en: "Examining how thrust and drag forces affect norm-violation behavior in live-streaming e-commerce." } },
+            { title: { zh: "跨境社群商務信任移轉", en: "Trust transfer in cross-border social commerce" }, desc: { zh: "分析跨境社群商務中信任如何移轉並影響消費者行為。", en: "Analyzing how trust transfers in cross-border social commerce and shapes consumer behavior." } },
+          ],
+        },
+        {
+          id: "applications",
+          title: { zh: "實務應用", en: "Practical applications" },
+          type: "cards",
+          items: [
+            { title: { zh: "數位服務體驗設計", en: "Digital-service experience design" }, desc: { zh: "協助平台與服務提供者理解使用者採用、流失與滿意度的關鍵因素。", en: "Helping platforms and service providers understand the key factors behind adoption, churn, and satisfaction." } },
+            { title: { zh: "平台商業模式與服務創新", en: "Platform business models and service innovation" }, desc: { zh: "從消費者行為與服務科學角度分析數位商業模式。", en: "Analyzing digital business models from consumer-behavior and service-science perspectives." } },
+          ],
+        },
+        {
+          id: "related",
+          title: { zh: "相關發表", en: "Related publications" },
+          type: "note",
+          note: { zh: "完整論文清單請見「學術發表」頁面，可依電子商務與數位服務主題篩選相關研究。", en: "See the Publications page for the full list; filter by E-Commerce & Digital Services for related studies." },
+        },
+      ],
+    },
+
+    /* ===================== 4. 個案研究與服務科學 ===================== */
     {
       id: "case",
       icon: "briefcase",
@@ -158,7 +211,7 @@ window.DATA.research = {
       ],
     },
 
-    /* ===================== 4. 模糊集質性比較分析 fsQCA ===================== */
+    /* ===================== 5. 模糊集質性比較分析 fsQCA ===================== */
     {
       id: "fsqca",
       icon: "diagram",
