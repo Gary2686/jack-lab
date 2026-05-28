@@ -46,7 +46,7 @@ window.JL = window.JL || {};
     // 路由改變時關閉手機選單 / close mobile menu on route change
     useEffect(function () { setOpen(false); }, [route.path]);
 
-    const activeId = route.section === "tools" ? "research" : route.section;
+    const activeId = route.section;
 
     function go(path) { navigate(path); setOpen(false); }
 

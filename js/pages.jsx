@@ -522,6 +522,29 @@ window.JL = window.JL || {};
     );
   }
 
+  function ToolsPage() {
+    const ctx = JL.useLang(); const t = ctx.t;
+    const site = window.DATA.site;
+    const total = window.DATA.tools.items.length;
+    return (
+      <div>
+        <PageHero visual="ai" eyebrow={t(site.pages.tools.subtitle)} title={t(site.pages.tools.title)} subtitle={t(site.pages.tools.subtitle)} />
+        <Container className="py-12">
+          <Reveal className="mb-8">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["選擇工具", "理解框架", "套用情境", "下載資源"] : ["Choose", "Learn", "Apply", "Download"]}
+              icons={["search", "diagram", "target", "download"]}
+            />
+          </Reveal>
+          <div className="mb-6 text-sm text-slate-500">
+            {ctx.lang === "zh" ? "共 " + total + " 個工具，每個工具都有獨立介紹頁。" : total + " tools, each with its own detail page."}
+          </div>
+          <ToolHub />
+        </Container>
+      </div>
+    );
+  }
+
   function ResearchSection(props) {
     const ctx = JL.useLang(); const t = ctx.t;
     const s = props.section;
@@ -1103,13 +1126,14 @@ window.JL = window.JL || {};
     const site = window.DATA.site;
     const data = window.DATA.tools;
     const id = props.route ? props.route.sub : null;
+    if (!id) return <ToolsPage />;
     const tool = data.items.find(function (x) { return x.id === id; });
 
     if (!tool) {
       return (
         <Container className="py-24 text-center">
           <div className="text-slate-400 mb-4">{ctx.lang === "zh" ? "找不到這個工具。" : "Tool not found."}</div>
-          <Button to="/research/case" variant="secondary" icon="arrowRight">{t(site.ui.backToTools)}</Button>
+          <Button to="/tools" variant="secondary" icon="arrowRight">{t(site.ui.backToTools)}</Button>
         </Container>
       );
     }
@@ -1122,7 +1146,7 @@ window.JL = window.JL || {};
       <div>
         <section className={cx("border-b border-slate-100", c.soft)}>
           <Container className="py-12">
-            <button type="button" onClick={function () { navigate("/research/case"); }} className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-navy mb-6">
+            <button type="button" onClick={function () { navigate("/tools"); }} className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-navy mb-6">
               <Icon name="arrowRight" size={15} className="rotate-180" />{t(site.ui.backToTools)}
             </button>
             <div className="flex items-start gap-4">

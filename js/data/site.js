@@ -23,6 +23,7 @@ window.DATA.site = {
     { id: "about", path: "#/about", label: { zh: "關於我們", en: "About" } },
     { id: "team", path: "#/team", label: { zh: "團隊成員", en: "Team" } },
     { id: "research", path: "#/research", label: { zh: "研究領域與成果", en: "Research" } },
+    { id: "tools", path: "#/tools", label: { zh: "分析工具", en: "Tools" } },
     { id: "publications", path: "#/publications", label: { zh: "學術發表", en: "Publications" } },
     { id: "awards", path: "#/awards", label: { zh: "榮譽榜", en: "Honors" } },
     { id: "news", path: "#/news", label: { zh: "最新消息", en: "News" } },
@@ -182,6 +183,10 @@ window.DATA.site = {
     research: {
       title: { zh: "研究領域與成果", en: "Research & Outcomes" },
       subtitle: { zh: "六大主軸與代表性成果", en: "Six pillars and selected outcomes" },
+    },
+    tools: {
+      title: { zh: "分析工具", en: "Analysis Tools" },
+      subtitle: { zh: "26 個策略分析工具與教學資源", en: "26 strategy-analysis tools and teaching resources" },
     },
     publications: {
       title: { zh: "學術發表", en: "Publications" },
