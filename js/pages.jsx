@@ -244,7 +244,7 @@ window.JL = window.JL || {};
                 <Reveal key={l.member.id} delay={i * 80}>
                   <Card className="overflow-hidden text-center h-full flex flex-col">
                     <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-                      <MemberPhoto photo={l.member.photo} name={t(l.member.name)} />
+                      <MemberPhoto photo={l.member.photo} name={t(l.member.name)} position={l.member.photoPosition} />
                     </div>
                     <div className="p-5 flex flex-col items-center gap-1">
                       <div className="font-bold text-navy text-lg">{t(l.member.name)}</div>
@@ -380,10 +380,14 @@ window.JL = window.JL || {};
   }
 
   // 統一處理成員相片：有 src 顯示，無 src 顯示灰底使用者圖示
-  // object-top 確保頭部優先顯示（避免人臉被裁切）
+  // position 預設 "top" 確保頭部優先；若原圖頭頂上有留白，於 members.js 設 photoPosition: "center"
   function MemberPhoto(props) {
     if (props.photo) {
-      return <img src={props.photo} alt={props.name || ""} className="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />;
+      const pos = props.position === "center" ? "50% 50%"
+                : props.position === "bottom" ? "50% 100%"
+                : typeof props.position === "string" && props.position.endsWith("%") ? "50% " + props.position
+                : "50% 0%"; // default "top"
+      return <img src={props.photo} alt={props.name || ""} style={{ objectPosition: pos }} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />;
     }
     return (
       <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400">
@@ -402,7 +406,7 @@ window.JL = window.JL || {};
       return (
         <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
           <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
-            <MemberPhoto photo={m.photo} name={t(m.name)} />
+            <MemberPhoto photo={m.photo} name={t(m.name)} position={m.photoPosition} />
           </div>
           <div className="p-4 flex flex-col gap-1">
             <div className="font-semibold text-navy text-base leading-tight">{t(m.name)}</div>
@@ -435,7 +439,7 @@ window.JL = window.JL || {};
     return (
       <Card onClick={function () { props.onOpen(m); }} className="overflow-hidden h-full flex flex-col jl-card-tech cursor-pointer">
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-          <MemberPhoto photo={m.photo} name={t(m.name)} />
+          <MemberPhoto photo={m.photo} name={t(m.name)} position={m.photoPosition} />
         </div>
         <div className="p-5 flex flex-col gap-2 flex-1">
           <div>

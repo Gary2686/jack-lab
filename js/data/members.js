@@ -54,6 +54,7 @@ window.DATA.members = {
           name: { zh: "鄭鈞", en: "Jacob Cheng" },
           title: { zh: "博士後研究員", en: "Postdoctoral Researcher" },
           photo: "assets/members/jacob-cheng.jpg",
+          photoPosition: "center",
           interests: {
             zh: ["神經科學", "服務科學", "AI 人機互動", "電子商務與數位平台"],
             en: ["Neuroscience", "Service Science", "AI & HCI", "E-Commerce & Digital Platforms"],
@@ -78,6 +79,7 @@ window.DATA.members = {
           name: { zh: "葉欲禾", en: "Yeh Yu-Ho (Gary)" },
           title: { zh: "博士候選人", en: "Ph.D. Candidate" },
           photo: "assets/members/gary-yeh.jpg",
+          photoPosition: "center",
           interests: {
             zh: ["AI 與數位轉型", "永續行動", "AI 人機互動", "交通行為", "fsQCA"],
             en: ["AI & Digital Transformation", "Sustainable Action", "AI & HCI", "Transportation Behavior", "fsQCA"],
@@ -103,8 +105,8 @@ window.DATA.members = {
         { id: "wu-cheng-chien", name: { zh: "吳呈堅", en: "Wu Cheng-Jian" }, photo: "assets/members/wu-cheng-chien.jpg", email: "chengjianwu678@gmail.com" },
         { id: "kung-sung-yu", name: { zh: "孔崧羽", en: "Kong Song-Yu" }, photo: "assets/members/kung-sung-yu.jpg", email: "kongsongyu9012@gmail.com" },
         { id: "li-yu-chen", name: { zh: "李瑀蓁", en: "Lee Yu-Chen" }, photo: "assets/members/li-yu-chen.jpg", email: "lyzchry1771@gmail.com" },
-        { id: "hsu-chih-hao", name: { zh: "徐稚皓", en: "Hsu Chih-Hao" }, photo: "assets/members/hsu-chih-hao.jpg", email: "howard120330@gmail.com" },
-        { id: "su-wen-feng", name: { zh: "蘇彣丰", en: "Su Wen-Feng" }, photo: "assets/members/su-wen-feng.jpg", email: "wenfeng.taipei@gmail.com" },
+        { id: "hsu-chih-hao", name: { zh: "徐稚皓", en: "Hsu Chih-Hao" }, photo: "assets/members/hsu-chih-hao.jpg", photoPosition: "center", email: "howard120330@gmail.com" },
+        { id: "su-wen-feng", name: { zh: "蘇彣丰", en: "Su Wen-Feng" }, photo: "assets/members/su-wen-feng.jpg", photoPosition: "center", email: "wenfeng.taipei@gmail.com" },
       ],
     },
     {
