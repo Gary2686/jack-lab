@@ -404,7 +404,7 @@ window.JL = window.JL || {};
     // 共用：大相片在上方，aspect-square / 4:3，info 在下方
     if (layout === "compact") {
       return (
-        <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
+        <Card data-member-id={m.id} className="overflow-hidden h-full flex flex-col jl-card-tech">
           <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
             <MemberPhoto photo={m.photo} name={t(m.name)} position={m.photoPosition} />
           </div>
@@ -421,7 +421,7 @@ window.JL = window.JL || {};
     if (layout === "alumni") {
       // 校友卡保留原本小圓頭像 + 文字並排的精簡版型
       return (
-        <Card className="p-5 flex items-start gap-4 jl-card-tech">
+        <Card data-member-id={m.id} className="p-5 flex items-start gap-4 jl-card-tech">
           <Avatar name={t(m.name)} photo={m.photo} size={84} />
           <div className="min-w-0">
             <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
@@ -437,7 +437,7 @@ window.JL = window.JL || {};
     }
     // full（指導教授／博後／博士候選人）— 相片在上 + 完整資訊
     return (
-      <Card onClick={function () { props.onOpen(m); }} className="overflow-hidden h-full flex flex-col jl-card-tech cursor-pointer">
+      <Card data-member-id={m.id} onClick={function () { props.onOpen(m); }} className="overflow-hidden h-full flex flex-col jl-card-tech cursor-pointer">
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
           <MemberPhoto photo={m.photo} name={t(m.name)} position={m.photoPosition} />
         </div>
@@ -482,23 +482,26 @@ window.JL = window.JL || {};
         <Container className="pt-10">
           <JL.InteractiveFlow labels={ctx.lang === "zh" ? ["專長", "協作", "研究", "影響"] : ["Expertise", "Collab", "Research", "Impact"]} icons={["brain", "users", "flask", "sparkles"]} />
         </Container>
-        <Container className="py-16 space-y-14">
-          {groups.map(function (g) {
-            return (
-              <section key={g.id}>
-                <div className="flex items-center gap-3 mb-6">
-                  <h2 className="text-xl font-bold text-navy">{t(g.label)}</h2>
-                  <span className="text-sm text-slate-400">({g.members.length})</span>
-                  <span className="h-px flex-1 bg-slate-100" />
-                </div>
-                <div className={gridFor(g.layout)}>
-                  {g.members.map(function (m, i) {
-                    return <Reveal key={m.id} delay={i * 50}><MemberCard member={m} layout={g.layout} onOpen={setActive} /></Reveal>;
-                  })}
-                </div>
-              </section>
-            );
-          })}
+        <Container className="py-16">
+          <div className="relative space-y-14">
+            <JL.PetGarden members={groups.reduce(function (acc, g) { return acc.concat(g.members); }, [])} />
+            {groups.map(function (g) {
+              return (
+                <section key={g.id}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <h2 className="text-xl font-bold text-navy">{t(g.label)}</h2>
+                    <span className="text-sm text-slate-400">({g.members.length})</span>
+                    <span className="h-px flex-1 bg-slate-100" />
+                  </div>
+                  <div className={gridFor(g.layout)}>
+                    {g.members.map(function (m, i) {
+                      return <Reveal key={m.id} delay={i * 50}><MemberCard member={m} layout={g.layout} onOpen={setActive} /></Reveal>;
+                    })}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         </Container>
 
         <Modal open={!!active} onClose={function () { setActive(null); }}>

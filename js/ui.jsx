@@ -100,16 +100,17 @@ window.JL = window.JL || {};
 
   /* ------------------------------- Card -------------------------------- */
   function Card(props) {
-    const clickable = !!props.onClick;
+    const { children, className, onClick, hover, ...rest } = props;
+    const clickable = !!onClick;
     return (
-      <div onClick={props.onClick}
+      <div {...rest} onClick={onClick}
         className={cx(
           "bg-white rounded-2xl border border-slate-100 shadow-sm",
-          (props.hover !== false) && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
+          (hover !== false) && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1",
           clickable && "cursor-pointer",
-          props.className
+          className
         )}>
-        {props.children}
+        {children}
       </div>
     );
   }
@@ -408,6 +409,207 @@ window.JL = window.JL || {};
 
   JL.CategoryBanner = CategoryBanner;
   JL.LabFeatureRibbon = LabFeatureRibbon;
+
+  /* -------- PetGarden（每位成員專屬 AI 寵物，互相拜訪後回家） -------- */
+  const PET_GRAD = '<defs><linearGradient id="petG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a93d4"/><stop offset="1" stop-color="#2f5ea3"/></linearGradient></defs>';
+
+  const PET_SVG = {
+    bot: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<line x1="22" y1="6" x2="22" y2="12" stroke="#272555" stroke-width="2"/>' +
+      '<circle cx="22" cy="5" r="2.5" fill="#3b76c0"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>' +
+      '<rect x="10" y="12" width="24" height="22" rx="6" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<rect x="14" y="18" width="6" height="6" rx="1.5" fill="#bfe3ff"/>' +
+      '<rect x="24" y="18" width="6" height="6" rx="1.5" fill="#bfe3ff"/>' +
+      '<rect x="16" y="28" width="12" height="2.5" rx="1" fill="#bfe3ff" opacity="0.7"/>' +
+      '<rect x="8" y="20" width="3" height="6" rx="1.5" fill="#88b4e3"/>' +
+      '<rect x="33" y="20" width="3" height="6" rx="1.5" fill="#88b4e3"/></svg>',
+
+    cat: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<path d="M10 14 L13 6 L17 12 Z" fill="#3b76c0"/>' +
+      '<path d="M34 14 L31 6 L27 12 Z" fill="#3b76c0"/>' +
+      '<circle cx="22" cy="24" r="13" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="17" cy="22" r="1.8" fill="#1f3556"/>' +
+      '<circle cx="27" cy="22" r="1.8" fill="#1f3556"/>' +
+      '<path d="M19 27 Q22 29 25 27" stroke="#1f3556" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
+      '<path d="M6 23 L13 23 M6 26 L13 25" stroke="#88b4e3" stroke-width="0.8" opacity="0.6"/>' +
+      '<path d="M38 23 L31 23 M38 26 L31 25" stroke="#88b4e3" stroke-width="0.8" opacity="0.6"/></svg>',
+
+    fox: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<path d="M22 38 Q9 36 8 22 Q8 12 14 9 L18 14 Q22 12 26 14 L30 9 Q36 12 36 22 Q35 36 22 38 Z" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<path d="M22 24 L17 28 L27 28 Z" fill="#bfe3ff" opacity="0.7"/>' +
+      '<circle cx="17" cy="22" r="2" fill="#1f3556"/>' +
+      '<circle cx="27" cy="22" r="2" fill="#1f3556"/>' +
+      '<ellipse cx="22" cy="29" rx="1.8" ry="1.2" fill="#1f3556"/></svg>',
+
+    owl: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<ellipse cx="22" cy="25" rx="14" ry="14" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="16" cy="22" r="5" fill="#bfe3ff"/>' +
+      '<circle cx="28" cy="22" r="5" fill="#bfe3ff"/>' +
+      '<circle cx="16" cy="22" r="2" fill="#1f3556"/>' +
+      '<circle cx="28" cy="22" r="2" fill="#1f3556"/>' +
+      '<path d="M22 26 L19 29 L25 29 Z" fill="#f59e0b"/>' +
+      '<path d="M9 13 L13 17 M35 13 L31 17" stroke="#1f3556" stroke-width="1.5"/></svg>',
+
+    frog: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<ellipse cx="22" cy="27" rx="15" ry="11" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="14" cy="14" r="5" fill="#bfe3ff" stroke="#1f3556" stroke-width="1.2"/>' +
+      '<circle cx="30" cy="14" r="5" fill="#bfe3ff" stroke="#1f3556" stroke-width="1.2"/>' +
+      '<circle cx="14" cy="14" r="2" fill="#1f3556"/>' +
+      '<circle cx="30" cy="14" r="2" fill="#1f3556"/>' +
+      '<path d="M14 28 Q22 34 30 28" stroke="#1f3556" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
+
+    bird: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<ellipse cx="23" cy="26" rx="13" ry="9" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="22" cy="15" r="7" fill="#5a93d4" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="20" cy="14" r="1.4" fill="#1f3556"/>' +
+      '<path d="M27 14 L31 15 L27 16 Z" fill="#f59e0b"/>' +
+      '<path d="M10 25 Q14 19 18 25" stroke="#1f3556" stroke-width="1.4" fill="#88b4e3"><animate attributeName="d" values="M10 25 Q14 19 18 25;M10 25 Q14 22 18 25;M10 25 Q14 19 18 25" dur="0.9s" repeatCount="indefinite"/></path></svg>',
+
+    fish: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<ellipse cx="20" cy="22" rx="14" ry="8" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<path d="M34 22 L40 14 L40 30 Z" fill="#3b76c0" stroke="#1f3556" stroke-width="1.2"/>' +
+      '<circle cx="14" cy="20" r="1.8" fill="#1f3556"/>' +
+      '<circle cx="14" cy="20" r="0.7" fill="#fff"/>' +
+      '<path d="M22 18 Q26 14 30 18" stroke="#1f3556" stroke-width="0.8" fill="none" opacity="0.6"/>' +
+      '<circle cx="6" cy="14" r="1" fill="#bfe3ff"><animate attributeName="cy" values="14;10;14" dur="2.4s" repeatCount="indefinite"/></circle></svg>',
+
+    ghost: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+      '<path d="M22 6 Q35 6 35 22 L35 36 L31 32 L27 36 L23 32 L19 36 L15 32 L9 36 L9 22 Q9 6 22 6 Z" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<circle cx="17" cy="20" r="2.4" fill="#1f3556"/>' +
+      '<circle cx="27" cy="20" r="2.4" fill="#1f3556"/>' +
+      '<circle cx="17" cy="19" r="0.8" fill="#bfe3ff"/>' +
+      '<circle cx="27" cy="19" r="0.8" fill="#bfe3ff"/>' +
+      '<ellipse cx="22" cy="25" rx="2.5" ry="1.5" fill="#1f3556" opacity="0.6"/></svg>',
+  };
+
+  const PET_KINDS = ["bot", "cat", "fox", "owl", "frog", "bird", "fish", "ghost"];
+  function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+  function defaultPetFor(id) { return PET_KINDS[hashStr(id) % PET_KINDS.length]; }
+  JL.PET_KINDS = PET_KINDS;
+  JL.defaultPetFor = defaultPetFor;
+
+  function PetGarden(props) {
+    const ref = useRef(null);
+    useEffect(function () {
+      const reduce = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const container = ref.current;
+      if (!container || !props.members || !props.members.length) return;
+      let raf = null, ro = null, mo = null, setupTimer = null, retries = 0;
+      let entities = [];
+      let cleanup = function () {};
+
+      function findCards() {
+        return props.members.map(function (m) { return document.querySelector('[data-member-id="' + m.id + '"]'); });
+      }
+      function tryInit() {
+        const cards = findCards();
+        if (cards.every(Boolean)) { clearInterval(setupTimer); init(cards); }
+        else if (retries++ > 30) { clearInterval(setupTimer); }
+      }
+      setupTimer = setInterval(tryInit, 120);
+      tryInit();
+
+      function init(cards) {
+        const containerRect = container.getBoundingClientRect();
+        entities = props.members.map(function (m, i) {
+          const r = cards[i].getBoundingClientRect();
+          const ax = r.left - containerRect.left + r.width - 24;
+          const ay = r.top - containerRect.top - 6;
+          const el = document.createElement("div");
+          el.style.position = "absolute";
+          el.style.width = "44px"; el.style.height = "44px";
+          el.style.pointerEvents = "none"; el.style.willChange = "transform";
+          el.style.filter = "drop-shadow(0 4px 8px rgba(31,53,86,0.18))";
+          el.setAttribute("aria-hidden", "true");
+          el.innerHTML = PET_SVG[m.pet || defaultPetFor(m.id)] || PET_SVG.bot;
+          container.appendChild(el);
+          return {
+            el: el, name: m.name && m.name.zh ? m.name.zh : m.id,
+            anchor: { x: ax, y: ay },
+            pos: { x: ax + (Math.random() - 0.5) * 30, y: ay + (Math.random() - 0.5) * 20 },
+            vel: { x: 0, y: 0 },
+            mode: "wander", target: null, t0: 0,
+            phase: Math.random() * Math.PI * 2,
+            spark: null,
+          };
+        });
+        if (reduce) { entities.forEach(function (e) { e.el.style.transform = "translate3d(" + e.anchor.x + "px," + e.anchor.y + "px,0)"; }); return; }
+
+        let lastT = 0, lastVisit = 0;
+        function tick(t) {
+          if (!lastT) lastT = t;
+          lastT = t;
+          if (t - lastVisit > 7000 && Math.random() < 0.7) {
+            const idle = entities.filter(function (e) { return e.mode === "wander"; });
+            if (idle.length >= 2) {
+              const a = idle[Math.floor(Math.random() * idle.length)];
+              let b = idle[Math.floor(Math.random() * idle.length)];
+              if (b === a) b = idle[(idle.indexOf(a) + 1) % idle.length];
+              if (b !== a) {
+                a.mode = "visit"; a.target = b; a.t0 = t;
+                b.mode = "visit"; b.target = a; b.t0 = t;
+                lastVisit = t;
+              }
+            }
+          }
+          entities.forEach(function (e) { step(e, t); });
+          raf = requestAnimationFrame(tick);
+        }
+        raf = requestAnimationFrame(tick);
+
+        function reanchor() {
+          const cRect = container.getBoundingClientRect();
+          const fresh = findCards();
+          entities.forEach(function (e, i) {
+            const cd = fresh[i]; if (!cd) return;
+            const r = cd.getBoundingClientRect();
+            e.anchor.x = r.left - cRect.left + r.width - 24;
+            e.anchor.y = r.top - cRect.top - 6;
+          });
+        }
+        ro = new ResizeObserver(reanchor); ro.observe(container);
+        mo = new MutationObserver(reanchor); mo.observe(container.parentElement || document.body, { childList: true, subtree: true });
+        window.addEventListener("resize", reanchor);
+        document.addEventListener("scroll", reanchor, { passive: true });
+        cleanup = function () {
+          if (raf) cancelAnimationFrame(raf);
+          if (ro) ro.disconnect();
+          if (mo) mo.disconnect();
+          window.removeEventListener("resize", reanchor);
+          document.removeEventListener("scroll", reanchor);
+          entities.forEach(function (e) { if (e.el && e.el.parentNode) e.el.parentNode.removeChild(e.el); });
+        };
+      }
+
+      function step(e, t) {
+        let tx, ty;
+        if (e.mode === "wander") {
+          tx = e.anchor.x + Math.sin(t / 1000 + e.phase) * 22;
+          ty = e.anchor.y + Math.cos(t / 1400 + e.phase) * 14;
+        } else if (e.mode === "visit" && e.target) {
+          tx = e.target.anchor.x; ty = e.target.anchor.y;
+          const dx = e.pos.x - tx, dy = e.pos.y - ty;
+          if (Math.hypot(dx, dy) < 50 || t - e.t0 > 3500) { e.mode = "return"; e.t0 = t; }
+        } else {
+          tx = e.anchor.x; ty = e.anchor.y;
+          if (Math.hypot(e.pos.x - tx, e.pos.y - ty) < 6 || t - e.t0 > 3500) { e.mode = "wander"; e.target = null; }
+        }
+        const ax = (tx - e.pos.x) * 0.055;
+        const ay = (ty - e.pos.y) * 0.055;
+        e.vel.x = e.vel.x * 0.85 + ax;
+        e.vel.y = e.vel.y * 0.85 + ay;
+        e.pos.x += e.vel.x; e.pos.y += e.vel.y;
+        const bob = e.mode === "wander" ? Math.sin(t / 300 + e.phase) * 2 : 0;
+        const flip = e.vel.x < -0.2 ? " scaleX(-1)" : "";
+        e.el.style.transform = "translate3d(" + Math.round(e.pos.x) + "px," + Math.round(e.pos.y + bob) + "px,0)" + flip;
+      }
+
+      return function () { if (setupTimer) clearInterval(setupTimer); cleanup(); };
+    }, [props.members && props.members.map(function (m) { return m.id; }).join(",")]);
+    return <div ref={ref} className="pointer-events-none absolute inset-0 z-20 overflow-visible" aria-hidden="true" />;
+  }
+
+  JL.PetGarden = PetGarden;
 
   /* --------------------- TechMotif（神經網絡動圖）-------------------- */
   function prefersReduced() {
