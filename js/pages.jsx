@@ -238,15 +238,19 @@ window.JL = window.JL || {};
         {/* TEAM PREVIEW */}
         <Container className="py-16">
           <SectionHeading eyebrow={t(site.home.sections.team.title)} title={t(site.home.sections.team.title)} subtitle={t(site.home.sections.team.subtitle)} center />
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {leaders.map(function (l, i) {
               return (
                 <Reveal key={l.member.id} delay={i * 80}>
-                  <Card className="p-6 text-center h-full">
-                    <div className="flex justify-center"><Avatar name={t(l.member.name)} photo={l.member.photo} size={136} /></div>
-                    <div className="mt-4 font-bold text-navy">{t(l.member.name)}</div>
-                    <div className="text-sm text-slate-400">{t(l.member.name) !== l.member.name.en ? l.member.name.en : ""}</div>
-                    <Pill className="mt-3 bg-brand-50 text-brand-700">{t(l.member.title)}</Pill>
+                  <Card className="overflow-hidden text-center h-full flex flex-col">
+                    <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                      <MemberPhoto photo={l.member.photo} name={t(l.member.name)} />
+                    </div>
+                    <div className="p-5 flex flex-col items-center gap-1">
+                      <div className="font-bold text-navy text-lg">{t(l.member.name)}</div>
+                      <div className="text-sm text-slate-400">{t(l.member.name) !== l.member.name.en ? l.member.name.en : ""}</div>
+                      <Pill className="mt-2 bg-brand-50 text-brand-700">{t(l.member.title)}</Pill>
+                    </div>
                   </Card>
                 </Reveal>
               );
@@ -375,61 +379,82 @@ window.JL = window.JL || {};
     );
   }
 
+  // 統一處理成員相片：有 src 顯示，無 src 顯示灰底使用者圖示
+  function MemberPhoto(props) {
+    if (props.photo) {
+      return <img src={props.photo} alt={props.name || ""} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />;
+    }
+    return (
+      <div className="absolute inset-0 grid place-items-center bg-gradient-to-br from-slate-200 to-slate-300 text-slate-400">
+        <Icon name="user" size={64} strokeWidth={1.4} />
+      </div>
+    );
+  }
+
   function MemberCard(props) {
     const ctx = JL.useLang(); const t = ctx.t;
     const m = props.member;
     const layout = props.layout;
 
+    // 共用：大相片在上方，aspect-square / 4:3，info 在下方
     if (layout === "compact") {
       return (
-        <Card className="p-5 flex items-center gap-4 jl-card-tech">
-          <Avatar name={t(m.name)} photo={m.photo} size={92} />
-          <div className="min-w-0">
-            <div className="font-semibold text-navy truncate">{t(m.name)}</div>
-            <div className="text-xs text-slate-400 truncate">{m.name.en}</div>
-            {m.email ? <a href={"mailto:" + m.email} className="text-xs text-brand-600 hover:underline">{m.email}</a>
-              : <span className="text-xs text-slate-300">{ctx.t(window.DATA.site.ui.email)} —</span>}
+        <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
+          <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+            <MemberPhoto photo={m.photo} name={t(m.name)} />
+          </div>
+          <div className="p-4 flex flex-col gap-1">
+            <div className="font-semibold text-navy text-base leading-tight">{t(m.name)}</div>
+            <div className="text-xs text-slate-400">{m.name.en}</div>
+            {m.email
+              ? <a href={"mailto:" + m.email} className="mt-1 text-xs text-brand-600 hover:underline truncate" title={m.email}>{m.email}</a>
+              : <span className="mt-1 text-xs text-slate-300">{ctx.t(window.DATA.site.ui.email)} —</span>}
           </div>
         </Card>
       );
     }
     if (layout === "alumni") {
       return (
-        <Card className="p-5 flex items-start gap-4 jl-card-tech">
-          <Avatar name={t(m.name)} photo={m.photo} size={92} />
-          <div className="min-w-0">
-            <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
+        <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
+          <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+            <MemberPhoto photo={m.photo} name={t(m.name)} />
+          </div>
+          <div className="p-4 flex flex-col gap-1">
+            <div className="font-semibold text-navy text-base leading-tight">{t(m.name)}</div>
+            <div className="text-xs text-slate-400">{m.name.en}</div>
             {m.currentPosition && t(m.currentPosition) ? (
               <div className="mt-1 text-xs text-slate-500 flex items-start gap-1">
                 <Icon name="briefcase" size={13} className="mt-0.5 text-slate-300" />{t(m.currentPosition)}
               </div>
             ) : null}
-            {m.email ? <a href={"mailto:" + m.email} className="mt-1 inline-block text-xs text-brand-600 hover:underline">{m.email}</a> : null}
+            {m.email ? <a href={"mailto:" + m.email} className="mt-1 inline-block text-xs text-brand-600 hover:underline truncate" title={m.email}>{m.email}</a> : null}
           </div>
         </Card>
       );
     }
-    // full
+    // full（指導教授／博後／博士候選人）— 相片在上 + 完整資訊
     return (
-      <Card onClick={function () { props.onOpen(m); }} className="p-6 h-full flex flex-col jl-card-tech">
-        <div className="flex items-center gap-4">
-          <Avatar name={t(m.name)} photo={m.photo} size={120} />
+      <Card onClick={function () { props.onOpen(m); }} className="overflow-hidden h-full flex flex-col jl-card-tech cursor-pointer">
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+          <MemberPhoto photo={m.photo} name={t(m.name)} />
+        </div>
+        <div className="p-5 flex flex-col gap-2 flex-1">
           <div>
             <div className="font-bold text-navy text-lg leading-tight">{t(m.name)}</div>
             <div className="text-sm text-slate-400">{m.name.en}</div>
-            <Pill className="mt-1.5 bg-brand-50 text-brand-700 text-xs">{t(m.title)}</Pill>
           </div>
-        </div>
-        {m.interests ? (
-          <div className="mt-4 flex flex-wrap gap-1.5">
-            {m.interests[ctx.lang].slice(0, 4).map(function (it, i) {
-              return <span key={i} className="rounded-full bg-slate-100 text-slate-600 px-2.5 py-1 text-xs">{it}</span>;
-            })}
+          <Pill className="self-start bg-brand-50 text-brand-700 text-xs">{t(m.title)}</Pill>
+          {m.interests ? (
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              {m.interests[ctx.lang].slice(0, 4).map(function (it, i) {
+                return <span key={i} className="rounded-full bg-slate-100 text-slate-600 px-2.5 py-1 text-xs">{it}</span>;
+              })}
+            </div>
+          ) : null}
+          <p className="text-sm text-slate-500 leading-relaxed line-clamp-3 flex-1">{t(m.bio)}</p>
+          <div className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+            {ctx.lang === "zh" ? "查看詳細" : "View profile"}<Icon name="arrowRight" size={15} />
           </div>
-        ) : null}
-        <p className="mt-3 text-sm text-slate-500 leading-relaxed line-clamp-3 flex-1">{t(m.bio)}</p>
-        <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
-          {ctx.lang === "zh" ? "查看詳細" : "View profile"}<Icon name="arrowRight" size={15} />
         </div>
       </Card>
     );
@@ -442,9 +467,10 @@ window.JL = window.JL || {};
     const [active, setActive] = useState(null);
 
     function gridFor(layout) {
+      // 統一改為每排 2–3 張大相片卡，相片清楚可辨識
       if (layout === "full") return "grid sm:grid-cols-2 lg:grid-cols-3 gap-6";
-      if (layout === "compact") return "grid sm:grid-cols-2 lg:grid-cols-4 gap-4";
-      return "grid sm:grid-cols-2 lg:grid-cols-3 gap-4"; // alumni
+      if (layout === "compact") return "grid grid-cols-2 md:grid-cols-3 gap-5";
+      return "grid grid-cols-2 md:grid-cols-3 gap-5"; // alumni
     }
 
     return (
