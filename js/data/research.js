@@ -24,10 +24,10 @@ window.DATA.research = {
       id: "ai",
       icon: "cpu",
       name: { zh: "人工智慧與數位轉型", en: "AI & Digital Transformation" },
-      tagline: { zh: "AI 賦能組織，驅動數位創新與企業績效", en: "AI-enabled organizations driving digital innovation and performance" },
+      tagline: { zh: "以 AI 帶動組織，推動數位創新與企業績效", en: "AI-enabled organizations driving digital innovation and performance" },
       intro: {
-        zh: "本主軸探討人工智慧、生成式 AI 與數位科技如何驅動組織的數位轉型與變革。我們關注企業如何採用與導入 AI、AI 如何賦能流程與決策，以及數位創新如何影響企業績效與競爭力。",
-        en: "This pillar studies how AI, generative AI, and digital technologies drive organizational transformation. We examine how firms adopt and deploy AI, how AI augments processes and decisions, and how digital innovation shapes performance and competitiveness.",
+        zh: "本主軸探討人工智慧、生成式 AI 與數位科技如何推動組織的數位轉型與變革。我們關注企業如何採用與導入 AI、AI 如何強化流程與決策，以及數位創新如何影響企業績效與競爭力。",
+        en: "This pillar studies how AI, generative AI, and digital technologies shape organizational transformation. We examine how firms adopt and deploy AI, how AI augments processes and decisions, and how digital innovation shapes performance and competitiveness.",
       },
       sections: [
         {
@@ -39,7 +39,7 @@ window.DATA.research = {
             { zh: "AI 採用與導入", en: "AI adoption" },
             { zh: "數位轉型策略", en: "Digital transformation" },
             { zh: "組織變革", en: "Organizational change" },
-            { zh: "AI 賦能", en: "AI enablement" },
+            { zh: "AI 應用", en: "AI application" },
             { zh: "數位創新", en: "Digital innovation" },
             { zh: "企業績效", en: "Firm performance" },
           ],
@@ -58,7 +58,7 @@ window.DATA.research = {
           title: { zh: "研究計畫", en: "Research projects" },
           type: "cards",
           items: [
-            { title: { zh: "數位轉型與 AI 賦能研究計畫", en: "Digital transformation & AI enablement project" }, desc: { zh: "聚焦企業在數位轉型階段中導入人工智慧的策略路徑、組織配適與績效影響。", en: "Examining the strategic pathways, organizational fit, and performance impact of AI adoption during enterprise digital transformation." } },
+            { title: { zh: "數位轉型與 AI 應用研究計畫", en: "Digital transformation & AI application project" }, desc: { zh: "聚焦企業在數位轉型階段中導入人工智慧的策略路徑、組織配適與績效影響。", en: "Examining the strategic pathways, organizational fit, and performance impact of AI adoption during enterprise digital transformation." } },
           ],
         },
         {

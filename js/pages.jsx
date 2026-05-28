@@ -22,6 +22,11 @@ window.JL = window.JL || {};
   const AREA_ICON = { ai: "cpu", neuro: "brain", security: "shield", ecommerce: "globe", team: "users", case: "briefcase", fsqca: "diagram" };
   const AREA_COLOR = { ai: "blue", neuro: "indigo", security: "emerald", ecommerce: "sky", team: "amber", case: "teal", fsqca: "violet" };
   const TOOLCAT_ICON = { positioning: "target", growth: "trendingUp", customer: "users", channel: "share", performance: "barChart", decision: "scale" };
+  // 暫時隱藏的研究 section 類型（資料保留，僅不渲染）。研究計畫 / 實務應用 / 研究案例
+  const HIDDEN_SECTION_IDS = ["projects", "applications", "cases"];
+  function visibleSections(sections) {
+    return (sections || []).filter(function (s) { return HIDDEN_SECTION_IDS.indexOf(s.id) < 0; });
+  }
 
   /* ----------------------------- helpers ----------------------------- */
   function Container(props) {
@@ -638,7 +643,7 @@ window.JL = window.JL || {};
           </div>
         ) : null}
         {sa.toolHub ? <ToolHub /> : null}
-        {sa.sections ? sa.sections.map(function (s) { return <ResearchSection key={s.id} section={s} color={color} />; }) : null}
+        {sa.sections ? visibleSections(sa.sections).map(function (s) { return <ResearchSection key={s.id} section={s} color={color} />; }) : null}
       </div>
     );
   }
@@ -714,7 +719,7 @@ window.JL = window.JL || {};
             </div>
           ) : (
             <div className="space-y-10">
-              {area.sections.map(function (s) { return <ResearchSection key={s.id} section={s} color={color} />; })}
+              {visibleSections(area.sections).map(function (s) { return <ResearchSection key={s.id} section={s} color={color} />; })}
             </div>
           )}
         </Container>

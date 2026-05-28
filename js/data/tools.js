@@ -301,7 +301,7 @@ window.DATA.tools = {
       summary: { zh: "聚焦顧客需求與價值之間的契合。", en: "Focuses on the fit between customer needs and value." },
       definition: { zh: "由 Osterwalder 提出，是 BMC 中「價值主張」與「顧客」兩塊的放大鏡，檢視兩者是否契合。", en: "Osterwalder's zoom-in on the value proposition and customer blocks, testing for fit." },
       whenToUse: {
-        zh: ["設計或精煉價值主張", "深入理解顧客需求", "驗證產品—市場契合"],
+        zh: ["設計或精煉價值主張", "仔細了解顧客需求", "驗證產品—市場契合"],
         en: ["Designing/refining a value prop", "Understanding customer needs", "Testing product–market fit"],
       },
       framework: [
@@ -435,7 +435,7 @@ window.DATA.tools = {
       summary: { zh: "從四構面平衡衡量績效並連結策略。", en: "Balances performance across four perspectives, linked to strategy." },
       definition: { zh: "由 Kaplan 與 Norton 提出，從財務與非財務四構面平衡衡量組織績效並落實策略。", en: "By Kaplan & Norton; balances financial and non-financial perspectives to execute strategy." },
       whenToUse: {
-        zh: ["策略落地與績效管理", "設計 KPI 與目標", "平衡短期與長期"],
+        zh: ["策略執行與績效管理", "設計 KPI 與目標", "平衡短期與長期"],
         en: ["Strategy execution & KPIs", "Designing measures and targets", "Balancing short/long term"],
       },
       framework: [

@@ -85,8 +85,8 @@ window.DATA.site = {
     intro: {
       title: { zh: "關於 Jack Lab", en: "About Jack Lab" },
       body: {
-        zh: "Jack Lab 隸屬於國立中山大學資訊管理學系，是一個跨領域的學術研究團隊。我們關注數位科技與人工智慧如何驅動組織轉型，並結合神經科學、資訊安全與管理研究深入理解使用者與組織在資訊系統中的認知、決策與行為。實驗室同時重視嚴謹的研究方法與真實的管理實務，致力於培養兼具理論深度與應用能力的研究人才。",
-        en: "Jack Lab is an interdisciplinary research team in the Department of Information Management at National Sun Yat-sen University. We study how digital technology and AI drive organizational transformation, while integrating neuroscience, information security, and management research to understand cognition, decisions, and behavior in information systems. The lab values both rigorous methodology and real-world management practice, training researchers with theoretical depth and applied capability.",
+        zh: "Jack Lab 隸屬於國立中山大學資訊管理學系，是一支跨領域的學術研究團隊。我們關心數位科技與人工智慧如何推動組織轉型，並結合神經科學、資訊安全與管理研究，從多元角度理解使用者與組織在資訊系統中的認知、決策與行為。實驗室同時重視嚴謹的研究方法與真實的管理現場，希望培養兼具紮實學術訓練與實務應用能力的研究人才。",
+        en: "Jack Lab is an interdisciplinary research team in the Department of Information Management at National Sun Yat-sen University. We study how digital technology and AI shape organizational transformation, while integrating neuroscience, information security, and management research to understand cognition, decisions, and behavior in information systems. The lab values both rigorous methodology and real-world management practice, training researchers with solid academic grounding and applied capability.",
       },
     },
     sections: {
@@ -128,8 +128,8 @@ window.DATA.site = {
     vision: {
       title: { zh: "研究願景", en: "Our vision" },
       body: {
-        zh: "我們致力於連結資訊管理理論、數位科技應用、使用者行為分析與組織管理實務，推動同時具備理論貢獻與實務價值的學術研究，並將研究成果轉化為教學個案與管理工具，回饋產業與社會。",
-        en: "We strive to connect information systems theory, digital technology applications, user-behavior analysis, and organizational practice — advancing research with both theoretical contribution and practical value, and translating findings into teaching cases and management tools that give back to industry and society.",
+        zh: "我們希望連結資訊管理理論、數位科技應用、使用者行為分析與組織管理實務，推動同時兼顧理論貢獻與實務價值的學術研究，並把研究成果轉化為教學個案與管理工具，回饋產業與社會。",
+        en: "We aim to connect information systems theory, digital technology applications, user-behavior analysis, and organizational practice — advancing research with both theoretical contribution and practical value, and turning findings into teaching cases and management tools that give back to industry and society.",
       },
     },
     features: {
