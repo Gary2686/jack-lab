@@ -24,6 +24,7 @@ window.JL = window.JL || {};
     activity: '<path d="M3 12h4l3 8 4-16 3 8h4"/>',
     cpu: '<rect x="6" y="6" width="12" height="12" rx="1.6"/><rect x="9.5" y="9.5" width="5" height="5" rx=".6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/>',
     brain: '<path d="M9.5 5A3 3 0 0 0 7 9.3 3 3 0 0 0 6 15a3 3 0 0 0 3.5 3.8"/><path d="M14.5 5A3 3 0 0 1 17 9.3 3 3 0 0 1 18 15a3 3 0 0 1-3.5 3.8"/><path d="M12 4.5v15"/>',
+    bot: '<rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><path d="M10 16h4"/><path d="M3 11h2M19 11h2"/>',
     briefcase: '<rect x="3" y="7" width="18" height="13" rx="1.6"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7"/><path d="M3 12h18"/>',
     diagram: '<circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M7.7 7.7 10.7 15.8M16.3 7.7 13.3 15.8M8.4 6h7.2"/>',
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
@@ -437,11 +438,86 @@ window.JL = window.JL || {};
     return <span ref={ref} className={props.className}>{val}{props.suffix || ""}</span>;
   }
 
+  /* ---------- SignalPanel（各分頁 Hero 的動態科技視覺） ---------- */
+  function SignalPanel(props) {
+    const ctx = useLang();
+    const mode = props.mode || "ai";
+    const copy = {
+      ai: { icon: "cpu", title: "AI", bits: ["data", "model", "insight"] },
+      robot: { icon: "bot", title: "Robot", bits: ["sense", "learn", "act"] },
+      mind: { icon: "brain", title: ctx.lang === "zh" ? "思考" : "Think", bits: ["cognition", "decision", "feeling"] },
+      paper: { icon: "doc", title: ctx.lang === "zh" ? "知識" : "Knowledge", bits: ["paper", "evidence", "impact"] },
+      award: { icon: "award", title: ctx.lang === "zh" ? "成果" : "Impact", bits: ["honor", "team", "growth"] },
+      news: { icon: "activity", title: ctx.lang === "zh" ? "動態" : "Signal", bits: ["trend", "event", "idea"] },
+    }[mode] || { icon: "sparkles", title: "Signal", bits: ["sense", "think", "feel"] };
+    return (
+      <div className={cx("jl-signal-card group relative overflow-hidden rounded-2xl border border-white/70 bg-white/75 p-4 shadow-lg shadow-brand-900/5 backdrop-blur", props.className)}>
+        <div className="absolute inset-0 hero-grid opacity-50" />
+        <div className="absolute -right-10 -top-12 h-28 w-28 rounded-full bg-brand-200/60 blur-2xl" />
+        <div className="relative">
+          <div className="mb-3 flex items-center gap-2">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-navy text-white shadow-sm"><Icon name={copy.icon} size={20} /></span>
+            <div>
+              <div className="text-sm font-extrabold text-navy">{copy.title}</div>
+              <div className="h-1.5 w-20 overflow-hidden rounded-full bg-slate-100"><span className="block h-full w-1/2 rounded-full bg-brand-500 jl-scan-line" /></div>
+            </div>
+          </div>
+          <div className="relative mx-auto aspect-square max-w-[210px]">
+            <TechMotif className="absolute inset-0 opacity-85" />
+            <div className="absolute inset-0 grid place-items-center">
+              <div className="grid h-16 w-16 place-items-center rounded-full bg-white text-brand-700 shadow-md ring-1 ring-brand-100">
+                <Icon name={copy.icon} size={28} />
+              </div>
+            </div>
+            {copy.bits.map(function (b, i) {
+              const pos = [
+                "left-1 top-9",
+                "right-0 top-24",
+                "left-1/2 bottom-2 -translate-x-1/2",
+              ][i];
+              return <span key={b} className={cx("absolute rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-slate-500 shadow-sm ring-1 ring-slate-100 jl-orbit-chip", pos)} style={{ animationDelay: (i * 0.4) + "s" }}>{b}</span>;
+            })}
+          </div>
+          <Waveform color="#3b76c0" opacity={0.45} height="20px" />
+        </div>
+      </div>
+    );
+  }
+
+  /* --------- InteractiveFlow（頁內的小型互動流程視覺）--------- */
+  function InteractiveFlow(props) {
+    const ctx = useLang();
+    const labels = props.labels || (ctx.lang === "zh"
+      ? ["感知", "分析", "決策", "應用"]
+      : ["Sense", "Analyze", "Decide", "Apply"]);
+    const icons = props.icons || ["eye", "brain", "diagram", "sparkles"];
+    return (
+      <div className={cx("jl-flow-panel relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-sm", props.className)}>
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400 to-transparent jl-scan-x" />
+        <div className="absolute inset-0 hero-grid opacity-30" />
+        <div className="relative grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {labels.map(function (label, i) {
+            return (
+              <div key={label} className="group rounded-xl bg-slate-50/80 p-3 text-center ring-1 ring-slate-100 transition-all duration-300 hover:-translate-y-1 hover:bg-brand-50 hover:ring-brand-200">
+                <div className="mx-auto mb-2 grid h-9 w-9 place-items-center rounded-full bg-white text-brand-700 shadow-sm ring-1 ring-brand-100 group-hover:scale-110 transition-transform">
+                  <Icon name={icons[i] || "sparkles"} size={18} />
+                </div>
+                <div className="text-xs font-semibold text-navy">{label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
   JL.TechMotif = TechMotif;
   JL.Waveform = Waveform;
   JL.ParticleField = ParticleField;
   JL.RobotMascot = RobotMascot;
   JL.CountUp = CountUp;
+  JL.SignalPanel = SignalPanel;
+  JL.InteractiveFlow = InteractiveFlow;
   JL.Icon = Icon;
   JL.Avatar = Avatar;
   JL.Card = Card;

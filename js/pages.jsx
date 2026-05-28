@@ -29,13 +29,19 @@ window.JL = window.JL || {};
   }
 
   function PageHero(props) {
+    const visual = props.visual || (props.motif ? "ai" : null);
     return (
       <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-b from-brand-50/70 via-white to-white">
         <div className="absolute inset-0 -z-10 hero-grid opacity-60" />
         <div className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
-        {props.motif ? <div className="hidden lg:block absolute right-3 top-1/2 -translate-y-1/2 w-[230px] opacity-80 pointer-events-none"><JL.TechMotif /></div> : null}
+        {visual ? <JL.ParticleField className="pointer-events-none opacity-30" /> : null}
+        {visual ? (
+          <div className="hidden lg:block absolute right-4 xl:right-14 top-16 w-[280px] origin-top-right" style={{ transform: "scale(0.55)" }}>
+            <JL.SignalPanel mode={visual} />
+          </div>
+        ) : null}
         <Container className="relative z-10 py-14 sm:py-16">
-          <Reveal>
+          <Reveal className={visual ? "max-w-2xl" : ""}>
             {props.eyebrow ? <div className="text-xs font-semibold uppercase tracking-wide text-brand-600 mb-3">{props.eyebrow}</div> : null}
             <h1 className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">{props.title}</h1>
             {props.subtitle ? <p className="mt-4 max-w-2xl text-lg text-slate-500 leading-relaxed">{props.subtitle}</p> : null}
@@ -267,7 +273,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero motif eyebrow={t(about.hero.subtitle)} title={t(about.hero.title)} subtitle={t(about.hero.subtitle)} />
+        <PageHero visual="mind" eyebrow={t(about.hero.subtitle)} title={t(about.hero.title)} subtitle={t(about.hero.subtitle)} />
         <Container className="py-16 grid lg:grid-cols-2 gap-12">
           <Reveal>
             <h2 className="text-2xl font-bold text-navy">{t(about.intro.title)}</h2>
@@ -355,7 +361,7 @@ window.JL = window.JL || {};
 
     if (layout === "compact") {
       return (
-        <Card className="p-5 flex items-center gap-4">
+        <Card className="p-5 flex items-center gap-4 jl-card-tech">
           <Avatar name={t(m.name)} photo={m.photo} size={56} />
           <div className="min-w-0">
             <div className="font-semibold text-navy truncate">{t(m.name)}</div>
@@ -368,7 +374,7 @@ window.JL = window.JL || {};
     }
     if (layout === "alumni") {
       return (
-        <Card className="p-5 flex items-start gap-4">
+        <Card className="p-5 flex items-start gap-4 jl-card-tech">
           <Avatar name={t(m.name)} photo={m.photo} size={56} />
           <div className="min-w-0">
             <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
@@ -382,7 +388,7 @@ window.JL = window.JL || {};
     }
     // full
     return (
-      <Card onClick={function () { props.onOpen(m); }} className="p-6 h-full flex flex-col">
+      <Card onClick={function () { props.onOpen(m); }} className="p-6 h-full flex flex-col jl-card-tech">
         <div className="flex items-center gap-4">
           <Avatar name={t(m.name)} photo={m.photo} size={72} />
           <div>
@@ -420,7 +426,10 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.team.subtitle)} title={t(site.pages.team.title)} subtitle={t(site.pages.team.subtitle)} />
+        <PageHero visual="robot" eyebrow={t(site.pages.team.subtitle)} title={t(site.pages.team.title)} subtitle={t(site.pages.team.subtitle)} />
+        <Container className="pt-10">
+          <JL.InteractiveFlow labels={ctx.lang === "zh" ? ["專長", "協作", "研究", "影響"] : ["Expertise", "Collab", "Research", "Impact"]} icons={["brain", "users", "flask", "sparkles"]} />
+        </Container>
         <Container className="py-16 space-y-14">
           {groups.map(function (g) {
             return (
@@ -481,7 +490,7 @@ window.JL = window.JL || {};
     const tool = props.tool;
     const c = toolColor(props.color);
     return (
-      <Card onClick={function () { navigate("/tools/" + tool.id); }} className="p-5 h-full flex flex-col">
+      <Card onClick={function () { navigate("/tools/" + tool.id); }} className="p-5 h-full flex flex-col jl-card-tech">
         <div className={cx("h-10 w-10 rounded-xl grid place-items-center mb-3", c.icon)}>
           <Icon name={TOOLCAT_ICON[tool.categoryId] || "layers"} size={20} />
         </div>
@@ -530,7 +539,7 @@ window.JL = window.JL || {};
         {s.type === "cards" ? (
           <div className="grid sm:grid-cols-2 gap-4">
             {s.items.map(function (it, i) {
-              return <Card key={i} className="p-5" hover={false}><div className="font-semibold text-navy">{t(it.title)}</div><p className="mt-1.5 text-sm text-slate-500 leading-relaxed">{t(it.desc)}</p></Card>;
+              return <Card key={i} className="p-5 jl-card-tech" hover={false}><div className="font-semibold text-navy">{t(it.title)}</div><p className="mt-1.5 text-sm text-slate-500 leading-relaxed">{t(it.desc)}</p></Card>;
             })}
           </div>
         ) : null}
@@ -539,7 +548,7 @@ window.JL = window.JL || {};
             {s.items.map(function (it, i) {
               const hasUrl = !!it.url;
               return (
-                <Card key={i} className="p-5" hover={hasUrl}>
+                <Card key={i} className="p-5 jl-card-tech" hover={hasUrl}>
                   <div className="flex items-start justify-between gap-2">
                     <div className="font-semibold text-navy">{t(it.title)}</div>
                     <Icon name="link" size={16} className="text-slate-300 shrink-0" />
@@ -608,7 +617,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.research.subtitle)} title={t(site.pages.research.title)} subtitle={t(site.pages.research.subtitle)} />
+        <PageHero visual="ai" eyebrow={t(site.pages.research.subtitle)} title={t(site.pages.research.title)} subtitle={t(site.pages.research.subtitle)} />
 
         {/* Area tabs */}
         <div className="sticky top-16 z-30 bg-white/90 backdrop-blur border-b border-slate-100">
@@ -639,6 +648,12 @@ window.JL = window.JL || {};
               </div>
             </div>
             <p className="text-slate-600 leading-relaxed max-w-3xl mb-10">{t(area.intro)}</p>
+          </Reveal>
+          <Reveal delay={80} className="mb-10">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["感知問題", "建模分析", "互動驗證", "管理應用"] : ["Sense", "Model", "Interact", "Apply"]}
+              icons={area.id === "neuro" ? ["eye", "brain", "activity", "sparkles"] : area.id === "ai" ? ["cpu", "bot", "diagram", "trendingUp"] : ["target", "diagram", "users", "check"]}
+            />
           </Reveal>
 
           {area.subAreas ? (
@@ -673,7 +688,7 @@ window.JL = window.JL || {};
     const typeObj = window.DATA.publications.types.find(function (x) { return x.id === p.type; });
     const [open, setOpen] = useState(false);
     return (
-      <Card className="p-5" hover={false}>
+      <Card className="p-5 jl-card-tech" hover={false}>
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <span className="rounded-md bg-navy/90 text-white px-2 py-0.5 text-[11px] font-semibold">{typeObj ? t(typeObj.label) : p.type}</span>
           <span className="text-xs font-semibold text-slate-400">{p.year}</span>
@@ -721,7 +736,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.publications.subtitle)} title={t(site.pages.publications.title)} subtitle={t(site.pages.publications.subtitle)} />
+        <PageHero visual="paper" eyebrow={t(site.pages.publications.subtitle)} title={t(site.pages.publications.title)} subtitle={t(site.pages.publications.subtitle)} />
         <Container className="py-12">
           <div className="space-y-4 mb-8">
             <div>
@@ -738,6 +753,9 @@ window.JL = window.JL || {};
                 className="w-full rounded-xl border border-slate-200 pl-9 pr-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-300" />
             </div>
           </div>
+          <Reveal className="mb-8">
+            <JL.InteractiveFlow labels={ctx.lang === "zh" ? ["問題", "方法", "證據", "貢獻"] : ["Question", "Method", "Evidence", "Contribution"]} icons={["search", "diagram", "doc", "sparkles"]} />
+          </Reveal>
 
           <div className="text-sm text-slate-400 mb-4">{filtered.length} {ctx.lang === "zh" ? "筆" : "items"}</div>
           {filtered.length ? (
@@ -765,7 +783,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.awards.subtitle)} title={t(site.pages.awards.title)} subtitle={t(site.pages.awards.subtitle)} />
+        <PageHero visual="award" eyebrow={t(site.pages.awards.subtitle)} title={t(site.pages.awards.title)} subtitle={t(site.pages.awards.subtitle)} />
         <Container className="py-12">
           <div className="mb-10"><FilterChips options={data.types} value={type} onChange={setType} allLabel={site.ui.all} /></div>
 
@@ -783,7 +801,7 @@ window.JL = window.JL || {};
                       {filtered.filter(function (a) { return a.year === yr; }).map(function (a, i) {
                         return (
                           <Reveal key={a.id} delay={i * 50}>
-                            <Card className="p-5 h-full">
+                            <Card className="p-5 h-full jl-card-tech">
                               <div className="flex items-center gap-2 mb-3">
                                 <span className="grid place-items-center h-9 w-9 rounded-lg bg-amber-100 text-amber-600"><Icon name="award" size={18} /></span>
                                 <span className="rounded-md bg-slate-100 text-slate-500 px-2 py-0.5 text-[11px] font-semibold">{typeLabel(a.type)}</span>
@@ -815,7 +833,7 @@ window.JL = window.JL || {};
     const cat = window.DATA.news.categories.find(function (x) { return x.id === n.category; });
     const tagDefs = window.DATA.news.tags;
     return (
-      <Card className="overflow-hidden h-full flex flex-col" hover={false}>
+      <Card className="overflow-hidden h-full flex flex-col jl-card-tech" hover={false}>
         <ImagePlaceholder src={n.image} className="h-40" icon="news" />
         <div className="p-5 flex flex-col flex-1">
           <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -861,7 +879,7 @@ window.JL = window.JL || {};
 
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.news.subtitle)} title={t(site.pages.news.title)} subtitle={t(site.pages.news.subtitle)} />
+        <PageHero visual="news" eyebrow={t(site.pages.news.subtitle)} title={t(site.pages.news.title)} subtitle={t(site.pages.news.subtitle)} />
         <Container className="py-12">
           <div className="space-y-4 mb-8">
             <div>
@@ -890,13 +908,13 @@ window.JL = window.JL || {};
     const items = window.DATA.activities.items.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
     return (
       <div>
-        <PageHero eyebrow={t(site.pages.activities.subtitle)} title={t(site.pages.activities.title)} subtitle={t(site.pages.activities.subtitle)} />
+        <PageHero visual="robot" eyebrow={t(site.pages.activities.subtitle)} title={t(site.pages.activities.title)} subtitle={t(site.pages.activities.subtitle)} />
         <Container className="py-12 space-y-10">
           {items.map(function (a, idx) {
             const photos = a.photos && a.photos.length ? a.photos : [null, null, null];
             return (
               <Reveal key={a.id} delay={(idx % 4) * 60}>
-                <Card className="overflow-hidden" hover={false}>
+                <Card className="overflow-hidden jl-card-tech" hover={false}>
                   <div className="grid md:grid-cols-5">
                     <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
                       {photos.slice(0, 4).map(function (src, i) {
