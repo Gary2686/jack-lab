@@ -100,6 +100,21 @@ window.DATA.research = {
           sections: [
             { id: "topics", title: { zh: "研究主題", en: "Topics" }, type: "tags", items: [ { zh: "認知負荷", en: "Cognitive load" }, { zh: "情緒反應", en: "Emotional response" }, { zh: "注意力", en: "Attention" }, { zh: "決策歷程", en: "Decision process" }, { zh: "資訊系統使用", en: "IS use" } ] },
             { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "資訊系統使用的認知負荷", en: "Cognitive load in IS use" }, desc: { zh: "以 EEG 指標評估介面複雜度對使用者負荷的影響。", en: "Using EEG indices to assess how interface complexity affects user cognitive load." } } ] },
+            {
+              id: "resources",
+              title: { zh: "教材參考", en: "Teaching materials" },
+              type: "links",
+              items: [
+                {
+                  title: { zh: "EEG 訊號處理與機器學習教材", en: "EEG Signal Processing & Machine Learning Coursebook" },
+                  desc: {
+                    zh: "系統性的線上教材，以「基礎篇／進階篇／臨床應用篇」三大主軸鋪陳：從腦電圖原理與訊號模型化，延伸到機器學習、腦連結分析與源頭定位，再到癲癇、睡眠、情緒、神經退化疾病與腦機介面（BCI）等臨床主題。內容搭配互動圖示與隨堂測驗，適合神經科學、生醫工程與認知科學的學生與研究人員，建立從基礎到實務的完整學習路徑。",
+                    en: "A systematic online coursebook organized into Foundations, Advanced topics (machine learning, brain connectivity, source localization) and Clinical Applications (epilepsy, sleep, affect, neurodegenerative diseases, brain–computer interfaces). With interactive figures and in-line quizzes, it suits students and researchers in neuroscience, biomedical engineering and cognitive science who want a path from fundamentals to applied practice.",
+                  },
+                  url: "https://gary2686.github.io/eeg-book/",
+                },
+              ],
+            },
           ],
         },
         {
