@@ -5,7 +5,7 @@
  * item 欄位 / fields:
  *   id, categoryId, name{zh,en}, summary{zh,en}, definition{zh,en},
  *   whenToUse{zh:[],en:[]}, framework:[{title{zh,en}, desc{zh,en}}], example{zh,en},
- *   deckUrl ('' → 顯示「投影片連結待補充」), references:[{label{zh,en}, url}]
+ *   deckUrl ('' → 不顯示下載連結 / leave empty to hide download), references:[{label{zh,en}, url}]
  *
  * 📌 原始教學投影片在 Google 雲端硬碟 (G:\...\策略工具)。檔案較大不放進 repo；
  *    請將各檔在雲端設定共用後，把分享連結填入對應的 deckUrl 即可。

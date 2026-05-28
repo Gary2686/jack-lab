@@ -513,6 +513,90 @@ window.JL = window.JL || {};
     );
   }
 
+  /* -------- IconConstellation（漂浮 AI/腦/眼/機器人 icon 星座 / floating tech icons） -------- */
+  function IconConstellation(props) {
+    const reduce = prefersReduced();
+    // 每個 icon 的相對位置 (vw / %)、尺寸、動畫延遲與類別
+    const items = props.items || [
+      { name: "cpu",     top: "8%",  left: "4%",   size: 18, delay: 0,   tone: "bg-blue-100 text-blue-700" },
+      { name: "brain",   top: "22%", left: "16%",  size: 22, delay: 0.6, tone: "bg-indigo-100 text-indigo-700" },
+      { name: "eye",     top: "62%", left: "8%",   size: 18, delay: 1.1, tone: "bg-emerald-100 text-emerald-700" },
+      { name: "bot",     top: "12%", right: "10%", size: 22, delay: 0.3, tone: "bg-sky-100 text-sky-700" },
+      { name: "shield",  top: "70%", right: "14%", size: 18, delay: 0.9, tone: "bg-violet-100 text-violet-700" },
+      { name: "diagram", top: "44%", right: "4%",  size: 18, delay: 1.4, tone: "bg-amber-100 text-amber-700" },
+      { name: "activity",top: "82%", left: "44%",  size: 16, delay: 0.5, tone: "bg-teal-100 text-teal-700" },
+    ];
+    return (
+      <div className={cx("pointer-events-none absolute inset-0 overflow-hidden", props.className)} aria-hidden="true">
+        {items.map(function (it, i) {
+          const style = { top: it.top, left: it.left, right: it.right, animationDelay: (it.delay || 0) + "s" };
+          return (
+            <span
+              key={i}
+              style={style}
+              className={cx(
+                "absolute grid place-items-center rounded-2xl shadow-sm ring-1 ring-white/70 backdrop-blur-sm bg-white/70",
+                it.tone,
+                !reduce && "animate-floaty"
+              )}
+            >
+              <span className="grid place-items-center p-2">
+                <Icon name={it.name} size={it.size} />
+              </span>
+              {reduce ? null : (
+                <span className={cx("absolute inset-0 rounded-2xl jl-ping", it.tone)} />
+              )}
+            </span>
+          );
+        })}
+      </div>
+    );
+  }
+
+  /* -------- GazeHeatmap（眼動熱區圖；脈衝小點，模擬 fixation） -------- */
+  function GazeHeatmap(props) {
+    const reduce = prefersReduced();
+    const pts = props.points || [
+      { x: 24, y: 30, r: 14, delay: 0 },
+      { x: 60, y: 22, r: 10, delay: 0.4 },
+      { x: 82, y: 48, r: 16, delay: 0.9 },
+      { x: 46, y: 60, r: 12, delay: 1.4 },
+      { x: 18, y: 72, r: 9,  delay: 1.9 },
+      { x: 70, y: 80, r: 11, delay: 2.4 },
+    ];
+    return (
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className={cx("h-full w-full", props.className)} aria-hidden="true">
+        <defs>
+          <radialGradient id="jlGaze" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#3b76c0" stopOpacity="0.55" />
+            <stop offset="60%" stopColor="#88b4e3" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#88b4e3" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        {/* 注視軌跡（虛線） */}
+        <path
+          d={"M" + pts.map(function (p) { return p.x + "," + p.y; }).join(" L")}
+          fill="none" stroke="#5a93d4" strokeWidth="0.6" strokeDasharray="1.6 2.4" opacity="0.5"
+          className={reduce ? undefined : "jl-flow"}
+        />
+        {pts.map(function (p, i) {
+          return (
+            <g key={i}>
+              <circle cx={p.x} cy={p.y} r={p.r} fill="url(#jlGaze)" />
+              <circle cx={p.x} cy={p.y} r="1.4" fill="#1f3556">
+                {reduce ? null : (
+                  <animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" begin={(p.delay || 0) + "s"} repeatCount="indefinite" />
+                )}
+              </circle>
+            </g>
+          );
+        })}
+      </svg>
+    );
+  }
+
+  JL.IconConstellation = IconConstellation;
+  JL.GazeHeatmap = GazeHeatmap;
   JL.TechMotif = TechMotif;
   JL.Waveform = Waveform;
   JL.ParticleField = ParticleField;

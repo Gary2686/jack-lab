@@ -49,8 +49,8 @@ window.DATA.research = {
           title: { zh: "代表性成果", en: "Selected outcomes" },
           type: "cards",
           items: [
-            { title: { zh: "AI 採用前因與績效效果", en: "Antecedents and performance effects of AI adoption" }, desc: { zh: "探討企業導入 AI 的關鍵因素與其對營運績效的影響。（成果待補充）", en: "Key drivers of enterprise AI adoption and their impact on operational performance. (To be added.)" } },
-            { title: { zh: "生成式 AI 與工作流程重塑", en: "Generative AI and workflow redesign" }, desc: { zh: "分析生成式 AI 如何改變知識工作的流程與分工。（成果待補充）", en: "How generative AI reshapes knowledge-work processes. (To be added.)" } },
+            { title: { zh: "AI 採用前因與績效效果", en: "Antecedents and performance effects of AI adoption" }, desc: { zh: "探討企業導入 AI 的關鍵因素與其對營運績效的影響。", en: "Key drivers of enterprise AI adoption and their impact on operational performance." } },
+            { title: { zh: "生成式 AI 與工作流程重塑", en: "Generative AI and workflow redesign" }, desc: { zh: "分析生成式 AI 如何改變知識工作的流程與分工。", en: "How generative AI reshapes knowledge-work processes." } },
           ],
         },
         {
@@ -58,7 +58,7 @@ window.DATA.research = {
           title: { zh: "研究計畫", en: "Research projects" },
           type: "cards",
           items: [
-            { title: { zh: "數位轉型與 AI 賦能研究計畫", en: "Digital transformation & AI enablement project" }, desc: { zh: "計畫名稱、期間與補助單位待補充。", en: "Project title, period and funding agency to be added." } },
+            { title: { zh: "數位轉型與 AI 賦能研究計畫", en: "Digital transformation & AI enablement project" }, desc: { zh: "聚焦企業在數位轉型階段中導入人工智慧的策略路徑、組織配適與績效影響。", en: "Examining the strategic pathways, organizational fit, and performance impact of AI adoption during enterprise digital transformation." } },
           ],
         },
         {
@@ -66,7 +66,7 @@ window.DATA.research = {
           title: { zh: "實務應用", en: "Practical applications" },
           type: "cards",
           items: [
-            { title: { zh: "企業 AI 導入諮詢", en: "Enterprise AI advisory" }, desc: { zh: "與企業合作評估 AI 應用場景與導入路徑。（案例待補充）", en: "Partnering with firms to assess AI use cases and adoption paths. (Cases to be added.)" } },
+            { title: { zh: "企業 AI 導入諮詢", en: "Enterprise AI advisory" }, desc: { zh: "與企業合作評估 AI 應用場景與導入路徑，將學術研究方法轉化為實務可行的轉型建議。", en: "Partnering with firms to assess AI use cases and adoption paths, translating research methods into actionable transformation guidance." } },
           ],
         },
         {
@@ -96,11 +96,10 @@ window.DATA.research = {
             zh: "以腦電圖（EEG）量測使用者在操作資訊系統時的腦部活動，研究認知負荷、情緒反應、注意力與決策歷程，並對應到系統設計與使用行為。",
             en: "Using electroencephalography (EEG) to measure brain activity during system use — studying cognitive load, emotional response, attention, and decision processes, and linking them to design and behavior.",
           },
-          equipment: { zh: "多通道 EEG 腦波儀（設備規格待補充）", en: "Multi-channel EEG system (specifications to be added)" },
+          equipment: { zh: "多通道 EEG 腦波儀", en: "Multi-channel EEG system" },
           sections: [
             { id: "topics", title: { zh: "研究主題", en: "Topics" }, type: "tags", items: [ { zh: "認知負荷", en: "Cognitive load" }, { zh: "情緒反應", en: "Emotional response" }, { zh: "注意力", en: "Attention" }, { zh: "決策歷程", en: "Decision process" }, { zh: "資訊系統使用", en: "IS use" } ] },
-            { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "資訊系統使用的認知負荷", en: "Cognitive load in IS use" }, desc: { zh: "以 EEG 指標評估介面複雜度對使用者負荷的影響。（案例待補充）", en: "Using EEG indices to assess interface complexity. (To be added.)" } } ] },
-            { id: "images", title: { zh: "實驗圖片", en: "Lab photos" }, type: "note", note: { zh: "實驗場景與設備照片待補充。", en: "Photos of the setup and equipment to be added." } },
+            { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "資訊系統使用的認知負荷", en: "Cognitive load in IS use" }, desc: { zh: "以 EEG 指標評估介面複雜度對使用者負荷的影響。", en: "Using EEG indices to assess how interface complexity affects user cognitive load." } } ] },
           ],
         },
         {
@@ -110,11 +109,10 @@ window.DATA.research = {
             zh: "以眼動追蹤量測使用者的視覺注意力與資訊搜尋歷程，應用於介面設計、使用者體驗與決策行為研究。",
             en: "Using eye tracking to measure visual attention and information-search behavior, applied to interface design, UX, and decision research.",
           },
-          equipment: { zh: "眼動追蹤儀（設備規格待補充）", en: "Eye tracker (specifications to be added)" },
+          equipment: { zh: "眼動追蹤儀", en: "Eye tracker" },
           sections: [
             { id: "topics", title: { zh: "研究主題", en: "Topics" }, type: "tags", items: [ { zh: "視覺注意力", en: "Visual attention" }, { zh: "介面設計", en: "Interface design" }, { zh: "資訊搜尋", en: "Information search" }, { zh: "使用者體驗", en: "UX" }, { zh: "決策行為", en: "Decision behavior" } ] },
-            { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "介面佈局與視覺搜尋", en: "Layout and visual search" }, desc: { zh: "以注視軌跡分析不同版面配置對搜尋效率的影響。（案例待補充）", en: "Analyzing gaze paths across layouts. (To be added.)" } } ] },
-            { id: "images", title: { zh: "實驗圖片", en: "Lab photos" }, type: "note", note: { zh: "眼動熱區圖與實驗照片待補充。", en: "Heatmaps and lab photos to be added." } },
+            { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "介面佈局與視覺搜尋", en: "Layout and visual search" }, desc: { zh: "以注視軌跡分析不同版面配置對使用者搜尋效率與決策路徑的影響。", en: "Analyzing gaze paths across layouts to understand search efficiency and decision pathways." } } ] },
           ],
         },
       ],
@@ -330,8 +328,8 @@ window.DATA.research = {
           title: { zh: "研究應用案例", en: "Applications" },
           type: "cards",
           items: [
-            { title: { zh: "科技採用的組態分析", en: "Configurations of technology adoption" }, desc: { zh: "探討哪些條件組合共同導向高採用意願。（案例待補充）", en: "Which condition bundles jointly lead to high adoption. (To be added.)" } },
-            { title: { zh: "服務體驗與滿意度路徑", en: "Paths to service satisfaction" }, desc: { zh: "辨識通往高滿意度的多元組態路徑。（案例待補充）", en: "Identifying multiple paths to high satisfaction. (To be added.)" } },
+            { title: { zh: "科技採用的組態分析", en: "Configurations of technology adoption" }, desc: { zh: "探討哪些條件組合共同導向高採用意願，凸顯非單一變數的路徑差異。", en: "Identifying combinations of conditions that jointly lead to high adoption, highlighting path differences beyond single-variable effects." } },
+            { title: { zh: "服務體驗與滿意度路徑", en: "Paths to service satisfaction" }, desc: { zh: "辨識通往高滿意度的多元組態路徑，協助服務設計者了解達標的不同方式。", en: "Identifying multiple configurational paths to high satisfaction, helping service designers see alternative routes to success." } },
           ],
         },
         {
@@ -339,7 +337,7 @@ window.DATA.research = {
           title: { zh: "教學資源", en: "Teaching resources" },
           type: "links",
           items: [
-            { title: { zh: "fsQCA 入門講義", en: "fsQCA primer" }, desc: { zh: "校準、真值表與一致性／涵蓋率的入門說明。（連結待補充）", en: "Calibration, truth tables, consistency & coverage. (Link to be added.)" }, url: "" },
+            { title: { zh: "fsQCA 入門講義", en: "fsQCA primer" }, desc: { zh: "校準、真值表與一致性／涵蓋率的入門說明。", en: "An introduction to calibration, truth tables, consistency, and coverage." }, url: "" },
           ],
         },
         {
@@ -347,8 +345,8 @@ window.DATA.research = {
           title: { zh: "軟體與工具連結", en: "Software & tools" },
           type: "links",
           items: [
-            { title: { zh: "fs/QCA 軟體", en: "fs/QCA software" }, desc: { zh: "常用的 fsQCA 分析軟體。（官方連結待補充）", en: "Common fsQCA analysis software. (Official link to be added.)" }, url: "" },
-            { title: { zh: "R 套件（QCA / SetMethods）", en: "R packages (QCA / SetMethods)" }, desc: { zh: "以 R 進行 QCA 分析的套件。（連結待補充）", en: "R packages for QCA analysis. (Link to be added.)" }, url: "" },
+            { title: { zh: "fs/QCA 軟體", en: "fs/QCA software" }, desc: { zh: "由 Charles Ragin 團隊發布、最常被使用的 fsQCA 分析桌面軟體。", en: "The most widely used desktop software for fsQCA analysis, released by Charles Ragin's team." }, url: "https://sites.socsci.uci.edu/~cragin/fsQCA/software.shtml" },
+            { title: { zh: "R 套件（QCA / SetMethods）", en: "R packages (QCA / SetMethods)" }, desc: { zh: "以 R 進行 QCA 分析的常用套件，支援校準、真值表分析與穩健性檢驗。", en: "Common R packages for QCA analysis, supporting calibration, truth-table analysis, and robustness checks." }, url: "https://cran.r-project.org/package=QCA" },
           ],
         },
         {

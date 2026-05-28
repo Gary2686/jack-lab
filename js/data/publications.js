@@ -376,10 +376,10 @@ window.DATA.publications = {
       id: "p-sample-1", type: "project", year: 2025, topics: ["ai"], featured: true, draft: true,
       title: { zh: "（範例）AI 賦能數位轉型之研究", en: "(Sample) AI-Enabled Digital Transformation" },
       authors: { zh: "主持人：徐士傑", en: "PI: Shih-Chieh Hsu" },
-      venue: { zh: "國科會 / 產學合作（補助單位待補充）", en: "NSTC / Industry (funder TBA)" },
-      detail: { zh: "計畫期間：待補充", en: "Period: TBA" },
+      venue: { zh: "國科會 / 產學合作", en: "NSTC / Industry" },
+      detail: { zh: "", en: "" },
       doi: "", url: "",
-      abstract: { zh: "計畫摘要待補充。", en: "Project abstract to be added." },
+      abstract: { zh: "探討企業在數位轉型過程中導入 AI 的關鍵驅動因子、組織配適與績效效果。", en: "Examining key drivers, organizational fit, and performance effects of AI adoption during enterprise digital transformation." },
     },
     {
       id: "t-sample-1", type: "thesis", year: 2024, topics: ["neuro"], featured: false, draft: true,

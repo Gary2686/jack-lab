@@ -14,7 +14,7 @@ window.DATA.site = {
       zh: "國立中山大學 資訊管理學系",
       en: "Department of Information Management, National Sun Yat-sen University",
     },
-    orgShort: { zh: "中山大學 資管系", en: "NSYSU · Dept. of IM" },
+    orgShort: { zh: "國立中山大學 資管系", en: "NSYSU · Dept. of IM" },
   },
 
   /* ---- 導覽列 / Navigation（順序即顯示順序，可增刪）---- */
@@ -51,9 +51,9 @@ window.DATA.site = {
     bio: { zh: "學術簡介", en: "Biography" },
     currentPosition: { zh: "目前動向", en: "Currently" },
     viewSlides: { zh: "檢視教學投影片", en: "View teaching slides" },
-    slidesComingSoon: { zh: "教學投影片連結待補充", en: "Slides link coming soon" },
+    slidesComingSoon: { zh: "教學投影片", en: "Teaching slides" },
     pinned: { zh: "置頂", en: "Pinned" },
-    comingSoon: { zh: "內容陸續更新中", en: "Content coming soon" },
+    comingSoon: { zh: "持續更新", en: "Ongoing updates" },
     relatedPublications: { zh: "相關發表", en: "Related publications" },
     backToResearch: { zh: "返回研究領域", en: "Back to Research" },
     backToTools: { zh: "返回分析工具", en: "Back to tools" },
@@ -63,7 +63,7 @@ window.DATA.site = {
     definition: { zh: "方法簡介", en: "Overview" },
     references: { zh: "延伸閱讀", en: "Further reading" },
     photos: { zh: "活動照片", en: "Photos" },
-    placeholderPhoto: { zh: "照片待補", en: "Photo coming soon" },
+    placeholderPhoto: { zh: "Jack Lab", en: "Jack Lab" },
   },
 
   /* ---- 首頁 / Home ---- */
@@ -209,7 +209,7 @@ window.DATA.site = {
   /* ---- 頁尾 / Footer ---- */
   footer: {
     copyright: {
-      zh: "版權所有 中山大學資管系徐傑克實驗室 (Jack Lab)",
+      zh: "版權所有 國立中山大學資管系徐傑克實驗室 (Jack Lab)",
       en: "Copyright © Jack Lab, Department of Information Management, NSYSU. All rights reserved.",
     },
     contactTitle: { zh: "聯絡我們", en: "Contact" },
@@ -218,9 +218,9 @@ window.DATA.site = {
       en: "No. 70 Lien-hai Rd., Kaohsiung 804, Taiwan · Dept. of Information Management, NSYSU",
     },
     quickLinksTitle: { zh: "快速連結", en: "Quick links" },
-    note: {
-      zh: "本網站採資料與元件分離架構，內容可持續更新與擴充。",
-      en: "Built with a data-driven, component-based architecture for easy long-term updates.",
+    tagline: {
+      zh: "資訊管理 × AI × 神經科學 × 數位轉型",
+      en: "Information Management × AI × Neuroscience × Digital Transformation",
     },
   },
 };

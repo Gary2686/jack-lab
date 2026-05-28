@@ -35,6 +35,14 @@ window.JL = window.JL || {};
         <div className="absolute inset-0 -z-10 hero-grid opacity-60" />
         <div className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl" />
         {visual ? <JL.ParticleField className="pointer-events-none opacity-30" /> : null}
+        {/* 漂浮的 AI / 腦 / 眼 / 機器人 圖示星座（裝飾，不可點擊）*/}
+        <JL.IconConstellation className="opacity-70" />
+        {/* 眼動熱區圖薄背景（neuro 視覺主題時更強）*/}
+        {visual === "mind" || visual === "robot" ? (
+          <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-multiply">
+            <JL.GazeHeatmap />
+          </div>
+        ) : null}
         {visual ? (
           <div className="hidden lg:block absolute right-4 xl:right-14 top-16 w-[280px] origin-top-right" style={{ transform: "scale(0.55)" }}>
             <JL.SignalPanel mode={visual} />
@@ -125,6 +133,7 @@ window.JL = window.JL || {};
           <div className="absolute top-10 -right-24 -z-10 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl animate-floaty-slow" />
           <div className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl animate-floaty" />
           <JL.ParticleField className="pointer-events-none opacity-70" />
+          <JL.IconConstellation className="opacity-60" />
           <div className="hidden xl:block absolute right-2 2xl:right-12 top-1/2 -translate-y-1/2 w-[300px] pointer-events-none">
             <JL.RobotMascot />
           </div>
@@ -378,9 +387,11 @@ window.JL = window.JL || {};
           <Avatar name={t(m.name)} photo={m.photo} size={72} />
           <div className="min-w-0">
             <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
-            <div className="mt-1 text-xs text-slate-500 flex items-start gap-1">
-              <Icon name="briefcase" size={13} className="mt-0.5 text-slate-300" />{t(m.currentPosition)}
-            </div>
+            {m.currentPosition && t(m.currentPosition) ? (
+              <div className="mt-1 text-xs text-slate-500 flex items-start gap-1">
+                <Icon name="briefcase" size={13} className="mt-0.5 text-slate-300" />{t(m.currentPosition)}
+              </div>
+            ) : null}
             {m.email ? <a href={"mailto:" + m.email} className="mt-1 inline-block text-xs text-brand-600 hover:underline">{m.email}</a> : null}
           </div>
         </Card>
@@ -579,7 +590,7 @@ window.JL = window.JL || {};
                   <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">{t(it.desc)}</p>
                   {hasUrl
                     ? <a href={it.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:underline">{t(window.DATA.site.ui.readMore)}<Icon name="external" size={14} /></a>
-                    : <span className="mt-3 inline-block text-xs text-slate-400">{ctx.lang === "zh" ? "連結待補充" : "Link coming soon"}</span>}
+                    : null}
                 </Card>
               );
             })}

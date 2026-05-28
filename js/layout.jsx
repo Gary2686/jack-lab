@@ -120,7 +120,9 @@ window.JL = window.JL || {};
                 <div className="text-xs text-slate-400">{ctx.t(site.brand.org)}</div>
               </div>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">{ctx.t(site.footer.note)}</p>
+            {site.footer.tagline ? (
+              <p className="text-sm text-slate-400 leading-relaxed">{ctx.t(site.footer.tagline)}</p>
+            ) : null}
           </div>
 
           <div>
@@ -141,7 +143,7 @@ window.JL = window.JL || {};
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wide">{ctx.t(site.footer.contactTitle)}</h3>
             <p className="text-sm text-slate-400 leading-relaxed flex items-start gap-2">
               <Icon name="pin" size={18} className="mt-0.5 shrink-0 text-slate-500" />
-              <span>{ctx.t(site.footer.address)}</span>
+              <span style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>{ctx.t(site.footer.address)}</span>
             </p>
           </div>
         </div>
