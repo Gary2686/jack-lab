@@ -29,7 +29,7 @@ window.DATA.members = {
           id: "hsu-shih-chieh",
           name: { zh: "徐士傑", en: "Shih-Chieh Hsu" },
           title: { zh: "教授 兼 系主任", en: "Professor & Department Chair" },
-          photo: "",
+          photo: "assets/members/hsu-shih-chieh.jpg",
           interests: {
             zh: ["人工智慧與數位轉型", "神經科學與人機互動", "電子商務與數位服務", "團隊與專案管理", "哈佛教學個案", "fsQCA"],
             en: ["AI & Digital Transformation", "Neuroscience & HCI", "E-Commerce & Digital Services", "Team & Project Management", "Harvard Teaching Cases", "fsQCA"],
@@ -53,7 +53,7 @@ window.DATA.members = {
           id: "jacob-cheng",
           name: { zh: "鄭鈞", en: "Jacob Cheng" },
           title: { zh: "博士後研究員", en: "Postdoctoral Researcher" },
-          photo: "",
+          photo: "assets/members/jacob-cheng.jpg",
           interests: {
             zh: ["人工智慧應用", "數位轉型", "資訊系統"],
             en: ["AI applications", "Digital transformation", "Information systems"],
@@ -77,7 +77,7 @@ window.DATA.members = {
           id: "gary-yeh",
           name: { zh: "葉欲禾", en: "Yeh Yu-Ho (Gary)" },
           title: { zh: "博士候選人", en: "Ph.D. Candidate" },
-          photo: "",
+          photo: "assets/members/gary-yeh.jpg",
           interests: {
             zh: ["神經科學與人機互動", "使用者行為", "fsQCA"],
             en: ["Neuroscience & HCI", "User behavior", "fsQCA"],
@@ -112,7 +112,7 @@ window.DATA.members = {
       layout: "alumni",
       label: { zh: "畢業成員", en: "Alumni" },
       members: [
-        { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Guan-Hong" }, photo: "", email: "zxc1030123@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
+        { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Guan-Hong" }, photo: "assets/members/liu-kuan-hung.jpg", email: "zxc1030123@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "assets/members/chang-chan-chia.jpg", email: "alex20010122@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "chien-yun-ting", name: { zh: "簡筠庭", en: "Chien Yun-Ting" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
