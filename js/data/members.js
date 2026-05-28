@@ -113,7 +113,7 @@ window.DATA.members = {
       label: { zh: "畢業成員", en: "Alumni" },
       members: [
         { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Guan-Hong" }, photo: "assets/members/liu-kuan-hung.jpg", email: "zxc1030123@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
-        { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
+        { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "assets/members/huang-shu-han.jpg", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "assets/members/chang-chan-chia.jpg", email: "alex20010122@gmail.com", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "chien-yun-ting", name: { zh: "簡筠庭", en: "Chien Yun-Ting" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
         { id: "yang-chu-chun", name: { zh: "楊筑鈞", en: "Yang Chu-Chun" }, photo: "", email: "", currentPosition: { zh: "目前動向待補充", en: "Current position TBA" } },
