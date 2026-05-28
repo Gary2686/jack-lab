@@ -82,9 +82,19 @@ window.JL = window.JL || {};
   function toolColor(key) { return TOOL_COLORS[key] || TOOL_COLORS.blue; }
 
   /* ------------------------------ Avatar ------------------------------- */
+  // 支援 position prop：未指定 → 預設 center（瀏覽器原生行為）；
+  // "top"/"bottom"/"<N>%"/"<N>% <N>%" → 設定 object-position，讓肖像照不會切到頭
   function Avatar(props) {
     const size = props.size || 96;
     const style = { width: size, height: size };
+    if (props.position) {
+      const p = props.position;
+      style.objectPosition = p === "top" ? "50% 0%"
+                           : p === "bottom" ? "50% 100%"
+                           : p === "center" ? "50% 50%"
+                           : typeof p === "string" && /^\d+%$/.test(p) ? "50% " + p
+                           : p;
+    }
     if (props.photo) {
       return <img src={props.photo} alt={props.name || ""} style={style}
         className={cx("shrink-0 rounded-full object-cover ring-4 ring-white shadow-md", props.className)} />;
@@ -411,75 +421,99 @@ window.JL = window.JL || {};
   JL.LabFeatureRibbon = LabFeatureRibbon;
 
   /* -------- PetGarden（每位成員專屬 AI 寵物，互相拜訪後回家） -------- */
-  const PET_GRAD = '<defs><linearGradient id="petG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a93d4"/><stop offset="1" stop-color="#2f5ea3"/></linearGradient></defs>';
+  // 每種寵物使用獨立漸層 id 與專屬色系
+  function petGrad(id, c1, c2) {
+    return '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + c1 + '"/><stop offset="1" stop-color="' + c2 + '"/></linearGradient></defs>';
+  }
 
   const PET_SVG = {
-    bot: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
+    // 機器人 — 藍 / navy
+    bot: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_bot", "#5a93d4", "#2f5ea3") +
       '<line x1="22" y1="6" x2="22" y2="12" stroke="#272555" stroke-width="2"/>' +
       '<circle cx="22" cy="5" r="2.5" fill="#3b76c0"><animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/></circle>' +
-      '<rect x="10" y="12" width="24" height="22" rx="6" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+      '<rect x="10" y="12" width="24" height="22" rx="6" fill="url(#petG_bot)" stroke="#1f3556" stroke-width="1.5"/>' +
       '<rect x="14" y="18" width="6" height="6" rx="1.5" fill="#bfe3ff"/>' +
       '<rect x="24" y="18" width="6" height="6" rx="1.5" fill="#bfe3ff"/>' +
-      '<rect x="16" y="28" width="12" height="2.5" rx="1" fill="#bfe3ff" opacity="0.7"/>' +
+      '<rect x="16" y="28" width="12" height="2.5" rx="1" fill="#bfe3ff" opacity="0.8"/>' +
       '<rect x="8" y="20" width="3" height="6" rx="1.5" fill="#88b4e3"/>' +
       '<rect x="33" y="20" width="3" height="6" rx="1.5" fill="#88b4e3"/></svg>',
 
-    cat: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<path d="M10 14 L13 6 L17 12 Z" fill="#3b76c0"/>' +
-      '<path d="M34 14 L31 6 L27 12 Z" fill="#3b76c0"/>' +
-      '<circle cx="22" cy="24" r="13" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+    // 貓 — 焦糖橘 / 焦糖咖啡
+    cat: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_cat", "#f6a85b", "#b66b1a") +
+      '<path d="M10 14 L13 6 L17 12 Z" fill="#b66b1a"/>' +
+      '<path d="M11 12 L13 8 L15 12 Z" fill="#fbcfac"/>' +
+      '<path d="M34 14 L31 6 L27 12 Z" fill="#b66b1a"/>' +
+      '<path d="M33 12 L31 8 L29 12 Z" fill="#fbcfac"/>' +
+      '<circle cx="22" cy="24" r="13" fill="url(#petG_cat)" stroke="#5a3a14" stroke-width="1.5"/>' +
       '<circle cx="17" cy="22" r="1.8" fill="#1f3556"/>' +
       '<circle cx="27" cy="22" r="1.8" fill="#1f3556"/>' +
-      '<path d="M19 27 Q22 29 25 27" stroke="#1f3556" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
-      '<path d="M6 23 L13 23 M6 26 L13 25" stroke="#88b4e3" stroke-width="0.8" opacity="0.6"/>' +
-      '<path d="M38 23 L31 23 M38 26 L31 25" stroke="#88b4e3" stroke-width="0.8" opacity="0.6"/></svg>',
+      '<path d="M22 26 L20 27 L24 27 Z" fill="#5a3a14"/>' +
+      '<path d="M22 27 L20 29 M22 27 L24 29" stroke="#5a3a14" stroke-width="1.2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M6 23 L13 23 M6 26 L13 25" stroke="#5a3a14" stroke-width="0.8" opacity="0.55"/>' +
+      '<path d="M38 23 L31 23 M38 26 L31 25" stroke="#5a3a14" stroke-width="0.8" opacity="0.55"/></svg>',
 
-    fox: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<path d="M22 38 Q9 36 8 22 Q8 12 14 9 L18 14 Q22 12 26 14 L30 9 Q36 12 36 22 Q35 36 22 38 Z" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<path d="M22 24 L17 28 L27 28 Z" fill="#bfe3ff" opacity="0.7"/>' +
+    // 狐狸 — 鏽橘 / 暗紅
+    fox: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_fox", "#ee7a3a", "#b13d10") +
+      '<path d="M22 38 Q9 36 8 22 Q8 12 14 9 L18 14 Q22 12 26 14 L30 9 Q36 12 36 22 Q35 36 22 38 Z" fill="url(#petG_fox)" stroke="#7d2a08" stroke-width="1.5"/>' +
+      '<path d="M22 24 L17 30 L27 30 Z" fill="#ffffff" opacity="0.85"/>' +
       '<circle cx="17" cy="22" r="2" fill="#1f3556"/>' +
       '<circle cx="27" cy="22" r="2" fill="#1f3556"/>' +
+      '<circle cx="17.4" cy="21.5" r="0.6" fill="#fff"/>' +
+      '<circle cx="27.4" cy="21.5" r="0.6" fill="#fff"/>' +
       '<ellipse cx="22" cy="29" rx="1.8" ry="1.2" fill="#1f3556"/></svg>',
 
-    owl: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<ellipse cx="22" cy="25" rx="14" ry="14" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<circle cx="16" cy="22" r="5" fill="#bfe3ff"/>' +
-      '<circle cx="28" cy="22" r="5" fill="#bfe3ff"/>' +
-      '<circle cx="16" cy="22" r="2" fill="#1f3556"/>' +
-      '<circle cx="28" cy="22" r="2" fill="#1f3556"/>' +
-      '<path d="M22 26 L19 29 L25 29 Z" fill="#f59e0b"/>' +
-      '<path d="M9 13 L13 17 M35 13 L31 17" stroke="#1f3556" stroke-width="1.5"/></svg>',
+    // 貓頭鷹 — 棕色 / 奶白胸毛
+    owl: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_owl", "#a17a3e", "#4f3a17") +
+      '<ellipse cx="22" cy="25" rx="14" ry="14" fill="url(#petG_owl)" stroke="#3a2a10" stroke-width="1.5"/>' +
+      '<ellipse cx="22" cy="29" rx="8" ry="9" fill="#fff5d6" opacity="0.85"/>' +
+      '<circle cx="16" cy="22" r="5" fill="#fff5d6"/>' +
+      '<circle cx="28" cy="22" r="5" fill="#fff5d6"/>' +
+      '<circle cx="16" cy="22" r="2.2" fill="#1f3556"/>' +
+      '<circle cx="28" cy="22" r="2.2" fill="#1f3556"/>' +
+      '<path d="M22 26 L19 29 L25 29 Z" fill="#f59e0b" stroke="#a06b00" stroke-width="0.4"/>' +
+      '<path d="M9 13 L13 17 M35 13 L31 17" stroke="#3a2a10" stroke-width="1.5"/></svg>',
 
-    frog: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<ellipse cx="22" cy="27" rx="15" ry="11" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<circle cx="14" cy="14" r="5" fill="#bfe3ff" stroke="#1f3556" stroke-width="1.2"/>' +
-      '<circle cx="30" cy="14" r="5" fill="#bfe3ff" stroke="#1f3556" stroke-width="1.2"/>' +
-      '<circle cx="14" cy="14" r="2" fill="#1f3556"/>' +
-      '<circle cx="30" cy="14" r="2" fill="#1f3556"/>' +
-      '<path d="M14 28 Q22 34 30 28" stroke="#1f3556" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
+    // 青蛙 — 草綠 / 深綠
+    frog: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_frog", "#7fd47a", "#2f7f3a") +
+      '<ellipse cx="22" cy="27" rx="15" ry="11" fill="url(#petG_frog)" stroke="#1f5c25" stroke-width="1.5"/>' +
+      '<ellipse cx="22" cy="30" rx="10" ry="6" fill="#d5f0d2" opacity="0.85"/>' +
+      '<circle cx="14" cy="14" r="5" fill="#7fd47a" stroke="#1f5c25" stroke-width="1.2"/>' +
+      '<circle cx="30" cy="14" r="5" fill="#7fd47a" stroke="#1f5c25" stroke-width="1.2"/>' +
+      '<circle cx="14" cy="13" r="3" fill="#ffffff"/>' +
+      '<circle cx="30" cy="13" r="3" fill="#ffffff"/>' +
+      '<circle cx="14" cy="14" r="1.8" fill="#1f3556"/>' +
+      '<circle cx="30" cy="14" r="1.8" fill="#1f3556"/>' +
+      '<path d="M14 28 Q22 34 30 28" stroke="#1f5c25" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>',
 
-    bird: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<ellipse cx="23" cy="26" rx="13" ry="9" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<circle cx="22" cy="15" r="7" fill="#5a93d4" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<circle cx="20" cy="14" r="1.4" fill="#1f3556"/>' +
-      '<path d="M27 14 L31 15 L27 16 Z" fill="#f59e0b"/>' +
-      '<path d="M10 25 Q14 19 18 25" stroke="#1f3556" stroke-width="1.4" fill="#88b4e3"><animate attributeName="d" values="M10 25 Q14 19 18 25;M10 25 Q14 22 18 25;M10 25 Q14 19 18 25" dur="0.9s" repeatCount="indefinite"/></path></svg>',
+    // 小鳥 — 天藍 / 黃喙
+    bird: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_bird", "#7cc5ec", "#1a6b9a") +
+      '<ellipse cx="23" cy="26" rx="13" ry="9" fill="url(#petG_bird)" stroke="#0d4d70" stroke-width="1.5"/>' +
+      '<ellipse cx="23" cy="28" rx="6" ry="5" fill="#ffffff" opacity="0.45"/>' +
+      '<circle cx="22" cy="15" r="7" fill="#7cc5ec" stroke="#0d4d70" stroke-width="1.5"/>' +
+      '<circle cx="20" cy="14" r="1.6" fill="#1f3556"/>' +
+      '<circle cx="20.4" cy="13.6" r="0.55" fill="#fff"/>' +
+      '<path d="M27 14 L32 15 L27 16 Z" fill="#ffd45e" stroke="#a06d00" stroke-width="0.5"/>' +
+      '<path d="M10 25 Q14 19 18 25" stroke="#0d4d70" stroke-width="1.4" fill="#5aaad6"><animate attributeName="d" values="M10 25 Q14 19 18 25;M10 25 Q14 22 18 25;M10 25 Q14 19 18 25" dur="0.9s" repeatCount="indefinite"/></path></svg>',
 
-    fish: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<ellipse cx="20" cy="22" rx="14" ry="8" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
-      '<path d="M34 22 L40 14 L40 30 Z" fill="#3b76c0" stroke="#1f3556" stroke-width="1.2"/>' +
+    // 魚 — 青綠 / 橘尾
+    fish: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_fish", "#5fd0d4", "#1d6e72") +
+      '<ellipse cx="20" cy="22" rx="14" ry="8" fill="url(#petG_fish)" stroke="#0d4a4c" stroke-width="1.5"/>' +
+      '<path d="M34 22 L40 14 L40 30 Z" fill="#ffa850" stroke="#a8600e" stroke-width="1.2"/>' +
+      '<path d="M16 14 L20 8 L24 14 Z" fill="#ffa850" stroke="#a8600e" stroke-width="0.8"/>' +
+      '<ellipse cx="20" cy="25" rx="9" ry="3" fill="#ffffff" opacity="0.4"/>' +
       '<circle cx="14" cy="20" r="1.8" fill="#1f3556"/>' +
-      '<circle cx="14" cy="20" r="0.7" fill="#fff"/>' +
-      '<path d="M22 18 Q26 14 30 18" stroke="#1f3556" stroke-width="0.8" fill="none" opacity="0.6"/>' +
+      '<circle cx="14.4" cy="19.6" r="0.7" fill="#fff"/>' +
+      '<path d="M22 18 Q26 14 30 18" stroke="#0d4a4c" stroke-width="0.8" fill="none" opacity="0.6"/>' +
       '<circle cx="6" cy="14" r="1" fill="#bfe3ff"><animate attributeName="cy" values="14;10;14" dur="2.4s" repeatCount="indefinite"/></circle></svg>',
 
-    ghost: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + PET_GRAD +
-      '<path d="M22 6 Q35 6 35 22 L35 36 L31 32 L27 36 L23 32 L19 36 L15 32 L9 36 L9 22 Q9 6 22 6 Z" fill="url(#petG)" stroke="#1f3556" stroke-width="1.5"/>' +
+    // 幽靈 — 淡紫 / 深紫
+    ghost: '<svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">' + petGrad("petG_ghost", "#c9b6ed", "#6d50ac") +
+      '<path d="M22 6 Q35 6 35 22 L35 36 L31 32 L27 36 L23 32 L19 36 L15 32 L9 36 L9 22 Q9 6 22 6 Z" fill="url(#petG_ghost)" stroke="#4a2f8a" stroke-width="1.5"/>' +
       '<circle cx="17" cy="20" r="2.4" fill="#1f3556"/>' +
       '<circle cx="27" cy="20" r="2.4" fill="#1f3556"/>' +
-      '<circle cx="17" cy="19" r="0.8" fill="#bfe3ff"/>' +
-      '<circle cx="27" cy="19" r="0.8" fill="#bfe3ff"/>' +
-      '<ellipse cx="22" cy="25" rx="2.5" ry="1.5" fill="#1f3556" opacity="0.6"/></svg>',
+      '<circle cx="17" cy="19" r="0.8" fill="#ffffff"/>' +
+      '<circle cx="27" cy="19" r="0.8" fill="#ffffff"/>' +
+      '<ellipse cx="22" cy="25" rx="2.5" ry="1.5" fill="#1f3556" opacity="0.55"/></svg>',
   };
 
   const PET_KINDS = ["bot", "cat", "fox", "owl", "frog", "bird", "fish", "ghost"];

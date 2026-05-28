@@ -335,7 +335,7 @@ window.JL = window.JL || {};
             <Reveal>
               <Card className="p-8 max-w-3xl mx-auto">
                 <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                  <Avatar name={t(advisor.name)} photo={advisor.photo} size={172} />
+                  <Avatar name={t(advisor.name)} photo={advisor.photo} size={172} position={advisor.photoPosition || "top"} />
                   <div className="text-center sm:text-left">
                     <div className="text-xl font-bold text-navy">{t(advisor.name)} <span className="text-slate-400 text-base font-medium">{advisor.name.en}</span></div>
                     <Pill className="mt-2 bg-brand-50 text-brand-700">{t(advisor.title)}</Pill>
@@ -511,7 +511,7 @@ window.JL = window.JL || {};
                 <button onClick={function () { setActive(null); }} className="absolute top-3 right-3 grid place-items-center h-9 w-9 rounded-full bg-white/20 text-white hover:bg-white/30" aria-label="Close"><Icon name="close" size={18} /></button>
               </div>
               <div className="px-6 pb-6 -mt-12">
-                <Avatar name={t(active.name)} photo={active.photo} size={140} />
+                <Avatar name={t(active.name)} photo={active.photo} size={140} position={active.photoPosition || "top"} />
                 <div className="mt-3 text-xl font-bold text-navy">{t(active.name)} <span className="text-base font-medium text-slate-400">{active.name.en}</span></div>
                 <Pill className="mt-1.5 bg-brand-50 text-brand-700">{t(active.title)}</Pill>
                 {active.interests ? (
