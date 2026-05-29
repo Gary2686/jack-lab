@@ -53,7 +53,12 @@ window.DATA.activities = {
       },
       instructor: "hsu-shih-chieh",
       projectMembers: ["gary-yeh", "liu-kuan-hung", "chang-chan-chia", "huang-shu-han"],
-      photos: [],
+      photos: [
+        "assets/activities/strategic-innovation-2025/1.jpg",
+        "assets/activities/strategic-innovation-2025/2.jpg",
+        "assets/activities/strategic-innovation-2025/3.jpg",
+        "assets/activities/strategic-innovation-2025/4.jpg",
+      ],
     },
     {
       id: "act-fanshikang-2025", date: "2025-09-15",
