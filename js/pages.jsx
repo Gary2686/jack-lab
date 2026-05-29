@@ -1029,6 +1029,63 @@ window.JL = window.JL || {};
     );
   }
 
+  /* ============== PROJECT CARD (shared: activities & consulting) ============== */
+  // Single card render used by both ActivitiesPage and ConsultingPage.
+  function ProjectCard(props) {
+    const ctx = JL.useLang(); const t = ctx.t;
+    const a = props.item;
+    const photos = a.photos && a.photos.length ? a.photos : [null, null, null];
+    return (
+      <Reveal delay={props.delay || 0}>
+        <Card className="overflow-hidden jl-card-tech" hover={false}>
+          <div className="grid md:grid-cols-5">
+            <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
+              {photos.slice(0, 6).map(function (src, i) {
+                return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className="aspect-[4/3] rounded-lg" icon="activity" />;
+              })}
+            </div>
+            <div className="md:col-span-3 p-6">
+              <div className="flex items-center gap-2 text-xs text-slate-400 mb-2">
+                <Icon name="calendar" size={13} />{a.date}
+                {a.location ? <React.Fragment><span>·</span><Icon name="pin" size={13} />{t(a.location)}</React.Fragment> : null}
+              </div>
+              <h3 className="text-lg font-bold text-navy">{t(a.title)}</h3>
+              {a.tags && a.tags.length ? (
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {a.tags.map(function (tg, i) { return <span key={i} className="rounded-full bg-brand-50 text-brand-600 px-2.5 py-0.5 text-xs">{t(tg)}</span>; })}
+                </div>
+              ) : null}
+              <p className="mt-3 text-slate-600 leading-relaxed whitespace-pre-line">{t(a.description)}</p>
+              {a.instructor || (a.projectMembers && a.projectMembers.length) ? (
+                <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-sm">
+                  {a.instructor ? (
+                    <div>
+                      <span className="text-slate-400">{ctx.lang === "zh" ? "授課教師：" : "Instructor: "}</span>
+                      <MemberLink id={a.instructor} />
+                    </div>
+                  ) : null}
+                  {a.projectMembers && a.projectMembers.length ? (
+                    <div>
+                      <span className="text-slate-400">{ctx.lang === "zh" ? "專案成員：" : "Project members: "}</span>
+                      {a.projectMembers.map(function (mid, i) {
+                        return (
+                          <React.Fragment key={mid}>
+                            {i > 0 ? <span className="text-slate-400">{ctx.lang === "zh" ? "、" : ", "}</span> : null}
+                            <MemberLink id={mid} />
+                          </React.Fragment>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </Card>
+      </Reveal>
+    );
+  }
+
   /* ============================ ACTIVITIES ============================ */
   function ActivitiesPage() {
     const ctx = JL.useLang(); const t = ctx.t;
@@ -1044,58 +1101,37 @@ window.JL = window.JL || {};
               icons={["users", "flask", "quote", "trendingUp"]}
             />
           </Reveal>
-          {items.map(function (a, idx) {
-            const photos = a.photos && a.photos.length ? a.photos : [null, null, null];
-            return (
-              <Reveal key={a.id} delay={(idx % 4) * 60}>
-                <Card className="overflow-hidden jl-card-tech" hover={false}>
-                  <div className="grid md:grid-cols-5">
-                    <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
-                      {photos.slice(0, 6).map(function (src, i) {
-                        return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className="aspect-[4/3] rounded-lg" icon="activity" />;
-                      })}
-                    </div>
-                    <div className="md:col-span-3 p-6">
-                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-2">
-                        <Icon name="calendar" size={13} />{a.date}
-                        {a.location ? <React.Fragment><span>·</span><Icon name="pin" size={13} />{t(a.location)}</React.Fragment> : null}
-                      </div>
-                      <h3 className="text-lg font-bold text-navy">{t(a.title)}</h3>
-                      {a.tags && a.tags.length ? (
-                        <div className="mt-2 flex flex-wrap gap-1.5">
-                          {a.tags.map(function (tg, i) { return <span key={i} className="rounded-full bg-brand-50 text-brand-600 px-2.5 py-0.5 text-xs">{t(tg)}</span>; })}
-                        </div>
-                      ) : null}
-                      <p className="mt-3 text-slate-600 leading-relaxed whitespace-pre-line">{t(a.description)}</p>
-                      {a.instructor || (a.projectMembers && a.projectMembers.length) ? (
-                        <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-sm">
-                          {a.instructor ? (
-                            <div>
-                              <span className="text-slate-400">{ctx.lang === "zh" ? "授課教師：" : "Instructor: "}</span>
-                              <MemberLink id={a.instructor} />
-                            </div>
-                          ) : null}
-                          {a.projectMembers && a.projectMembers.length ? (
-                            <div>
-                              <span className="text-slate-400">{ctx.lang === "zh" ? "專案成員：" : "Project members: "}</span>
-                              {a.projectMembers.map(function (mid, i) {
-                                return (
-                                  <React.Fragment key={mid}>
-                                    {i > 0 ? <span className="text-slate-400">{ctx.lang === "zh" ? "、" : ", "}</span> : null}
-                                    <MemberLink id={mid} />
-                                  </React.Fragment>
-                                );
-                              })}
-                            </div>
-                          ) : null}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-                </Card>
-              </Reveal>
-            );
-          })}
+          {items.length ? items.map(function (a, idx) {
+            return <ProjectCard key={a.id} item={a} delay={(idx % 4) * 60} />;
+          }) : (
+            <div className="text-center text-slate-400 py-12">{ctx.lang === "zh" ? "活動紀錄陸續更新中。" : "Activity logs coming soon."}</div>
+          )}
+        </Container>
+      </div>
+    );
+  }
+
+  /* ============================ CONSULTING ============================ */
+  function ConsultingPage() {
+    const ctx = JL.useLang(); const t = ctx.t;
+    const site = window.DATA.site;
+    const data = window.DATA.consulting || { items: [] };
+    const items = (data.items || []).filter(function (a) { return !a.draft; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    return (
+      <div>
+        <PageHero visual="robot" eyebrow={t(site.pages.consulting.subtitle)} title={t(site.pages.consulting.title)} subtitle={t(site.pages.consulting.subtitle)} />
+        <Container className="py-12 space-y-10">
+          <Reveal className="mb-2">
+            <JL.InteractiveFlow
+              labels={ctx.lang === "zh" ? ["需求釐清", "方法引導", "共同產出", "落地實踐"] : ["Scope", "Method", "Co-create", "Deliver"]}
+              icons={["target", "diagram", "users", "trendingUp"]}
+            />
+          </Reveal>
+          {items.length ? items.map(function (a, idx) {
+            return <ProjectCard key={a.id} item={a} delay={(idx % 4) * 60} />;
+          }) : (
+            <div className="text-center text-slate-400 py-12">{ctx.lang === "zh" ? "顧問專案陸續上架中。" : "Consulting projects coming soon."}</div>
+          )}
         </Container>
       </div>
     );
@@ -1414,6 +1450,7 @@ window.JL = window.JL || {};
     awards: AwardsPage,
     news: NewsPage,
     activities: ActivitiesPage,
+    consulting: ConsultingPage,
     tools: ToolDetailPage,
     notFound: NotFoundPage,
   };

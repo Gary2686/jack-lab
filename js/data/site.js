@@ -26,6 +26,7 @@ window.DATA.site = {
     { id: "tools", path: "#/tools", label: { zh: "分析工具", en: "Tools" } },
     { id: "publications", path: "#/publications", label: { zh: "學術發表", en: "Publications" } },
     { id: "awards", path: "#/awards", label: { zh: "榮譽榜", en: "Honors" } },
+    { id: "consulting", path: "#/consulting", label: { zh: "顧問服務", en: "Consulting" } },
     { id: "news", path: "#/news", label: { zh: "最新消息", en: "News" } },
     { id: "activities", path: "#/activities", label: { zh: "活動參與", en: "Activities" } },
   ],
@@ -195,6 +196,10 @@ window.DATA.site = {
     awards: {
       title: { zh: "榮譽榜", en: "Honors & Awards" },
       subtitle: { zh: "獎項、競賽、榮譽與實驗室里程碑", en: "Awards, competitions, honors and lab milestones" },
+    },
+    consulting: {
+      title: { zh: "顧問服務", en: "Consulting Services" },
+      subtitle: { zh: "產學合作、企業輔導、工作坊與應用開發專案", en: "Industry collaborations, corporate coaching, workshops, and applied projects" },
     },
     news: {
       title: { zh: "最新消息與趨勢資訊", en: "News & Trends" },
