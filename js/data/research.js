@@ -128,6 +128,9 @@ window.DATA.research = {
           sections: [
             { id: "topics", title: { zh: "研究主題", en: "Topics" }, type: "tags", items: [ { zh: "視覺注意力", en: "Visual attention" }, { zh: "介面設計", en: "Interface design" }, { zh: "資訊搜尋", en: "Information search" }, { zh: "使用者體驗", en: "UX" }, { zh: "決策行為", en: "Decision behavior" } ] },
             { id: "cases", title: { zh: "研究案例", en: "Studies" }, type: "cards", items: [ { title: { zh: "介面佈局與視覺搜尋", en: "Layout and visual search" }, desc: { zh: "以注視軌跡分析不同版面配置對使用者搜尋效率與決策路徑的影響。", en: "Analyzing gaze paths across layouts to understand search efficiency and decision pathways." } } ] },
+            { id: "teaching", title: { zh: "教材參考", en: "Teaching Materials" }, type: "links", items: [
+              { title: { zh: "眼動追蹤研究教材", en: "Eye-Tracking Research Textbook" }, desc: { zh: "Jack Lab 製作的眼動追蹤研究教材，涵蓋實驗設計、設備操作、資料分析與研究案例。", en: "Jack Lab's eye-tracking research textbook covering experimental design, equipment operation, data analysis, and research cases." }, url: "https://gary2686.github.io/eye-tracking-textbook/" },
+            ] },
           ],
         },
       ],

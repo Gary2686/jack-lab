@@ -1051,8 +1051,8 @@ window.JL = window.JL || {};
                 <Card className="overflow-hidden jl-card-tech" hover={false}>
                   <div className="grid md:grid-cols-5">
                     <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
-                      {photos.slice(0, 4).map(function (src, i) {
-                        return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className={cx("aspect-[4/3] rounded-lg", i === 0 ? "col-span-2" : "")} icon="activity" />;
+                      {photos.slice(0, 6).map(function (src, i) {
+                        return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className="aspect-[4/3] rounded-lg" icon="activity" />;
                       })}
                     </div>
                     <div className="md:col-span-3 p-6">

@@ -17,6 +17,31 @@ window.DATA = window.DATA || {};
 window.DATA.activities = {
   items: [
     {
+      id: "act-dementia-vr-2025", date: "2025-09-20",
+      title: { zh: "智趣時光 · 失智症照護 VR 應用開發（與高雄榮總合作）", en: "Cognitive-Fun Time · Dementia-Care VR Application (with Kaohsiung Veterans General Hospital)" },
+      location: { zh: "高雄 · 左營區福山里活動中心 / 高雄榮總", en: "Kaohsiung · Zuoying Fushan Community Center / KSVGH" },
+      tags: [
+        { zh: "產學合作", en: "Industry Collaboration" },
+        { zh: "VR", en: "VR" },
+        { zh: "醫療照護", en: "Healthcare" },
+        { zh: "跨領域研究", en: "Interdisciplinary" },
+      ],
+      description: {
+        zh: "Jack Lab 與高雄榮總合作開發「智趣時光」失智症照護 VR 應用，協助家屬與照護者更深入理解失智症患者的日常情境與互動策略。\n\n應用設計涵蓋 7 種典型失智症情境（例如患者誤認家中有小偷、重複相同對話等），體驗者透過語音回應系統選擇適當的應對方式，系統即時檢核並提供教學回饋。\n\n專案以 Unity + VR 開發、情境設計與使用者體驗研究為核心，結合跨領域的設計思維與行為研究工具。2025 年 9 月在高雄榮總與左營區福山里活動中心進行成果展示，吸引一般民眾、家屬，以及樹人醫專等職能治療相關科系師生參與體驗，並從跨領域使用者回饋持續優化系統流程與互動設計。",
+        en: "In collaboration with Kaohsiung Veterans General Hospital (KSVGH), Jack Lab developed the \"Cognitive-Fun Time\" dementia-care VR application, helping families and caregivers gain a deeper understanding of patients' day-to-day situations and effective interaction strategies.\n\nThe app covers seven typical dementia scenarios (e.g., patient mistakenly believing there is an intruder at home, repeating the same conversation). Users select an appropriate response through voice interaction, and the system provides real-time feedback and instructional videos.\n\nBuilt with Unity + VR, scenario design, and user-experience research, the project integrates cross-disciplinary design thinking with behavioral research tools. Public demonstrations were held in September 2025 at KSVGH and the Zuoying Fushan Community Center, drawing in the general public, family members, and occupational-therapy students from Shu-Te College — whose feedback continues to shape the system's flow and interaction design.",
+      },
+      instructor: "hsu-shih-chieh",
+      projectMembers: ["chien-yun-ting", "yang-chu-chun", "hsu-te-yen", "liu-kuan-hung", "huang-shu-han", "chang-chan-chia"],
+      photos: [
+        "assets/activities/dementia-vr-2025/1.jpg",
+        "assets/activities/dementia-vr-2025/2.jpg",
+        "assets/activities/dementia-vr-2025/3.jpg",
+        "assets/activities/dementia-vr-2025/4.jpg",
+        "assets/activities/dementia-vr-2025/5.jpg",
+        "assets/activities/dementia-vr-2025/6.jpg",
+      ],
+    },
+    {
       id: "act-sen-art-2026", date: "2026-03-15",
       title: { zh: "森美術 · 策略管理工作坊", en: "Sen Art Museum · Strategic Management Workshop" },
       location: { zh: "森美術 Sen Art Museum", en: "Sen Art Museum" },
@@ -36,6 +61,8 @@ window.DATA.activities = {
         "assets/activities/sen-art-museum/2.jpg",
         "assets/activities/sen-art-museum/3.jpg",
         "assets/activities/sen-art-museum/4.jpg",
+        "assets/activities/sen-art-museum/5.jpg",
+        "assets/activities/sen-art-museum/6.jpg",
       ],
     },
     {
@@ -58,6 +85,8 @@ window.DATA.activities = {
         "assets/activities/strategic-innovation-2025/2.jpg",
         "assets/activities/strategic-innovation-2025/3.jpg",
         "assets/activities/strategic-innovation-2025/4.jpg",
+        "assets/activities/strategic-innovation-2025/5.jpg",
+        "assets/activities/strategic-innovation-2025/6.jpg",
       ],
     },
     {
@@ -80,6 +109,8 @@ window.DATA.activities = {
         "assets/activities/fanshikang/2.jpg",
         "assets/activities/fanshikang/3.jpg",
         "assets/activities/fanshikang/4.jpg",
+        "assets/activities/fanshikang/5.jpg",
+        "assets/activities/fanshikang/6.jpg",
       ],
     },
     {
