@@ -199,7 +199,7 @@ window.JL = window.JL || {};
                 <div className="text-sm text-white/70 mt-1">{t(site.brand.org)}</div>
                 <div className="mt-4 grid grid-cols-2 gap-3 text-center">
                   <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statAreas} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "研究主軸" : "Pillars"}</div></div>
-                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statTools} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "分析工具" : "Tools"}</div></div>
+                  <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statTools} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "實務分析工具" : "Tools"}</div></div>
                   <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statMembers} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "團隊成員" : "Members"}</div></div>
                   <div className="rounded-xl bg-white/10 py-3"><div className="text-2xl font-extrabold"><JL.CountUp to={statCases} /></div><div className="text-[11px] text-white/70">{ctx.lang === "zh" ? "教學個案" : "Cases"}</div></div>
                 </div>

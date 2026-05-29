@@ -23,7 +23,7 @@ window.DATA.site = {
     { id: "about", path: "#/about", label: { zh: "關於我們", en: "About" } },
     { id: "team", path: "#/team", label: { zh: "團隊成員", en: "Team" } },
     { id: "research", path: "#/research", label: { zh: "研究領域與成果", en: "Research" } },
-    { id: "tools", path: "#/tools", label: { zh: "分析工具", en: "Tools" } },
+    { id: "tools", path: "#/tools", label: { zh: "實務分析工具", en: "Tools" } },
     { id: "publications", path: "#/publications", label: { zh: "學術發表", en: "Publications" } },
     { id: "awards", path: "#/awards", label: { zh: "榮譽榜", en: "Honors" } },
     { id: "consulting", path: "#/consulting", label: { zh: "顧問服務", en: "Consulting" } },
@@ -57,7 +57,7 @@ window.DATA.site = {
     comingSoon: { zh: "持續更新", en: "Ongoing updates" },
     relatedPublications: { zh: "相關發表", en: "Related publications" },
     backToResearch: { zh: "返回研究領域", en: "Back to Research" },
-    backToTools: { zh: "返回分析工具", en: "Back to tools" },
+    backToTools: { zh: "返回實務分析工具", en: "Back to tools" },
     framework: { zh: "核心構面", en: "Core framework" },
     whenToUse: { zh: "使用情境", en: "When to use" },
     example: { zh: "應用案例", en: "Example" },
@@ -186,7 +186,7 @@ window.DATA.site = {
       subtitle: { zh: "七大主軸與代表性成果", en: "Seven pillars and selected outcomes" },
     },
     tools: {
-      title: { zh: "分析工具", en: "Analysis Tools" },
+      title: { zh: "實務分析工具", en: "Analysis Tools" },
       subtitle: { zh: "26 個策略分析工具與教學資源", en: "26 strategy-analysis tools and teaching resources" },
     },
     publications: {
