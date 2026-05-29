@@ -379,6 +379,42 @@ window.JL = window.JL || {};
     );
   }
 
+  // 依 id 從 members.js 找成員 / lookup member by id
+  function findMember(id) {
+    var groups = window.DATA.members.groups;
+    for (var i = 0; i < groups.length; i++) {
+      for (var j = 0; j < groups[i].members.length; j++) {
+        if (groups[i].members[j].id === id) return groups[i].members[j];
+      }
+    }
+    return null;
+  }
+
+  // 成員姓名連結：點一下跳到團隊頁面對應成員卡片，並短暫高亮
+  // Clickable name → navigates to /team and scrolls to that member's card.
+  function MemberLink(props) {
+    const ctx = JL.useLang();
+    const m = findMember(props.id);
+    const display = m ? ctx.t(m.name) : (props.fallback || props.id);
+    function go() {
+      JL.navigate("/team");
+      setTimeout(function () {
+        var el = document.querySelector('[data-member-id="' + props.id + '"]');
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("ring-2", "ring-brand-400");
+          setTimeout(function () { el.classList.remove("ring-2", "ring-brand-400"); }, 1800);
+        }
+      }, 350);
+    }
+    return (
+      <button type="button" onClick={go}
+        className="text-brand-700 hover:text-brand-900 hover:underline font-medium transition-colors">
+        {display}
+      </button>
+    );
+  }
+
   // 統一處理成員相片：有 src 顯示，無 src 顯示灰底使用者圖示
   // position 預設 "top" 確保頭部優先；若原圖頭頂上有留白，於 members.js 設 photoPosition: "center"
   function MemberPhoto(props) {
@@ -1030,7 +1066,30 @@ window.JL = window.JL || {};
                           {a.tags.map(function (tg, i) { return <span key={i} className="rounded-full bg-brand-50 text-brand-600 px-2.5 py-0.5 text-xs">{t(tg)}</span>; })}
                         </div>
                       ) : null}
-                      <p className="mt-3 text-slate-600 leading-relaxed">{t(a.description)}</p>
+                      <p className="mt-3 text-slate-600 leading-relaxed whitespace-pre-line">{t(a.description)}</p>
+                      {a.instructor || (a.projectMembers && a.projectMembers.length) ? (
+                        <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-sm">
+                          {a.instructor ? (
+                            <div>
+                              <span className="text-slate-400">{ctx.lang === "zh" ? "授課教師：" : "Instructor: "}</span>
+                              <MemberLink id={a.instructor} />
+                            </div>
+                          ) : null}
+                          {a.projectMembers && a.projectMembers.length ? (
+                            <div>
+                              <span className="text-slate-400">{ctx.lang === "zh" ? "專案成員：" : "Project members: "}</span>
+                              {a.projectMembers.map(function (mid, i) {
+                                return (
+                                  <React.Fragment key={mid}>
+                                    {i > 0 ? <span className="text-slate-400">{ctx.lang === "zh" ? "、" : ", "}</span> : null}
+                                    <MemberLink id={mid} />
+                                  </React.Fragment>
+                                );
+                              })}
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </Card>
