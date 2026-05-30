@@ -69,5 +69,31 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/91059/ai-prompt-tips-senior-vs-junior",
     },
+    {
+      id: "n-bnext-20260525-1", category: "media", date: "2026-05-25", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜AI 來了先砍誰？Cloudflare 執行長揭裁員新規則：「衡量者」先裁、工程師業務照樣聘",
+        en: "Bnext｜Who gets cut first in the AI era? Cloudflare CEO's new rule: 'Measurers' go first, builders and sellers stay",
+      },
+      summary: {
+        zh: "Cloudflare 執行長 Matthew Prince 援引 Drucker 的員工分類框架，把職位分成 Builder（價值創造者）、Seller（業務推廣者）與 Measurer（效能衡量者）三類，AI 時代下中階管理、營運與稽核這類「衡量者」最容易被自動化取代，直接創造價值的工程師與業務則持續擴大招聘。對 AI 驅動下的組織再設計與人才配置提供具體的判斷依據。",
+        en: "Cloudflare CEO Matthew Prince invokes Drucker's framing to split roles into Builders, Sellers, and Measurers — and argues AI is making the middle-management, ops, and audit-style 'Measurer' roles the prime targets for cuts, while value-creating engineers and salespeople are being hired more aggressively. A concrete lens on org redesign and talent allocation under AI.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91035/cloudflare-ai-layoffs-builder-seller-measurer",
+    },
+    {
+      id: "n-bnext-20260521-1", category: "media", date: "2026-05-21", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜從產品安全到營運韌性：合勤集團揭 AI 時代資安新戰略",
+        en: "Bnext｜From product security to operational resilience: Zyxel unveils its AI-era cybersecurity strategy",
+      },
+      summary: {
+        zh: "合勤集團整合旗下黑貓資訊、兆勤與勤晁三家子公司，回應歐盟《網路韌性法案》(CRA)推出兩階段資安戰略：2026 年強化「通報即戰力」的產品安全應變機制，2027 年導入 Security by Design 的全生命週期治理，並透過 Nebula 雲地聯防與多層次防禦因應量子運算威脅。為企業資安從被動合規走向主動風險治理提供完整框架。",
+        en: "Zyxel integrates three subsidiaries to roll out a two-phase strategy aligned with the EU Cyber Resilience Act: in 2026, build a 'report-as-defense' incident-response capability; in 2027, institutionalize Security-by-Design across the full lifecycle, with the Nebula cloud–edge platform and multi-layered defenses against quantum-era threats. A useful frame for moving enterprise cybersecurity from passive compliance to proactive governance.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/90987/zyxel_2026-05",
+    },
   ],
 };
