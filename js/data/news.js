@@ -95,5 +95,31 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/90987/zyxel_2026-05",
     },
+    {
+      id: "n-bnext-20260424-1", category: "media", date: "2026-04-24", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜AI 加持近 9 成企業，甚至扛起營運大任！解放人類產能的 AI「18 同仁」出列",
+        en: "Bnext｜AI now powers nearly 90% of enterprises and shoulders core operations — meet the 18 AI 'coworkers'",
+      },
+      summary: {
+        zh: "麥肯錫調查顯示 88% 企業已在至少一項職能定期使用 AI，文章盤點 18 家為企業痛點量身打造的 AI 應用新創，涵蓋招募、客服、財務、資安等領域。AI 正從輕量級辦公輔助升級為扛起營運的「數位員工」，未來辦公室將以 AI 代理為主力，員工轉為協調自己 AI 團隊的管理者 — 對 AI 落地策略、組織再設計與人才角色變動研究都是清楚的時間切片。",
+        en: "A McKinsey survey shows 88% of enterprises already use AI in at least one function. The piece profiles 18 startups built around concrete enterprise pain points — recruiting, support, finance, security — arguing AI is shifting from light office helper to operations-bearing 'digital employee', with humans becoming coordinators of their own AI teams. A useful timestamp for studies on AI adoption, org redesign, and shifting talent roles.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/90657/corp-app-ai100",
+    },
+    {
+      id: "n-bnext-20260323-1", category: "media", date: "2026-03-23", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜數位轉型最難一段！北捷「QR 紙票取代代幣」技術沒問題，為何用戶還是卡在閘門前？",
+        en: "Bnext｜The hardest mile in digital transformation: Taipei Metro's QR ticket works on paper — so why are riders still stuck at the gate?",
+      },
+      summary: {
+        zh: "北捷以 QR 紙票取代代幣的技術本身沒問題，但用戶卻在找閘門、紙票破損、掃描延遲等情境上頻頻卡關。文章點出數位轉型最常被低估的一環是「過渡期設計」：終態技術再完整也補不上認知落差，組織應該在設計階段就把真實使用情境與過渡期體驗放到與終態技術同等優先序。對服務設計、UX 與數位轉型研究是非常具體的本土案例。",
+        en: "Taipei Metro's QR-paper-ticket replacement works technically, yet users keep stalling at the gate — searching for compatible turnstiles, dealing with torn paper, or waiting for scans. The article surfaces what digital transformation projects most often underestimate: transition-phase design. End-state tech can't paper over cognitive gaps; real-world usage and the in-between experience must be first-class design concerns. A vivid local case for service-design, UX, and digital-transformation researchers.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/90381/metro-digital-transformation-ux-gap",
+    },
   ],
 };
