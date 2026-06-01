@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gary2686.github.io/jack-lab/sitemap.xml
