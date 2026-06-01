@@ -1,54 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!--
-    註：本站為 hash-routed SPA，主要分頁的 URL 都帶 # 號。
-    Google 雖然不會把 hash fragment 視為獨立頁面，但列出仍有助於人類使用者點擊與外部站台引用。
-    Note: This is a hash-routed SPA. Hash URLs are listed here for human reference;
-    Google indexes them as the same page (index.html) after JS rendering.
+    本站為 hash-routed SPA：所有分頁（#/about、#/team、#/research、…）
+    其實都由 index.html + JS 動態渲染，Google 也是把它們視為同一個 URL。
+    依 Google sitemap 規範，URL 中不應含 # fragment，因此只列出首頁。
+    Hash-routed SPA: every section is served by index.html, so we list a single
+    canonical URL here (Google treats fragments as part of the same page).
   -->
   <url>
     <loc>https://gary2686.github.io/jack-lab/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/team</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/research</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/publications</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/awards</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/news</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/activities</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://gary2686.github.io/jack-lab/#/tools</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>
