@@ -123,7 +123,7 @@ window.DATA.members = {
         { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "assets/members/chang-chan-chia.jpg", email: "alex20010122@gmail.com", currentPosition: { zh: "", en: "" }, pet: "frog" },
         { id: "chien-yun-ting", name: { zh: "簡筠庭", en: "Yun Ting-Jian" }, photo: "assets/members/chien-yun-ting.jpg", email: "tiffany90123281@gmail.com", currentPosition: { zh: "(美國) Flowyth Co. (GingerControl) · Product Manager / Forward Deployed Engineer", en: "(US) Flowyth Co. d/b/a GingerControl · Product Manager / Forward Deployed Engineer" }, pet: "cat" },
         { id: "yang-chu-chun", name: { zh: "楊筑鈞", en: "Yang Jhu-Jyun" }, photo: "assets/members/yang-chu-chun.jpg", email: "011189tina@gmail.com", currentPosition: { zh: "財團法人工業技術研究院 · 副管理師", en: "Industrial Technology Research Institute (ITRI) · Assistant Manager" }, pet: "fish" },
-        { id: "hsu-te-yen", name: { zh: "徐德諺", en: "Hsu Te-Yen" }, photo: "", email: "", currentPosition: { zh: "", en: "" }, pet: "ghost" },
+        { id: "hsu-te-yen", name: { zh: "徐德諺", en: "Hsu Te-Yen" }, photo: "assets/members/hsu-te-yen.jpg", email: "alberthsutedyen@gmail.com", currentPosition: { zh: "", en: "" }, pet: "ghost" },
       ],
     },
   ],
