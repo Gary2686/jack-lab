@@ -1038,18 +1038,27 @@ window.JL = window.JL || {};
 
   /* ============== PROJECT CARD (shared: activities & consulting) ============== */
   // Single card render used by both ActivitiesPage and ConsultingPage.
+  // 單張照片時，圖片區改為單格全寬；多張時維持 2-col 縮圖牆。
+  // roleLabel 可覆寫「專案成員」label（例如改成「網頁設計」）。
   function ProjectCard(props) {
     const ctx = JL.useLang(); const t = ctx.t;
     const a = props.item;
-    const photos = a.photos && a.photos.length ? a.photos : [null, null, null];
+    const hasPhotos = a.photos && a.photos.length > 0;
+    const photos = hasPhotos ? a.photos : [null, null, null];
+    const singlePhoto = hasPhotos && photos.length === 1;
+    const membersLabel = a.roleLabel ? t(a.roleLabel) : (ctx.lang === "zh" ? "專案成員" : "Project members");
     return (
       <Reveal delay={props.delay || 0}>
         <Card className="overflow-hidden jl-card-tech" hover={false}>
           <div className="grid md:grid-cols-5">
-            <div className="md:col-span-2 grid grid-cols-2 gap-1 p-1 bg-slate-50">
-              {photos.slice(0, 6).map(function (src, i) {
-                return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className="aspect-[4/3] rounded-lg" icon="activity" />;
-              })}
+            <div className={cx("md:col-span-2 p-1 bg-slate-50", singlePhoto ? "" : "grid grid-cols-2 gap-1")}>
+              {singlePhoto ? (
+                <ImagePlaceholder src={photos[0] || undefined} kind="activity" className="aspect-[4/3] rounded-lg w-full h-full" icon="activity" />
+              ) : (
+                photos.slice(0, 6).map(function (src, i) {
+                  return <ImagePlaceholder key={i} src={src || undefined} kind="activity" className="aspect-[4/3] rounded-lg" icon="activity" />;
+                })
+              )}
             </div>
             <div className="md:col-span-3 p-6">
               <div className="flex items-center gap-2 text-xs text-slate-400 mb-2">
@@ -1078,7 +1087,7 @@ window.JL = window.JL || {};
                   ) : null}
                   {a.projectMembers && a.projectMembers.length ? (
                     <div>
-                      <span className="text-slate-400">{ctx.lang === "zh" ? "專案成員：" : "Project members: "}</span>
+                      <span className="text-slate-400">{membersLabel}{ctx.lang === "zh" ? "：" : ": "}</span>
                       {a.projectMembers.map(function (mid, i) {
                         return (
                           <React.Fragment key={mid}>

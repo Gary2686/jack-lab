@@ -16,7 +16,7 @@ window.DATA.consulting = {
   items: [
     {
       id: "act-uhima-2026", date: "2026-07-02",
-      title: { zh: "UHIMA 2026 · 國際健康資訊管理研討會 主辦", en: "UHIMA 2026 · Hosting the International Health Information Management Conference" },
+      title: { zh: "UHIMA 2026 · 第 21 屆國際健康資訊管理研討會（暨 TLCMA 2026）", en: "UHIMA 2026 · 21st International Conference on Health Information Management (with TLCMA 2026)" },
       location: { zh: "國立中山大學（高雄）", en: "National Sun Yat-sen University, Kaohsiung" },
       tags: [
         { zh: "國際研討會", en: "International Conference" },
@@ -24,13 +24,13 @@ window.DATA.consulting = {
         { zh: "AI 智慧照護", en: "AI Smart Care" },
       ],
       description: {
-        zh: "Jack Lab 協同國立中山大學資訊管理學系主辦「第 21 屆國際健康資訊管理研討會（UHIMA 2026）暨第 6 屆台灣長期照護管理研討會（TLCMA 2026）」，主題「AI 賦能智慧照護：高齡健康新紀元」，由台灣健康資訊管理學會與台灣長期照護管理學會主辦，時間 2026 年 7 月 2 日（四）至 7 月 3 日（五）。\n\n研討會匯集學術與實務界專家，探討人工智慧在高齡照護、智慧醫療與護理領域的創新應用與發展趨勢。徵稿主題涵蓋智慧高齡健康、智慧醫療照護、護理照護、醫療資訊科技、智慧睡眠照護等六大議題。\n\n研討會官方網站：https://uhima2026.mis.nsysu.edu.tw/",
-        en: "Jack Lab and the Department of Information Management at NSYSU co-host the 21st International Conference on Health Information Management (UHIMA 2026) together with the 6th Taiwan Long-term Care Management Conference (TLCMA 2026), themed \"AI-Enabled Smart Care: A New Era of Aging Health,\" on July 2–3, 2026.\n\nOrganized by the Taiwan Health Information Management Association and the Taiwan Long-term Care Management Association, the conference brings together scholars and practitioners to explore innovative applications of AI in aging care, smart healthcare, and nursing. Topics include smart aging health, smart medical care, nursing, healthcare IT, and smart sleep care.\n\nConference site: https://uhima2026.mis.nsysu.edu.tw/",
+        zh: "「第 21 屆國際健康資訊管理研討會（UHIMA 2026）暨第 6 屆台灣長期照護管理研討會（TLCMA 2026）」，主題「AI 賦能智慧照護：高齡健康新紀元」，由台灣健康資訊管理學會與台灣長期照護管理學會主辦，2026 年 7 月 2 日（四）至 7 月 3 日（五）於國立中山大學舉行。\n\n研討會匯集學術與實務界專家，探討人工智慧在高齡照護、智慧醫療與護理領域的創新應用與發展趨勢。徵稿主題涵蓋智慧高齡健康、智慧醫療照護、護理照護、醫療資訊科技、智慧睡眠照護等六大議題。",
+        en: "The 21st International Conference on Health Information Management (UHIMA 2026) and the 6th Taiwan Long-term Care Management Conference (TLCMA 2026), themed \"AI-Enabled Smart Care: A New Era of Aging Health,\" will be held at National Sun Yat-sen University on July 2–3, 2026, co-hosted by the Taiwan Health Information Management Association and the Taiwan Long-term Care Management Association.\n\nThe conference brings together scholars and practitioners to explore innovative applications of AI in aging care, smart healthcare, and nursing. Topics include smart aging health, smart medical care, nursing, healthcare IT, and smart sleep care.",
       },
-      instructor: "hsu-shih-chieh",
+      roleLabel: { zh: "網頁設計", en: "Web design" },
       projectMembers: ["lin-chen-wei"],
       url: "https://uhima2026.mis.nsysu.edu.tw/",
-      photos: [],
+      photos: ["assets/consulting/uhima-2026.png"],
     },
     {
       id: "act-dementia-vr-2025", date: "2025-09-20",
