@@ -380,7 +380,7 @@ window.JL = window.JL || {};
       { icon: "cpu",         label: { zh: "AI",       en: "AI" },              tone: "blue",    to: "/research/ai" },
       { icon: "shield",      label: { zh: "資訊安全", en: "Security" },        tone: "violet",  to: "/research/security" },
       { icon: "trendingUp",  label: { zh: "數位轉型", en: "Digital Transform" },tone: "sky",     to: "/research/ai" },
-      { icon: "briefcase",   label: { zh: "顧問服務", en: "Advisory" },        tone: "teal",    to: "/research/case" },
+      { icon: "briefcase",   label: { zh: "學術與顧問服務", en: "Academic & Advisory" }, tone: "teal", to: "/consulting" },
       { icon: "diagram",     label: { zh: "fsQCA",    en: "fsQCA" },           tone: "amber",   to: "/research/fsqca" },
     ];
     return (

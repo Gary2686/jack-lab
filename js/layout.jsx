@@ -151,7 +151,10 @@ window.JL = window.JL || {};
         <div className="border-t border-white/10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
             <span>{ctx.t(site.footer.copyright)}</span>
-            <span className="text-slate-500">© {year} Jack Lab · NSYSU</span>
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 text-slate-500">
+              {site.footer.credit ? <span>{ctx.t(site.footer.credit)}</span> : null}
+              <span>© {year} Jack Lab · NSYSU</span>
+            </div>
           </div>
         </div>
       </footer>

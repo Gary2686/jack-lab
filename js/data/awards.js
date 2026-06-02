@@ -15,6 +15,38 @@ window.DATA.awards = {
   ],
   items: [
     {
+      id: "a-hsu-sbir-115",
+      type: "honor",
+      year: 2026,
+      title: {
+        zh: "115 年度「小型企業創新研發計畫（SBIR）」服務領域 審查委員",
+        en: "SBIR 2026 (Year 115) Service-Domain Review Committee Member",
+      },
+      recipient: { zh: "徐士傑", en: "Shih-Chieh Hsu" },
+      org: { zh: "經濟部 中小及新創企業署", en: "Small and Medium Enterprise and Startup Administration, MOEA" },
+      desc: {
+        zh: "獲經濟部中小及新創企業署聘任為 115 年度「小型企業創新研發計畫（SBIR）」服務領域審查委員，協助審查中小企業之創新研發提案。",
+        en: "Appointed by MOEA's SMESA as a review committee member for the 2026 (ROC Year 115) Small Business Innovation Research (SBIR) Program in the Service Domain, evaluating innovation R&D proposals from SMEs.",
+      },
+      image: "assets/awards/hsu-sbir-115.jpg",
+    },
+    {
+      id: "a-hsu-sbir-114",
+      type: "honor",
+      year: 2025,
+      title: {
+        zh: "114 年度「小型企業創新研發計畫（SBIR）」服務領域 審查委員",
+        en: "SBIR 2025 (Year 114) Service-Domain Review Committee Member",
+      },
+      recipient: { zh: "徐士傑", en: "Shih-Chieh Hsu" },
+      org: { zh: "經濟部 中小及新創企業署", en: "Small and Medium Enterprise and Startup Administration, MOEA" },
+      desc: {
+        zh: "獲經濟部中小及新創企業署聘任為 114 年度「小型企業創新研發計畫（SBIR）」服務領域審查委員。",
+        en: "Appointed by MOEA's SMESA as a review committee member for the 2025 (ROC Year 114) SBIR Program in the Service Domain.",
+      },
+      image: "assets/awards/hsu-sbir-114.jpg",
+    },
+    {
       id: "a-hsu-teaching-114-1",
       type: "honor",
       year: 2025,

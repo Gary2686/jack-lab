@@ -25,8 +25,25 @@ window.DATA.news = {
     { id: "neuro", label: { zh: "神經科學", en: "Neuroscience" } },
     { id: "fsqca", label: { zh: "fsQCA", en: "fsQCA" } },
     { id: "workshop", label: { zh: "工作坊", en: "Workshop" } },
+    { id: "conference", label: { zh: "研討會", en: "Conference" } },
   ],
   items: [
+    {
+      id: "n-uhima-2026", category: "labNews", date: "2026-06-02", pinned: true, tags: ["conference", "ai"],
+      title: {
+        zh: "UHIMA 2026 ｜「AI 賦能智慧照護：高齡健康新紀元」國際研討會（7/2–7/3 中山大學）",
+        en: "UHIMA 2026 | AI-Enabled Smart Care: A New Era of Aging Health (July 2–3, NSYSU)",
+      },
+      summary: {
+        zh: "第 21 屆國際健康資訊管理研討會（UHIMA 2026）暨第 6 屆台灣長期照護管理研討會（TLCMA 2026），主題「AI 賦能智慧照護：高齡健康新紀元」，2026 年 7 月 2 日（四）至 7 月 3 日（五）於國立中山大學舉行，由台灣健康資訊管理學會與台灣長期照護管理學會主辦。",
+        en: "The 21st International Conference on Health Information Management (UHIMA 2026) and the 6th Taiwan Long-term Care Management Conference (TLCMA 2026), themed \"AI-Enabled Smart Care: A New Era of Aging Health,\" will be held at National Sun Yat-sen University on July 2–3, 2026, co-hosted by the Taiwan Health Information Management Association and the Taiwan Long-term Care Management Association.",
+      },
+      body: {
+        zh: "本研討會匯集學術界與實務界專家，探討人工智慧在高齡照護、智慧醫療與護理領域的創新應用與發展趨勢。\n\n徵稿主題涵蓋：智慧高齡健康、智慧醫療照護、護理照護、醫療資訊科技、智慧睡眠照護等六大議題。徵稿截止日：2026 年 4 月 26 日（週日）。\n\n相關資訊與報名連結請見研討會官網。",
+        en: "The conference brings together scholars and practitioners to explore innovative applications and trends of AI in aging care, smart healthcare, and nursing.\n\nTopics include smart aging health, smart medical care, nursing care, healthcare information technology, and smart sleep care. Submission deadline: April 26, 2026. See the conference website for full information and registration.",
+      },
+      image: "", url: "https://uhima2026.mis.nsysu.edu.tw/",
+    },
     {
       id: "n-1", category: "labNews", date: "2026-05-28", pinned: true, tags: ["recruiting"],
       title: {

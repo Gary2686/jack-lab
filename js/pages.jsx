@@ -922,15 +922,22 @@ window.JL = window.JL || {};
                       {filtered.filter(function (a) { return a.year === yr; }).map(function (a, i) {
                         return (
                           <Reveal key={a.id} delay={i * 50}>
-                            <Card className="p-5 h-full jl-card-tech">
-                              <div className="flex items-center gap-2 mb-3">
-                                <span className="grid place-items-center h-9 w-9 rounded-lg bg-amber-100 text-amber-600"><Icon name="award" size={18} /></span>
-                                <span className="rounded-md bg-slate-100 text-slate-500 px-2 py-0.5 text-[11px] font-semibold">{typeLabel(a.type)}</span>
+                            <Card className="overflow-hidden h-full flex flex-col jl-card-tech">
+                              {a.image ? (
+                                <a href={a.image} target="_blank" rel="noopener noreferrer" className="block relative aspect-[4/3] w-full overflow-hidden bg-slate-50 group">
+                                  <img src={a.image} alt={t(a.title)} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                                </a>
+                              ) : null}
+                              <div className="p-5 flex flex-col flex-1">
+                                <div className="flex items-center gap-2 mb-3">
+                                  <span className="grid place-items-center h-9 w-9 rounded-lg bg-amber-100 text-amber-600"><Icon name="award" size={18} /></span>
+                                  <span className="rounded-md bg-slate-100 text-slate-500 px-2 py-0.5 text-[11px] font-semibold">{typeLabel(a.type)}</span>
+                                </div>
+                                <h3 className="font-semibold text-navy leading-snug">{t(a.title)}</h3>
+                                <div className="mt-1.5 text-sm text-brand-700 font-medium">{t(a.recipient)}</div>
+                                <div className="text-xs text-slate-400">{t(a.org)}</div>
+                                <p className="mt-2 text-sm text-slate-500 leading-relaxed">{t(a.desc)}</p>
                               </div>
-                              <h3 className="font-semibold text-navy leading-snug">{t(a.title)}</h3>
-                              <div className="mt-1.5 text-sm text-brand-700 font-medium">{t(a.recipient)}</div>
-                              <div className="text-xs text-slate-400">{t(a.org)}</div>
-                              <p className="mt-2 text-sm text-slate-500 leading-relaxed">{t(a.desc)}</p>
                             </Card>
                           </Reveal>
                         );
@@ -1056,6 +1063,11 @@ window.JL = window.JL || {};
                 </div>
               ) : null}
               <p className="mt-3 text-slate-600 leading-relaxed whitespace-pre-line">{t(a.description)}</p>
+              {a.url ? (
+                <a href={a.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-600">
+                  <Icon name="external" size={15} />{ctx.lang === "zh" ? "前往官方網站" : "Visit official site"}
+                </a>
+              ) : null}
               {a.instructor || (a.projectMembers && a.projectMembers.length) ? (
                 <div className="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-sm">
                   {a.instructor ? (
