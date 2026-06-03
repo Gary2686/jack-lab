@@ -103,9 +103,9 @@ window.DATA.members = {
       layout: "alumni",
       label: { zh: "在職博士生", en: "Working Ph.D. Students" },
       members: [
-        { id: "hsu-yu-ping", name: { zh: "許郁屏", en: "Hsu Yu-Ping" }, photo: "assets/members/hsu-yu-ping.jpg", photoPosition: "top", email: "", currentPosition: { zh: "台灣櫻花股份有限公司", en: "Sakura Corporation" } },
-        { id: "shen-hung-chun", name: { zh: "沈閎駿", en: "Shen Hung-Chun" }, photo: "assets/members/shen-hung-chun.jpg", email: "", currentPosition: { zh: "財團法人工業技術研究院", en: "Industrial Technology Research Institute (ITRI)" }, pet: "fox" },
-        { id: "tsai-min-fang", name: { zh: "蔡敏芳", en: "Tsai Min-Fang" }, photo: "assets/members/tsai-min-fang.jpg", email: "", currentPosition: { zh: "阮綜合醫療社團法人阮綜合醫院", en: "Yuan's General Hospital" }, pet: "cat" },
+        { id: "hsu-yu-ping", name: { zh: "許郁屏", en: "Hsu Yu-Ping" }, photo: "assets/members/hsu-yu-ping.jpg", photoPosition: "top", email: "yupingagnes@gmail.com", currentPosition: { zh: "台灣櫻花股份有限公司", en: "Sakura Corporation" } },
+        { id: "shen-hung-chun", name: { zh: "沈閎駿", en: "Shen Hung-Chun" }, photo: "assets/members/shen-hung-chun.jpg", email: "jackyshen0212@gmail.com", currentPosition: { zh: "財團法人工業技術研究院", en: "Industrial Technology Research Institute (ITRI)" }, pet: "fox" },
+        { id: "tsai-min-fang", name: { zh: "蔡敏芳", en: "Tsai Min-Fang" }, photo: "assets/members/tsai-min-fang.jpg", email: "min.fang797@gmail.com", currentPosition: { zh: "阮綜合醫療社團法人阮綜合醫院", en: "Yuan's General Hospital" }, pet: "cat" },
         { id: "chen-yun-yuan", name: { zh: "陳韻元", en: "Chen Yun-Yuan" }, photo: "assets/members/chen-yun-yuan.jpg", email: "", currentPosition: { zh: "中華電信股份有限公司", en: "Chunghwa Telecom Co., Ltd." }, pet: "bot" },
       ],
     },
@@ -130,7 +130,7 @@ window.DATA.members = {
       label: { zh: "畢業成員", en: "Alumni" },
       members: [
         { id: "liu-kuan-hung", name: { zh: "劉冠宏", en: "Liu Guan-Hong" }, photo: "assets/members/liu-kuan-hung.jpg", email: "zxc1030123@gmail.com", currentPosition: { zh: "", en: "" }, pet: "fox" },
-        { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "assets/members/huang-shu-han.jpg", email: "", currentPosition: { zh: "", en: "" }, pet: "owl" },
+        { id: "huang-shu-han", name: { zh: "黃舒韓", en: "Huang Shu-Han" }, photo: "assets/members/huang-shu-han.jpg", email: "1422harrygloria@gmail.com", currentPosition: { zh: "", en: "" }, pet: "owl" },
         { id: "chang-chan-chia", name: { zh: "張展嘉", en: "Chang Chan-Chia" }, photo: "assets/members/chang-chan-chia.jpg", email: "alex20010122@gmail.com", currentPosition: { zh: "", en: "" }, pet: "frog" },
         { id: "chien-yun-ting", name: { zh: "簡筠庭", en: "Yun Ting-Jian" }, photo: "assets/members/chien-yun-ting.jpg", email: "tiffany90123281@gmail.com", currentPosition: { zh: "(美國) Flowyth Co. (GingerControl) · Product Manager / Forward Deployed Engineer", en: "(US) Flowyth Co. d/b/a GingerControl · Product Manager / Forward Deployed Engineer" }, pet: "cat" },
         { id: "yang-chu-chun", name: { zh: "楊筑鈞", en: "Yang Jhu-Jyun" }, photo: "assets/members/yang-chu-chun.jpg", email: "011189tina@gmail.com", currentPosition: { zh: "財團法人工業技術研究院 · 副管理師", en: "Industrial Technology Research Institute (ITRI) · Assistant Manager" }, pet: "fish" },
