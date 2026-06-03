@@ -458,7 +458,7 @@ window.JL = window.JL || {};
       // 校友卡保留原本小圓頭像 + 文字並排的精簡版型
       return (
         <Card data-member-id={m.id} className="p-5 flex items-start gap-4 jl-card-tech">
-          <Avatar name={t(m.name)} photo={m.photo} size={84} />
+          <Avatar name={t(m.name)} photo={m.photo} size={84} position={m.photoPosition} />
           <div className="min-w-0">
             <div className="font-semibold text-navy">{t(m.name)} <span className="text-xs text-slate-400">{m.name.en}</span></div>
             {m.currentPosition && t(m.currentPosition) ? (
@@ -520,7 +520,6 @@ window.JL = window.JL || {};
         </Container>
         <Container className="py-16">
           <div className="relative space-y-14">
-            <JL.PetGarden members={groups.reduce(function (acc, g) { return acc.concat(g.members); }, [])} />
             {groups.map(function (g) {
               return (
                 <section key={g.id}>

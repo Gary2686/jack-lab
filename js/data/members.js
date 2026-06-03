@@ -103,7 +103,7 @@ window.DATA.members = {
       layout: "alumni",
       label: { zh: "在職博士生", en: "Working Ph.D. Students" },
       members: [
-        { id: "hsu-yu-ping", name: { zh: "許郁屏", en: "Hsu Yu-Ping" }, photo: "assets/members/hsu-yu-ping.jpg", email: "", currentPosition: { zh: "台灣櫻花股份有限公司", en: "Sakura Corporation" }, pet: "owl" },
+        { id: "hsu-yu-ping", name: { zh: "許郁屏", en: "Hsu Yu-Ping" }, photo: "assets/members/hsu-yu-ping.jpg", photoPosition: "top", email: "", currentPosition: { zh: "台灣櫻花股份有限公司", en: "Sakura Corporation" } },
         { id: "shen-hung-chun", name: { zh: "沈閎駿", en: "Shen Hung-Chun" }, photo: "assets/members/shen-hung-chun.jpg", email: "", currentPosition: { zh: "財團法人工業技術研究院", en: "Industrial Technology Research Institute (ITRI)" }, pet: "fox" },
         { id: "tsai-min-fang", name: { zh: "蔡敏芳", en: "Tsai Min-Fang" }, photo: "assets/members/tsai-min-fang.jpg", email: "", currentPosition: { zh: "阮綜合醫療社團法人阮綜合醫院", en: "Yuan's General Hospital" }, pet: "cat" },
         { id: "chen-yun-yuan", name: { zh: "陳韻元", en: "Chen Yun-Yuan" }, photo: "assets/members/chen-yun-yuan.jpg", email: "", currentPosition: { zh: "中華電信股份有限公司", en: "Chunghwa Telecom Co., Ltd." }, pet: "bot" },
