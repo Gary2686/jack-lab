@@ -171,7 +171,9 @@
   <!-- React + Babel (no-build CDN setup) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Pinned to Babel 7.x; Babel 8 changed default JSX runtime to 'automatic' which
+       emits `import` statements that break in non-module <script type="text/babel"> tags. -->
+  <script src="https://unpkg.com/@babel/standalone@7.29.7/babel.min.js"></script>
 
   <!-- 內容資料（純資料，與元件分離）/ Content data (plain JS, separate from components) -->
   <script src="js/data/site.js?v=13"></script>
@@ -179,7 +181,7 @@
   <script src="js/data/research.js?v=12"></script>
   <script src="js/data/publications.js?v=15"></script>
   <script src="js/data/awards.js?v=10"></script>
-  <script src="js/data/news.js?v=15"></script>
+  <script src="js/data/news.js?v=20"></script>
   <script src="js/data/activities.js?v=16"></script>
   <script src="js/data/consulting.js?v=3"></script>
   <script src="js/data/tools.js?v=8"></script>
