@@ -138,5 +138,330 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/90381/metro-digital-transformation-ux-gap",
     },
+    {
+      id: "n-bnext-20260603-1", category: "media", date: "2026-06-03", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜代理式商務連動百兆 AI 商機！4 張圖掌握「依賴經濟」大勢：對話框正接管搜尋框",
+        en: "Bnext｜Agentic commerce unlocks a trillion-dollar AI market: the rise of the 'dependency economy' as the chat box takes over the search box",
+      },
+      summary: {
+        zh: "文章指出 AI 正從爭奪「注意力」演進到爭奪「情感占有率」的依賴經濟時代：購物入口從「打開購物網站」前移到「與 AI 聊天」，消費者首次主動把決策權交給自主代理程式。對電商與消費者行為研究而言，這重塑了顧客旅程與獲利模式，也帶來決策授權與倫理層面的全新課題。",
+        en: "The piece argues AI is shifting from competing for 'attention' to competing for 'share of dependency': the shopping entry point moves from opening a store to chatting with an AI agent, as consumers for the first time actively delegate decisions to autonomous agents. For e-commerce and consumer-behavior research it reshapes the customer journey and monetization models, raising new questions about decision delegation and ethics.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91092/ai-agentic-ommerce",
+    },
+    {
+      id: "n-bnext-20260602-1", category: "media", date: "2026-06-02", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜黃仁勳猛催 token、企業 AI 帳單卻失控！微軟與 Uber 都踩煞車，「養 AI 比用人貴」現實已上演",
+        en: "Bnext｜Token prices fall but AI bills explode: Microsoft and Uber hit the brakes as 'AI costs more than headcount' becomes reality",
+      },
+      summary: {
+        zh: "本文揭示企業 AI 的成本悖論：雖然 token 單價持續下降，AI 代理的消耗量卻膨脹得更快，整體推理成本反而上升，連微軟、Uber 都被迫緊縮 AI 政策。對管理者是一記提醒——應檢視 AI 投資的真實 ROI，而非盲目跟風願景敘事，重新評估技術導入的商業合理性。",
+        en: "The article exposes the enterprise AI cost paradox: even as per-token prices fall, agent consumption grows faster, pushing total inference costs up — forcing even Microsoft and Uber to rein in AI policies. A reminder for managers to scrutinize the real ROI of AI investment rather than chase vision-driven hype, and to reassess the business case for adoption.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91045/ai-cost-token-agent",
+    },
+    {
+      id: "n-bnext-20260608-1", category: "media", date: "2026-06-08", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜觀點：AI Bots 流量 2025 年暴增 21 倍，直逼 Google 爬蟲！你的購物網站準備好迎接 Agent 了嗎？",
+        en: "Bnext｜Opinion: AI-bot traffic surged 21× in 2025, rivaling Google's crawler — is your e-commerce site ready for agents?",
+      },
+      summary: {
+        zh: "AI 機器人流量已占全網約 4.2%、年成長逾 21 倍，逼近搜尋引擎爬蟲，迫使電商網站從「人類優先」轉向「Agent 優先」設計；Google 推行 UCP 協議、Cloudflare 推出 Agent Readiness Score 檢測工具，企業應主動優化網站結構（如 markdown、llm.txt）以被 AI 代理發現。對電商與服務設計研究而言，「Agent 友善性」正成為新的核心競爭力與顧客旅程入口。",
+        en: "AI-bot traffic now makes up ~4.2% of the web and grew over 21× in 2025, nearly matching search-engine crawlers — pushing e-commerce sites to shift from human-first to agent-first design. With Google's UCP protocol and Cloudflare's Agent Readiness Score, firms must optimize site structure (markdown, llm.txt) to be discoverable by AI agents. For e-commerce and service-design research, 'agent-friendliness' is emerging as a new core competitive edge and customer-journey entry point.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91191/is-your-shopping-site-ready-for-ai-agents",
+    },
+    {
+      id: "n-bnext-20260605-1", category: "media", date: "2026-06-05", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜不只在 Threads 陪聊！Meta AI 將化身「超級店員」，進駐 IG、Messenger 幫全球商家接單",
+        en: "Bnext｜Beyond Threads chat: Meta AI becomes a 'super clerk' on Instagram and Messenger to take orders for businesses worldwide",
+      },
+      summary: {
+        zh: "Meta 推出 Business Agent，將 AI 部署到 WhatsApp、Messenger 與 Instagram，協助商家處理客服、產品推薦與銷售轉化，把每日逾 10 億筆商家對話轉化為商務平台。此舉是 Meta 在廣告之外尋求新營收模式，也反映平台經濟正向「AI 代理即服務」轉型；對平台經濟、電商與消費者行為研究是觀察既有用戶基礎如何轉化為企業 AI 市場優勢的清楚案例。",
+        en: "Meta's new Business Agent deploys AI across WhatsApp, Messenger, and Instagram to handle customer service, recommendations, and sales conversion, turning over a billion daily business conversations into a commerce platform. It marks Meta's search for revenue beyond ads and signals platform economies pivoting toward 'AI-agent-as-a-service.' A clear case for platform-economy, e-commerce, and consumer-behavior research on how an installed user base converts into enterprise-AI advantage.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91148/meta-business-agent-ai-business-entry-whatsapp-messenger-instagram",
+    },
+    {
+      id: "n-bnext-20260602-2", category: "media", date: "2026-06-02", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜硬體成本年降 40%！台大教授徐宏民：AI 雖突破自駕瓶頸，但我對機器人商業化更樂觀",
+        en: "Bnext｜Hardware costs falling 40% a year: NTU's Winston Hsu on why he's even more bullish on robots than self-driving",
+      },
+      summary: {
+        zh: "台大教授徐宏民指出，大語言模型的「泛化能力」突破了傳統自駕長尾效應瓶頸；電動車規模經濟讓機器人硬體成本以每年 40% 速度下降，餐飲與醫療照護等缺工產業將迎來服務型機器人應用爆發。相較自駕車的高風險開放環境，封閉場域的服務型機器人商業化前景更明確。對人機互動與 AI 實體化研究，這揭示通用推理能力與成本優化如何重塑產業落地路徑。",
+        en: "NTU professor Winston Hsu argues LLMs' generalization breaks the long-tail bottleneck that has stalled self-driving, while EV-driven scale economies are cutting robot hardware costs ~40% per year — poised to unleash service robots in labor-short sectors like dining and healthcare. Unlike high-risk open-road autonomy, service robots in closed environments have a clearer path to commercialization. For HCI and embodied-AI research, it shows how general reasoning plus cost optimization reshape real-world deployment.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91120/ai-robot-commercialization-autonomous-driving",
+    },
+    {
+      id: "n-bnext-20260610-1", category: "media", date: "2026-06-10", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜3 億用戶數據幹嘛分你！亞馬遜鎖緊生態圈「獨自升級」接招 AI 代理浪潮，它在提防什麼事？",
+        en: "Bnext｜Why share 300M users' data? Amazon walls off its ecosystem to face the AI-agent wave alone",
+      },
+      summary: {
+        zh: "亞馬遜自研購物代理 Rufus 在 2025 年吸引逾 3 億用戶、帶動 120 億美元增量收入，轉換率高出一般用戶 60%；它選擇封鎖第三方 AI 爬蟲、以數據護城河「獨自升級」，與沃爾瑪、Etsy 擁抱 OpenAI、Google 的開放路線形成對比。對電商與平台經濟研究而言，這是「閉門數據主導 vs. 開放生態整合」策略取捨的清楚案例，也揭示 AI 代理正從搜尋工具轉為購物決策中介。",
+        en: "Amazon's in-house shopping agent Rufus drew over 300M users in 2025, drove $12B in incremental revenue, and converted 60% better than average — and Amazon chose to block third-party AI crawlers and 'upgrade alone' behind a data moat, contrasting with Walmart's and Etsy's open embrace of OpenAI and Google. For e-commerce and platform-economy research it is a clear case of the closed-data-dominance vs. open-ecosystem-integration trade-off, and shows AI agents shifting from search tools to shopping-decision intermediaries.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91210/amazon-ai-agent",
+    },
+    {
+      id: "n-bnext-20260610-2", category: "media", date: "2026-06-10", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜搶你發問的第一刻！沃爾瑪的 AI 代理新盤算：不單挑改打群架，拚「鋪貨」進 ChatGPT、Gemini",
+        en: "Bnext｜Win the moment you ask: Walmart's new agent play — stop going solo, get 'stocked' into ChatGPT and Gemini",
+      },
+      summary: {
+        zh: "沃爾瑪從獨自開發轉為與 Google、OpenAI 合作，透過「通用商業協定」把自研代理 Sparky 嵌入 Gemini 與 ChatGPT，讓 AI 在回答消費者問題的同時精準推薦商品。其關鍵在於維持推薦的精準度與信任，而非盲目銷售。對電商與消費者行為研究，這與亞馬遜的封閉策略形成對照，凸顯購物起點正從搜尋框轉向對話框，且 AI 推薦的商業成敗繫於演算法信任度與「價值提供 vs. 過度商業化」的平衡。",
+        en: "Walmart pivots from going solo to partnering with Google and OpenAI, embedding its Sparky agent into Gemini and ChatGPT via a 'universal commerce protocol' so AI recommends products while answering consumer questions — with success hinging on recommendation accuracy and trust rather than hard selling. A direct counterpoint to Amazon's closed strategy, it underscores that the shopping entry point is moving from the search box to the chat box, and that AI-recommendation success rests on algorithmic trust and the value-vs-overselling balance.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91209/walmart-ai-agent",
+    },
+    {
+      id: "n-bnext-20260603-2", category: "media", date: "2026-06-03", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜微軟 Build 2026 懶人包｜你每天用的 Outlook 等辦公軟體，要從打開 App 變「呼叫代理」了",
+        en: "Bnext｜Microsoft Build 2026 recap: your daily Outlook and office apps are shifting from 'open the app' to 'call the agent'",
+      },
+      summary: {
+        zh: "微軟在 Build 2026 宣告從「應用程式時代」轉向「AI 代理時代」，執行長納德拉稱這是一次真正的平台轉移，推出 agent-first 平台 Project Solara、常駐型自動代理 Microsoft Scout 與量子晶片 Majorana 2，並把終端機、搜尋、編碼等工具重新設計以支援 agent 協作，同時保留身份追溯與權限控制。對 AI 代理與數位轉型研究而言，這是觀察軟體架構與企業治理如何因應「代理範式」重構的指標性案例。",
+        en: "At Build 2026 Microsoft declared a shift from the 'app era' to the 'agent era' — CEO Nadella called it a genuine platform shift — unveiling the agent-first Project Solara platform, the always-on Microsoft Scout autopilot agent, and the Majorana 2 quantum chip, while redesigning terminal, search, and coding tools for agent collaboration with identity traceability and permission controls preserved. For AI-agent and digital-transformation research, it is a bellwether case of how software architecture and enterprise governance restructure around the 'agent paradigm.'",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91134/microsoft-project-solara-android-chip-to-cloud-ai-agent-platform",
+    },
+    {
+      id: "n-bnext-20260613-1", category: "media", date: "2026-06-13", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜別盲目鑽研 Prompt！Claude 工程主管揭私房工作術：用不好 AI，問題出在你的想像力",
+        en: "Bnext｜Stop obsessing over prompts: Anthropic's Claude engineering lead says the real gap is imagination, not tools",
+      },
+      summary: {
+        zh: "Anthropic Claude Cowork 工程主管 Felix Rieseberg 主張，AI 用不好的瓶頸不在模型能力，而在使用者的想像力與工作流程設計。他提出三項心法：把問題「往上抽象一層」、把瑣事整段委派給 AI 並建立可重複使用的系統、依問題清晰度（而非難度）選模型，並從「審視輸出」轉為「評估結果」。對 AI 導入與知識工作研究而言，這把焦點從提示工程技巧移回到人類如何重構協作模式與任務分工。",
+        en: "Felix Rieseberg, engineering manager on Anthropic's Claude Cowork, argues the bottleneck to using AI well lies not in model capability but in users' imagination and workflow design. He offers three practices: move 'up one abstraction layer', delegate whole chunks of tedious work to AI and build reusable systems, and pick models by problem clarity rather than difficulty — shifting from scrutinizing output to evaluating results. For AI-adoption and knowledge-work research, it redirects attention from prompt-engineering tricks back to how humans restructure collaboration patterns and task division.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91239/felix-rieseberg-ai-gap-in-imagination-not-tools",
+    },
+    {
+      id: "n-bnext-20260612-1", category: "media", date: "2026-06-12", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜比同業早做一件事，momo 嘗到 AI 代理甜頭！商品推薦點擊率增 4 成、轉換率也提升 3 成",
+        en: "Bnext｜One early move pays off: momo reaps AI-agent gains, +40% recommendation click-through and +30% conversion",
+      },
+      summary: {
+        zh: "momo 因比同業更早建立完整的商品屬性資料庫，搭配向量搜尋與大語言模型強化的語意標籤導入「購物代理」，使商品推薦點擊率提升約 4 成、轉換率提升約 3 成。文章點出在代理驅動的電商時代，決勝關鍵不是炫目的 AI 功能，而是底層資料基礎建設；消費者互動正從關鍵字搜尋轉向語意理解，商品的「可被 AI 發現性」與信任成為新競爭要素。對電商與服務科學研究是少見的本土量化案例。",
+        en: "By building comprehensive product-attribute databases earlier than rivals — paired with vector search and LLM-enriched semantic tags — momo's 'shopping agent' lifted recommendation click-through ~40% and conversion ~30%. The piece argues that in agent-driven commerce, foundational data infrastructure rather than flashy AI features determines success, as consumer interaction shifts from keyword search to semantic understanding and product 'AI-discoverability' and trust become new competitive factors. A rare local, quantified case for e-commerce and service-science research.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91211/momo-ai-agent",
+    },
+    {
+      id: "n-bnext-20260612-2", category: "media", date: "2026-06-12", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜信用卡交給 AI 前的 16 個關鍵思考：免費的最貴？出包算誰？風險一次看",
+        en: "Bnext｜16 questions before you let AI hold your credit card: is 'free' the costliest, and who's liable when it errs?",
+      },
+      summary: {
+        zh: "本文集結四位專家、以 16 個關鍵問題剖析「代理式商務」的授權與責任邊界，核心原則是「誰授權，誰負責」——使用者對自己允許 AI 執行的行為仍負法律責任。文章提醒：免費 AI 服務的真實成本被補貼掩蓋、AI 推薦可能形成壟斷性的選擇控制、企業無法以「AI 說的」卸責（如 Air Canada 案），且共用 AI 帳號的資料外洩幾乎無法事後補救。對 AI 治理、消費者行為與數位倫理研究提供清楚的風險框架。",
+        en: "Drawing on four experts, the article frames agentic commerce through 16 critical questions about authorization and liability, anchored on 'whoever authorizes bears responsibility' — users remain legally accountable for actions they let AI take. It warns that free AI's real costs are hidden by subsidies, that AI recommendations can create monopolistic control over choice, that firms cannot disclaim 'the AI said it' (as in the Air Canada case), and that data leaks from shared AI accounts are nearly impossible to remedy afterward. A clear risk framework for AI-governance, consumer-behavior, and digital-ethics research.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91213/ai-agent-qa",
+    },
+    {
+      id: "n-bnext-20260618-1", category: "media", date: "2026-06-18", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜AI 代理愈多愈好？BCG 吳學霖打破迷思：千萬要避免「為了用 AI 而 AI」",
+        en: "Bnext｜More AI agents, better? BCG's Wu Xuelin debunks the myth: avoid 'using AI for AI's sake'",
+      },
+      summary: {
+        zh: "BCG X 大中華區負責人吳學霖指出，企業導入 AI 代理應避免「為了用 AI 而 AI」，須把資源聚焦在與核心競爭力最相關、價值最大的專案，並留意 tokens 的經濟成本。他強調當 CEO 親身領導轉型、跨部門檢視工作流程時，能產生個別部署無法達成的規模化效益。對 AI 導入策略與組織再設計研究，這提供了以價值創造為導向、需高層推動與組織變革配合的清楚判準。",
+        en: "BCG X Greater China lead Wu Xuelin argues enterprises must avoid deploying AI agents 'for AI's sake', concentrating resources on the projects most tied to core competitiveness and highest value while watching token economics. He stresses that when CEOs personally lead transformation and review cross-departmental workflows, they unlock scale benefits unattainable through isolated deployments. For AI-adoption-strategy and org-redesign research, it offers a clear value-creation criterion requiring top-down drive and organizational change.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91257/taiwan-enterprises-ai-agents-adoption-impact-bcg-x-wu-xuelin",
+    },
+    {
+      id: "n-bnext-20260617-1", category: "media", date: "2026-06-17", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜SpaceX 收購 Cursor！600 億美元交易背後，黃紹儒怎靠「GitHub 履歷」當上創始工程師？",
+        en: "Bnext｜SpaceX acquires Cursor: behind the $60B deal, how a Taiwanese engineer landed a founding role via his 'GitHub résumé'",
+      },
+      summary: {
+        zh: "AI 編程工具新創 Cursor 被 SpaceX 以 600 億美元收購，文章揭示三個觀察：25 歲執行長以「GitHub 作品」而非傳統履歷招募頂尖人才、台灣工程師黃紹儒靠開源專案成為早期創始工程師、以及 Cursor 被迫自建模型以擺脫對單一供應商的依賴。對人才管理與商業策略研究而言，這凸顯實作作品勝於履歷的甄選邏輯、新創的單一供應商風險，以及算力如何成為併購與融資的核心驅動力。",
+        en: "AI-coding startup Cursor is acquired by SpaceX for $60B. The piece surfaces three observations: a 25-year-old CEO recruiting top talent via 'GitHub portfolios' rather than traditional résumés, a Taiwanese engineer who became a founding engineer through open-source work, and Cursor building its own models to escape single-supplier dependence. For talent-management and business-strategy research, it highlights portfolio-over-résumé selection logic, startup single-supplier risk, and how compute power has become a core driver of M&A and financing.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91262/cursor-spacex-600-billion-deal-taiwan-engineer",
+    },
+    {
+      id: "n-bnext-20260616-1", category: "media", date: "2026-06-16", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜全公司都說「有在用 AI」，卻說不清楚改善了什麼？5 個問題找出企業轉型卡關在哪",
+        en: "Bnext｜Everyone says they 'use AI' but can't say what improved? 5 questions to find where transformation stalls",
+      },
+      summary: {
+        zh: "文章把企業 AI 應用區分為試驗、整合與「AI 原生」三層境界，強調真正的差距不在工具數量，而在部署哲學。企業需建立明確的工作角色定義、人類責任歸屬、沙箱測試、可觀測性儀表板與流程 KPI 等治理框架，才能從被動應用走向具信任基礎的智能組織。對數位轉型與治理研究的啟示是：轉型成敗取決於組織能否從「AI 能做什麼」轉向「我們授權什麼」的根本思維轉變。",
+        en: "The article distinguishes three tiers of enterprise AI use — experimentation, integration, and 'AI-native' — arguing the real gap lies not in the number of tools but in deployment philosophy. Firms need governance frameworks: clear role definitions, human accountability, sandbox testing, observability dashboards, and process KPIs, to move from passive use to a trust-based intelligent organization. For digital-transformation and governance research, the lesson is that success hinges on shifting from 'what AI can do' to 'what we authorize.'",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91253/ai-native-enterprise-transformation-governance",
+    },
+    {
+      id: "n-bnext-20260626-1", category: "media", date: "2026-06-26", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Anthropic 產能暴增 8 倍有代價！Claude Code 主管揭管理痛點，AI 如何讓團隊陷入「孤島」危機？",
+        en: "Bnext｜An 8× productivity surge has a cost: Anthropic's Claude Code lead on how AI pushes teams into 'silo' isolation",
+      },
+      summary: {
+        zh: "Anthropic 工程師單季程式產出達過去平均的 8 倍，但「寫程式已不再是瓶頸」，審核負荷反而暴增。Claude Code 主管 Fiona Fung 提出「bad vs. sad」品質框架讓子團隊自訂標準，並坦言最大隱憂是高效協作讓工程師「幾乎不需跨組溝通」即可完成工作，效率之外也帶來孤立感與文化維繫難題，團隊因而啟動共食、共觀彼此工作方式的機制。對團隊與專案管理、知識管理及 AI 導入研究，這是 AI 重塑協作模式與組織認同的具體案例。",
+        en: "Anthropic engineers' quarterly code output hit 8× the prior average, yet 'coding is no longer the bottleneck' — review load exploded instead. Claude Code lead Fiona Fung introduced a 'bad vs. sad' quality framework letting sub-teams set their own standards, and admits her biggest worry is that highly efficient collaboration lets engineers finish work with 'almost no cross-team communication', breeding isolation and cultural-cohesion challenges that prompted shared 'programming lunches'. A concrete case for team/project-management, knowledge-management, and AI-adoption research on how AI reshapes collaboration and organizational identity.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91335/claude-code-management-fiona-fung",
+    },
+    {
+      id: "n-bnext-20260626-2", category: "media", date: "2026-06-26", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜AI 是革智慧工作者的命！緯創技術長：過去資料治理是給人看，AI 時代要給 AI 代理看",
+        en: "Bnext｜AI is coming for knowledge workers: Wistron's CTO on data governance built for AI agents, not people",
+      },
+      summary: {
+        zh: "緯創技術長沈慶堯指出，AI 不只取代勞力，更進入智慧工作領域，未來 AI 代理將參與產銷管理與研發設計等決策流程；資料治理因而進入 2.0——「過去是給人看的資料，AI 時代是給 AI 代理看的」，企業須將製造與領域知識轉化為 AI 可用格式，且不能只靠中央單位，需財務、生產、資材等現場專家共同系統化。文章強調真正的難題是組織文化調整、人才訓練與職務轉型。對數位轉型與知識管理研究，這提供「資料治理為 AI 重構」的清楚產業視角。",
+        en: "Wistron CTO Shen Ching-yao argues AI is moving beyond manual labor into knowledge work, with AI agents set to join production-sales planning and R&D decisions — pushing data governance into a 2.0 era where 'data was once made for people; in the AI era it's made for AI agents.' Firms must convert manufacturing and domain knowledge into AI-usable formats and cannot rely on a central unit alone, requiring finance, production, and materials experts to systematize their know-how, while the real challenge is cultural change, talent training, and role transformation. A clear industry lens for digital-transformation and knowledge-management research on data governance restructured for AI.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91349/wistron-ai-factory-agent-smart-manufacturing",
+    },
+    {
+      id: "n-bnext-20260626-3", category: "media", date: "2026-06-26", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜真人創作行銷效果是 AI 的 7 倍！iKala 程世嘉：「真實」將成企業新競爭優勢",
+        en: "Bnext｜Human-made content markets 7× better than AI: iKala's Sega Cheng on 'authenticity' as the new competitive edge",
+      },
+      summary: {
+        zh: "iKala 程世嘉指出，在 AI 內容氾濫下消費者會下意識迴避缺乏溫度的資訊，真人創作內容的行銷效果是 AI 生成的 7 倍，使「真實體驗與信任」成為稀缺資產；他並預測 2030 年前全球企業將投入 2,500 億美元驗證內容與交易是否為 AI 偽造。當交易從搜尋轉向 AI 代理模式，企業恐失去交易數據與流量入口，回歸品牌定位與真實經營反而成為強大競爭優勢。對電商、消費者行為與數位服務研究，這提供「真實性溢價」與 AI 時代信任經濟的清楚切入點。",
+        en: "iKala's Sega Cheng argues that amid an AI-content flood consumers subconsciously avoid information that lacks warmth, with human-made content marketing 7× more effectively than AI-generated content — making 'authentic experience and trust' a scarce asset; he predicts global firms will spend $250B by 2030 verifying whether content and transactions are AI-faked. As commerce shifts from search to AI agents and firms risk losing transaction data and traffic entry points, returning to brand positioning and authentic operations becomes a powerful edge. A clear entry point for e-commerce, consumer-behavior, and digital-service research on the 'authenticity premium' and the trust economy in the AI era.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91345/ai_taiwan_2026_ikala_keynote_uuixsnru",
+    },
+    {
+      id: "n-bnext-20260629-1", category: "media", date: "2026-06-29", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜代理型商務贏家不是電商，而是購物中心！百貨跨業態整合才是 AI 時代護城河",
+        en: "Bnext｜The winners of agentic commerce aren't e-tailers but shopping malls: cross-format integration is the AI-era moat",
+      },
+      summary: {
+        zh: "文章主張在代理式商務時代，最適合與 AI 代理合作的不是純電商，而是具備跨業態整合能力的百貨與購物中心——它們能同時滿足實體體驗與線上需求，並以結構化資料、跨業態展示與品牌信任建立難以複製的護城河。對電商與服務科學研究而言，這把競爭焦點從交易效率轉向「資料結構化程度」與「跨通路體驗整合」，並提醒傳統零售把 AI 代理視為轉型機遇而非威脅。",
+        en: "The piece argues that in agentic commerce the best partners for AI agents are not pure e-tailers but department stores and malls with cross-format integration — able to serve both physical experience and online demand while building a hard-to-copy moat through structured data, multi-format display, and brand trust. For e-commerce and service-science research it shifts the competitive focus from transaction efficiency to degree of data structuring and cross-channel experience integration, reframing AI agents as a transformation opportunity rather than a threat for traditional retail.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91369/agentic-commerce-department-store",
+    },
+    {
+      id: "n-bnext-20260629-2", category: "media", date: "2026-06-29", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜不只是砸錢雇傭兵！Meta AI 負責人汪滔：我們放手讓天才發揮，要打造未來的「代理經濟」",
+        en: "Bnext｜More than hiring mercenaries: Meta AI chief Alexandr Wang on empowering talent to build the coming 'agent economy'",
+      },
+      summary: {
+        zh: "Meta AI 負責人汪滔指出，建構「代理經濟」生態系不能只靠砸錢招募，更要賦予頂尖人才充足算力與自主空間，並以「讓聰明人告訴我們該怎麼做」取代命令式管理；其願景是讓消費者與企業的 AI 代理自動媒合與交易，形成全新經濟體系。對人才管理與組織創新研究而言，這是一個賦權與資源配置勝過直接管控的具體論點，也勾勒了 AI 代理重塑市場交易結構的長期圖像。",
+        en: "Meta AI chief Alexandr Wang argues that building an 'agent economy' ecosystem takes more than throwing money at recruiting — it requires giving top talent ample compute and autonomy, replacing command-style management with 'let smart people tell us what to do' — with a vision of consumer and enterprise AI agents auto-matching and transacting to form a new economic system. For talent-management and organizational-innovation research it is a concrete argument that empowerment and resource allocation beat direct control, while sketching a long-run picture of AI agents reshaping market transaction structures.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91106/alexandr-wang-ai-agent-meta",
+    },
+    {
+      id: "n-bnext-20260630-1", category: "media", date: "2026-06-30", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜AI 讓寫程式不再是瓶頸，然後呢？Spotify 工程副總：判斷什麼是「好點子」，變成管理大難題",
+        en: "Bnext｜AI removes the coding bottleneck — now what? Spotify's VP of engineering: judging what's a 'good idea' becomes the hard management problem",
+      },
+      summary: {
+        zh: "Spotify 工程副總指出，AI 開發工具並未降低工程紀律需求，反而提高組織對驗證與測試的標準；當程式碼生成不再是瓶頸，真正的限制移轉到產品決策與價值判斷。對管理者的啟示是把評估焦點從「產出多少程式碼」重新定位到「創造多少使用者價值」，並建立從需求、測試到成果的完整連結體系——企業要發揮 AI 潛能，得先整理組織脈絡與工程基礎，而非單純追求工具導入。對團隊與專案管理、知識工作研究是清楚的決策瓶頸轉移案例。",
+        en: "Spotify's VP of engineering argues AI dev tools haven't lowered the need for engineering discipline — they raise the bar for validation and testing. Once code generation stops being the constraint, the real bottleneck shifts to product decisions and value judgment, so managers should refocus measurement from 'how much code' to 'how much user value', building a full chain from requirements to tests to outcomes. Unlocking AI's potential means first ordering organizational context and engineering foundations rather than chasing tool adoption — a clear case for team/project-management and knowledge-work research on where the decision bottleneck moves.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91376/spotify-ai-engineering-foundation-validation-loops-product-decisions",
+    },
+    {
+      id: "n-bnext-20260630-2", category: "media", date: "2026-06-30", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Meta 傳全面禁工程師用 Claude Code、Codex！擔心自家模型被「蒸餾」污染",
+        en: "Bnext｜Meta reportedly bans engineers from Claude Code and Codex over fears of 'distillation' contaminating its own model",
+      },
+      summary: {
+        zh: "Meta 傳對 Applied AI 部門工程師祭出禁令，禁用 Anthropic 的 Claude Code 與 OpenAI 的 Codex，擔心競爭對手模型的輸出會透過日常開發流程無意間混入自家 Llama 的訓練資料，形成模型蒸餾風險。此舉反映 AI 產業智財權保護戰升溫，企業開始把模型輸出、訓練資料與開發流程視為核心競爭資產。對 AI 治理與資訊安全研究而言，這凸顯組織須在創新效率與技術保密間建立內部工具使用規範，並重新評估對第三方服務的依賴與無意間的資料外洩風險。",
+        en: "Meta has reportedly banned its Applied AI engineers from using Anthropic's Claude Code and OpenAI's Codex, fearing competitors' model outputs could inadvertently seep into Llama's training data through daily development and create a 'distillation' risk. The move reflects an escalating IP-protection battle in AI, with firms treating model outputs, training data, and development workflows as core competitive assets. For AI-governance and information-security research, it highlights the need for internal tool-use policies that balance innovation against technical secrecy, and a reassessment of third-party dependence and inadvertent data-leakage risk.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91380/meta-bans-claude-code-codex",
+    },
+    {
+      id: "n-bnext-20260702-1", category: "media", date: "2026-07-02", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜台灣大資訊長：逆分工時代到來！「超人計畫」為框架，解密內部 4 個 AI 嵌入場景",
+        en: "Bnext｜Taiwan Mobile's CIO: the age of 'reverse division of labor' — the 'Superman Project' and four internal AI-embedding scenarios",
+      },
+      summary: {
+        zh: "台灣大資訊長蔡祈岩提出「AI 讓專才回歸通才」的逆分工觀點：當傳統分工走到瓶頸，企業應把重複性工作交給 AI 代理，釋放員工投入需要人類判斷與創意的任務。「超人計畫」從個人工具升級到組織級 AI Agent 部署，已在客服與門市見效（客服締約率提高 40%）。對數位轉型與組織再設計研究，這是系統性 AI 導入如何重塑運營架構的可量化本土案例。",
+        en: "Taiwan Mobile CIO Tsai Chi-yen frames a 'reverse division of labor': as traditional specialization hits its ceiling, firms should hand repetitive work to AI agents and free employees for judgment- and creativity-intensive tasks. The 'Superman Project' scales from personal tools to organization-level AI-agent deployment, already lifting customer-service close rates by 40% in call centers and stores. A quantified local case for digital-transformation and org-redesign research on how systematic AI adoption reshapes operating structures.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91390/taiwan-mobile-cio-reverse-division-of-labor-ai-agent",
+    },
+    {
+      id: "n-bnext-20260702-2", category: "media", date: "2026-07-02", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜電信業 AI 轉型第一步不是買 GPU！遠傳資訊長胡德民：先解高頻問題，1,000 人用就是董事會的成就",
+        en: "Bnext｜AI transformation doesn't start with buying GPUs: FarEasTone's CIO on solving high-frequency problems first, with 1,000 users as the real KPI",
+      },
+      summary: {
+        zh: "遠傳資訊長胡德民主張「AI 伺服器、GPU 可以買，但 AI 的成效與轉型不能買」，企業應從解決第一線高頻問題切入，而非盲目投資硬體。他把衡量成功的指標定為實際採用人數（如 1,000 名員工使用），而非技術投入規模。對數位轉型研究的啟示是：成功的 AI 導入需搭配組織流程改造與資料治理，技術實施與組織變革必須並行。",
+        en: "FarEasTone CIO Hu De-min argues that 'you can buy AI servers and GPUs, but you can't buy AI's impact or transformation' — firms should start from frontline high-frequency problems rather than blindly investing in hardware. He redefines the success metric as actual adoption (e.g., 1,000 employees using a tool) instead of the scale of technical spend. For digital-transformation research, the lesson is that effective AI adoption must pair with process redesign and data governance, running technology and organizational change in parallel.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91389/fet-ai-transformation-high-frequency-problems",
+    },
+    {
+      id: "n-bnext-20260701-1", category: "media", date: "2026-07-01", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜從客服到數位員工：宏華國際如何用 AI Agent 幫企業把握每一筆商機？",
+        en: "Bnext｜From customer service to digital employee: how Honghwa International uses AI Agents to help firms capture every opportunity",
+      },
+      summary: {
+        zh: "宏華國際以十餘年客服經驗，把服務場景與行業知識模組化，打造能理解情緒與情境、支援全通路與多語（國、台、英）24 小時服務的 AI 客服代理，降低企業導入門檻與試錯成本。文章點出 AI 客服成敗的關鍵不在技術本身，而在對真實服務情境的掌握——「真實世界的客服互動很少按既定腳本進行」。對電商、服務科學與顧客體驗研究，這是把領域知識轉為 AI 競爭優勢、並將客服代理延伸為內部員工支援基礎設施的具體本土案例。",
+        en: "Drawing on over a decade of customer-service experience, Honghwa International modularizes service scenarios and industry know-how to build AI service agents that grasp emotion and context and deliver 24/7 omnichannel, multilingual (Mandarin, Taiwanese, English) support — lowering enterprises' adoption barriers and trial-and-error costs. The piece argues the decisive factor is not the technology itself but mastery of real service contexts — 'real-world customer interactions rarely follow a fixed script.' A concrete local case for e-commerce, service-science, and customer-experience research on turning domain knowledge into AI advantage and extending service agents into internal employee-support infrastructure.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91367/honghwa",
+    },
+    {
+      id: "n-bnext-20260630-3", category: "media", date: "2026-06-30", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜PChome 傳遭駭！網家：與母公司系統無直接關聯，拍付國際證實收到勒索",
+        en: "Bnext｜PChome allegedly hacked: NetFamily says no direct link to parent systems while Pi Pay confirms extortion demand",
+      },
+      summary: {
+        zh: "勒索軟體組織 Settra 宣稱自 6 月 10 日起入侵 PChome，公開 12 頁滲透報告、聲稱取得 102GB 資料（含客戶紀錄、員工憑證、API 文件與稽核報告）與「350 萬名用戶」個資；網家淡化影響、稱與母公司系統無直接關聯，子公司拍付國際則證實收到勒索並報案啟動鑑識。值得注意的是不同威脅情報平台記錄的受害人數落差極大（350 萬 vs. 3.5 萬），凸顯攻擊者宣稱在官方調查前不應照單全收。對資訊安全與隱私研究，這是勒索勒贖手法、集團跨子公司資料匯聚風險與獨立鑑識驗證必要性的清楚本土案例。",
+        en: "Ransomware group Settra claims to have breached PChome since June 10, publishing a 12-page infiltration report and asserting access to 102GB of data (customer records, employee credentials, API docs, audit reports) and personal data on '3.5 million users'; PChome downplays the impact as not directly linked to parent systems, while subsidiary Pi Pay confirms an extortion demand, has reported it, and launched forensics. Notably, threat-intel platforms logged wildly different victim counts (3.5M vs. 35K), underscoring that attacker claims should not be taken at face value before official investigation. A clear local case for information-security and privacy research on ransomware-extortion tactics, cross-subsidiary data-aggregation risk, and the necessity of independent forensic verification.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91383/pchome-settra-ransomware-data-breach",
+    },
   ],
 };
