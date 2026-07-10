@@ -463,5 +463,44 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/91383/pchome-settra-ransomware-data-breach",
     },
+    {
+      id: "n-bnext-20260710-1", category: "media", date: "2026-07-10", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜在公司推 AI，同事一週就打回原形？他用「3 層知識庫」把流程變成按鈕",
+        en: "Bnext｜Pushing AI at work but colleagues revert within a week? A three-layer knowledge base turns workflows into buttons",
+      },
+      summary: {
+        zh: "與其訓練全體員工寫提示詞（多半一週後就打回原形），不如把複雜度抽象化為「按鈕」。文章拆解一套三層知識庫：參考文件轉為 Markdown、把步驟流程寫成 AI 可執行的行動工作流、再封裝成員工可直接下載部署的技能庫，讓使用者只看到完成的流程而看不到技術。對知識管理與 AI 導入研究的意涵在於：導入成敗取決於前置的知識基礎建設與版本治理，而非使用者的提示工程技巧。",
+        en: "Rather than training every employee to write prompts — an approach that usually collapses within a week — the piece argues for abstracting complexity into buttons. It unpacks a three-layer knowledge base: reference documents converted to Markdown, step-by-step action workflows that AI executes, and a skill library employees can download and deploy directly, so users see only a completed workflow rather than the underlying technology. For knowledge-management and AI-adoption research, the implication is that success rests on upfront knowledge infrastructure and version governance, not on users' prompt-engineering skill.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91473/ai-adoption-knowledge-base-skill-library",
+    },
+    {
+      id: "n-bnext-20260708-1", category: "media", date: "2026-07-08", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜蘋果夥伴塔塔爆 20 萬份檔案外洩！不只 iPhone 提前見光，更致命的危機才剛開始",
+        en: "Bnext｜Apple partner Tata leaks 200,000 files: the leaked iPhone specs are the least of it",
+      },
+      summary: {
+        zh: "蘋果印度製造夥伴塔塔電子外洩 204,341 份機密檔案，包含未發表的 iPhone 18 Pro 規格與供應商資訊。文章直指供應鏈分散化的策略張力——「印度的組裝能力提升，並不等於具備成熟的供應鏈安全管理」：分散生產雖降低地緣政治風險，卻換來各法域資安標準不一的破口。對資訊安全與策略研究而言，這揭示第三方供應商漏洞是分散式製造生態的系統性風險，未來高科技代工的競爭關鍵將從成本與產能轉向資安體系與智財保護機制。",
+        en: "Tata Electronics, Apple's Indian manufacturing partner, leaked 204,341 confidential files including unreleased iPhone 18 Pro specifications and supplier information. The article names the strategic tension in supply-chain diversification — 'growth in India's assembly capability does not equal mature supply-chain security management' — as decentralized production trades geopolitical resilience for exposure to fragmented security standards across jurisdictions. For information-security and strategy research, it shows third-party vendor vulnerability as a systemic risk in distributed manufacturing ecosystems, shifting the basis of contract-manufacturing competition from cost and volume toward security systems and IP protection.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91447/tata-hacker-iphone-18-supply-chain",
+    },
+    {
+      id: "n-bnext-20260706-1", category: "media", date: "2026-07-06", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜帶人比寫程式更難！TPU 之父曝「黃仁勳管理學」：為何拋棄一對一會談，可有效降低組織內鬥？",
+        en: "Bnext｜Leading people is harder than coding: the TPU inventor on why dropping one-on-ones curbs organizational infighting",
+      },
+      summary: {
+        zh: "TPU 發明人、Groq 創辦人 Jonathan Ross 指出，取消一對一會談、改以群體同步溝通，能讓所有人聽到高度一致的訊息，避免詮釋分歧滋生派系鬥爭；他並主張領導者應從徵詢共識（「你覺得呢？」）轉為宣告意圖（「我打算……」），在保留正當回饋空間的同時建立團隊當責。文章結論是有效管理須順應領導者性格與團隊組成，而非套用公式——當 AI 讓寫程式商品化，判斷力與方向清晰度才是新的領導瓶頸。對團隊與專案管理、組織創新研究，這是資訊透明度如何影響組織政治的具體論點。",
+        en: "TPU inventor and Groq founder Jonathan Ross argues that scrapping one-on-one meetings in favor of group-synchronous communication makes everyone hear remarkably consistent information, preventing divergent interpretations from fueling factionalism. He also urges leaders to shift from seeking consensus ('What do you think?') to declaring intent ('I intend to…'), preserving room for legitimate feedback while building team ownership. Effective management, he concludes, adapts to a leader's temperament and team composition rather than applying formulas — and as AI commoditizes coding, judgment and directional clarity become the new leadership bottleneck. A concrete argument for team/project-management and organizational-innovation research on how information transparency shapes organizational politics.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91431/jonathan-ross-groq-management-lessons",
+    },
   ],
 };
