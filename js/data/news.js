@@ -541,5 +541,31 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/91477/openai-gpt-5-6-chatgpt-work-launch",
     },
+    {
+      id: "n-bnext-20260715-1", category: "media", date: "2026-07-15", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Figma 畫布退位！YC 設計主管揭 Claude 工作流：當 AI 包辦技術，設計師如何靠「策展力」勝出？",
+        en: "Bnext｜Figma steps aside: YC's head of design on a Claude workflow — as AI handles the craft, designers win on 'curation'",
+      },
+      summary: {
+        zh: "YC 設計主管 Eve Bouffard 展示以 Claude 等 AI 代理重塑設計流程：當技術執行被自動化，設計師的重心從工具熟練度轉向「策展力」——品味、判斷與清楚表達美學方向的能力。對 UX／設計與人機互動研究的意涵是，技能門檻消融後，脈絡豐富的協作與策略判斷比軟體操作更關鍵，設計團隊的人才標準與工作分工也隨之重構。",
+        en: "YC head of design Eve Bouffard demonstrates reshaping design workflows with AI agents like Claude: once technical execution is automated, designers' focus shifts from tool mastery to 'curation' — taste, judgment, and the ability to articulate aesthetic direction. For UX/design and human-computer-interaction research, it implies that as skill barriers dissolve, context-rich collaboration and strategic judgment matter more than software proficiency, reshaping design-team talent criteria and division of labor.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91506/yc-designer-eve-bouffard-ai-workflow",
+    },
+    {
+      id: "n-bnext-20260713-1", category: "media", date: "2026-07-13", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Meta 出租 AI 算力，外界嗅出「AI 投資放緩」警訊？祖克柏揭背後原因",
+        en: "Bnext｜Meta leases out AI compute — a sign of an 'AI investment slowdown'? Zuckerberg explains the real reason",
+      },
+      summary: {
+        zh: "Meta 計畫透過雲端服務出租運算資源，引發科技巨頭 AI 算力過剩的疑慮；執行長祖克柏澄清此為策略性多角化而非過度投資，並以約為對手四分之一的價格推出 API 以擴大開發者採用，消息一出牽動半導體股大幅震盪。對商業策略與平台經濟研究而言，這標誌產業轉折點——巨頭須從無止境擴張投資轉為證明鉅額資本支出的實質回報，也揭示算力正從稀缺資產走向可租賃的平台商品。",
+        en: "Meta plans to lease computing resources via a cloud service, sparking concerns of AI compute surplus among tech giants; CEO Zuckerberg clarified it is strategic diversification rather than over-investment, pricing its APIs at roughly a quarter of rivals' rates to expand developer adoption — news that triggered sharp semiconductor-stock volatility. For business-strategy and platform-economy research it marks an inflection point where giants must show tangible returns on staggering capex rather than endless expansion, and signals compute shifting from a scarce asset toward a leasable platform commodity.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91484/meta-cloud-service-computing-power",
+    },
   ],
 };
