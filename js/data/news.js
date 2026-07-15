@@ -502,5 +502,44 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/91431/jonathan-ross-groq-management-lessons",
     },
+    {
+      id: "n-bnext-20260714-1", category: "media", date: "2026-07-14", pinned: false, tags: ["ai", "neuro"],
+      title: {
+        zh: "數位時代｜AI 也有雙重人格？Anthropic 拆解 30 萬則對話揭 AI「回話風格」，為何說英文的 Claude 比中文更刻薄？",
+        en: "Bnext｜Does AI have a split personality? Anthropic dissects 300,000 conversations to map Claude's 'response style'",
+      },
+      summary: {
+        zh: "Anthropic 分析逾 30 萬則對話，把 3,000 多種價值觀壓縮成四條可量化軸線（順從 vs. 謹慎、溫暖 vs. 嚴謹、深度 vs. 簡潔、坦率 vs. 執行導向），發現不同模型代表不同「互動風格」而非單純能力差異，且英文回覆比中文更偏謹慎，推翻「中文比較溫和」的直覺；但四軸僅能解釋約 15% 的回覆變異。對人機互動與認知科學研究而言，這提供了把 AI 對話風格操作化、量化並跨語言比較的清楚方法論範例，也提醒模型選擇其實是在選「互動風格」。",
+        en: "Anthropic analyzed over 300,000 conversations, compressing 3,000+ values into four measurable axes (deference vs. caution, warmth vs. rigor, depth vs. brevity, candor vs. execution-focus), finding that different models embody distinct 'interaction styles' rather than mere capability gaps — and that English replies skew more cautious than Chinese, overturning the intuition that Chinese is gentler; yet the four axes explain only ~15% of response variance. For human-AI interaction and cognitive-science research, it offers a clear methodological template for operationalizing, quantifying, and cross-linguistically comparing AI conversational style, and a reminder that choosing a model means choosing an interaction style.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91503/anthropic-claude-value-axes",
+    },
+    {
+      id: "n-bnext-20260714-2", category: "media", date: "2026-07-14", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜消費者問 ChatGPT，你的品牌會出現嗎？7 個動作讓 AI 看得見你、有信心推薦你",
+        en: "Bnext｜When consumers ask ChatGPT, does your brand show up? 7 moves to make AI see and confidently recommend you",
+      },
+      summary: {
+        zh: "當 AI 成為新的消費搜尋入口，品牌能否被推薦取決於「生成式引擎優化（GEO）」而非傳統 SEO。文章引數據指出 ChatGPT 導流轉換率達 15.9%、遠高於自然搜尋的 1.76%，並預估自然搜尋流量至 2028 年恐減半；接著提出七個具體動作——結構化品牌與商品資料、經營評論、自建 AI 導購、整合 CDP、測試完整 AI 購買流程、每季監測 AI 如何描述品牌。對電商、行銷與消費者行為研究而言，這把競爭焦點從「搜尋排名」移到「AI 可發現性與推薦信任」，並凸顯成敗繫於組織是否能持續監測與優化。",
+        en: "As AI becomes the new consumer search entry point, whether a brand gets recommended hinges on Generative Engine Optimization (GEO) rather than traditional SEO. The piece cites a 15.9% conversion rate from ChatGPT-referred traffic — far above natural search's 1.76% — and warns natural-search traffic could halve by 2028, then lays out seven concrete moves: structure brand and product data, manage reviews, deploy an owned AI shopping assistant, integrate a CDP, test full AI purchase workflows, and monitor quarterly how AI describes the brand. For e-commerce, marketing, and consumer-behavior research it shifts the competitive focus from search ranking to AI-discoverability and recommendation trust, underscoring that success rests on sustained organizational monitoring and optimization.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91505/geo-7-steps-ai-recommend-brand",
+    },
+    {
+      id: "n-bnext-20260710-2", category: "media", date: "2026-07-10", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜OpenAI 發表 GPT-5.6、ChatGPT Work！新模型效率大升級，三大版本與辦公代理一次看",
+        en: "Bnext｜OpenAI unveils GPT-5.6 and ChatGPT Work: an efficiency leap with three model tiers and an office agent",
+      },
+      summary: {
+        zh: "OpenAI 讓 GPT-5.6 全面上市並推出辦公型 AI 代理「ChatGPT Work」，主軸是「效率」——旗艦 Sol 在代理式程式撰寫的 token 效率提升 54%，另有均衡版 Terra 與輕量版 Luna 供成本取捨。ChatGPT Work 定位為「多步驟執行介面」，使用者只需指定想要的成果，系統即整合 Slack、Teams、Google Drive、SharePoint 等平台自動彙整資料並產出交付物，並保留人工核可關卡。對企業 AI 代理與數位轉型研究而言，這是「從指定步驟到指定成果」的介面典範轉移，也提供分層模型選型與人機監督機制的具體觀察點。",
+        en: "OpenAI brought GPT-5.6 to general availability and launched the office AI agent 'ChatGPT Work', with efficiency as the theme — flagship Sol improves token efficiency in agentic programming by 54%, alongside the balanced Terra and lightweight Luna for cost trade-offs. ChatGPT Work is positioned as a 'multi-step execution interface': users specify desired outcomes rather than steps, and the system integrates Slack, Teams, Google Drive, and SharePoint to synthesize data and produce deliverables while preserving human approval checkpoints. For enterprise-AI-agent and digital-transformation research, it marks an interface shift from specifying steps to specifying outcomes, and a concrete vantage point on tiered model selection and human-in-the-loop oversight.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91477/openai-gpt-5-6-chatgpt-work-launch",
+    },
   ],
 };
