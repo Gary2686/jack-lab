@@ -567,5 +567,161 @@ window.DATA.news = {
       image: "",
       url: "https://www.bnext.com.tw/article/91484/meta-cloud-service-computing-power",
     },
+    {
+      id: "n-bnext-20260716-1", category: "media", date: "2026-07-16", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Claude Code 官方解密！一次看懂 4 種「迴圈」設計法，讓 AI Agent 自動搞定複雜任務",
+        en: "Bnext｜Claude Code decoded: four 'loop' design patterns that let AI agents tackle complex tasks autonomously",
+      },
+      summary: {
+        zh: "Claude Code 團隊提出「迴圈設計非一體適用」的框架，把 AI 代理的自動化拆成四種模式——回合式（人工提示、模型自判完成）、目標式（明確成功標準）、時間式（定時或事件觸發）與自主式（無人在場、依目標持續運作），並主張應依任務特性選型：先從簡單回合式起步，僅在有清楚成功標準時才升級，以避免浪費 token 並在高風險決策上保留人類監督。對 AI 導入與知識工作研究而言，這把「如何用 AI」從提示技巧提升到自動化流程的系統性設計，也提供人機監督層級的具體判準。",
+        en: "The Claude Code team proposes that loop design is not one-size-fits-all, decomposing AI-agent automation into four patterns — turn-based (manual prompt, model self-judges completion), goal-based (explicit success criteria), time-based (scheduled or event-driven), and autonomous (no human present, running until objectives are met) — and argues for matching the pattern to task characteristics: start with simple turn-based approaches and escalate only when clear success criteria exist, to avoid wasteful token consumption while preserving human oversight on high-stakes decisions. For AI-adoption and knowledge-work research, it elevates 'how to use AI' from prompting tricks to systematic automation-workflow design and offers concrete criteria for levels of human-in-the-loop oversight.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91516/claude-code-loop-engineering",
+    },
+    {
+      id: "n-bnext-20260716-2", category: "media", date: "2026-07-16", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜押注日本 AI 機器人！黃仁勳訪日結盟富士通、日立等 9 大巨頭，組建「Cosmos 聯盟」",
+        en: "Bnext｜Betting on Japanese AI robots: Huang forms a nine-giant 'Cosmos Coalition' with Fujitsu, Hitachi and more",
+      },
+      summary: {
+        zh: "NVIDIA 執行長黃仁勳訪日，結盟 FANUC、富士通、日立、川崎重工、三菱、NEC、軟銀、Sony 與安川電機九大企業組建「Cosmos 聯盟」，主張日本在機器人、機電整合與精密製造的長年積累使其最適合引領「實體 AI（Physical AI）」革命。有別於台韓在 AI 晶片供應鏈的角色，日本的貢獻在於把 AI 能力轉譯為工廠、車輛與機器設備等實體系統，並以開放模型讓企業整合自有資料。對人機互動與具身 AI（embodied AI）研究而言，這是通用 AI 走向實體世界、重塑製造與服務型機器人落地路徑的指標性產業結盟。",
+        en: "NVIDIA CEO Jensen Huang visited Japan to forge a 'Cosmos Coalition' with nine giants — FANUC, Fujitsu, Hitachi, Kawasaki Heavy Industries, Mitsubishi, NEC, SoftBank, Sony, and Yaskawa — arguing that Japan's decades of expertise in robotics, mechatronics, and precision manufacturing make it best positioned to lead the 'Physical AI' revolution. Unlike Taiwan's and South Korea's roles in the AI-chip supply chain, Japan's contribution lies in translating AI capabilities into physical systems — factories, vehicles, and robotic equipment — with open models letting firms integrate proprietary data. For human-machine interaction and embodied-AI research, it is a bellwether industry alliance for general AI moving into the physical world and reshaping the deployment path of manufacturing and service robots.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91512/nvidia-japan-robotics-physical-ai",
+    },
+    {
+      id: "n-bnext-20260715-2", category: "media", date: "2026-07-15", pinned: false, tags: ["ai", "neuro"],
+      title: {
+        zh: "數位時代｜OpenAI 首款裝置曝光！設計大師艾夫操刀無螢幕 AI 音響，主打「具生命感」的 AI 伴侶",
+        en: "Bnext｜OpenAI's first device revealed: Jony Ive's screenless AI speaker pitched as a 'lifelike' companion",
+      },
+      summary: {
+        zh: "OpenAI 攜手設計大師 Jony Ive 推出首款硬體——一台無螢幕、可攜、內建攝影機與感測器的智慧音響，定位為「具生命感」的居家 AI 伴侶而非傳統語音助理；其機構甚至會「自主微動」以營造生命感，主打情感連結而非純功能。此舉標誌 OpenAI 從純軟體轉向「環境運算（ambient computing）」，讓 AI 成為隱形、隨時在場的家庭夥伴（惟蘋果 2026 年 7 月的商業機密訴訟恐延後上市）。對人機互動與注意力／情緒研究而言，這把介面從螢幕轉向多模態、擬情感的常駐存在，提出全新的互動設計與使用者情感依附課題。",
+        en: "OpenAI, partnering with designer Jony Ive, unveiled its first hardware — a screenless, portable smart speaker with camera and sensors, positioned as a 'lifelike' home AI companion rather than a traditional voice assistant; its mechanical structures even 'self-move' to create a sense of life, emphasizing emotional connection over pure function. The move marks OpenAI's pivot from software-only into 'ambient computing', making AI an invisible, always-present household partner (though Apple's July 2026 trade-secret lawsuit may delay launch). For human-computer-interaction and attention/emotion research, it shifts the interface from screens to multimodal, affect-laden ambient presence, raising fresh questions about interaction design and users' emotional attachment.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91510/openai-first-hardware-smart-speaker",
+    },
+    {
+      id: "n-bnext-20260717-1", category: "media", date: "2026-07-17", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜別人還在 AI 陣痛，它用數百個 AI 代理創造數億美元效益！百年物流巨頭做對哪 3 件事？",
+        en: "Bnext｜While others struggle with AI, it reaps hundreds of millions with hundreds of AI agents: what a century-old logistics giant got right",
+      },
+      summary: {
+        zh: "百年物流巨頭 C.H. Robinson 部署數百個 AI 代理，帶來約 45% 生產力提升與雙位數獲利成長，關鍵做對三件事：一是導入精實方法、先消除非增值任務再自動化；二是建立容錯文化、以紅綠燈狀態指標讓團隊安心試錯；三是自建 AI 模型（逾 450 名工程師）把 token 成本壓到 200 萬美元以下卻創造數億美元效益。對商業策略與數位轉型研究而言，這是一個「AI 導入須搭配流程優化、文化變革與內部能力建構」的量化案例，並示範如何在不裁員下把人力成長與業務量脫鉤、把人才轉往高價值工作。",
+        en: "Century-old logistics giant C.H. Robinson deployed hundreds of AI agents to achieve ~45% productivity gains and double-digit profit growth by getting three things right: applying lean methodology to eliminate non-value tasks before automating, fostering a failure-tolerant culture with red/green status indicators, and building AI models in-house (450+ engineers) to hold token costs under $2M while generating hundreds of millions in value. For business-strategy and digital-transformation research it is a quantified case that AI adoption must pair with process optimization, cultural change, and internal capability building, showing how to decouple headcount growth from business volume and redirect talent to higher-value work without mass layoffs.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91527/ai-transformation-ch-robinson",
+    },
+    {
+      id: "n-bnext-20260717-2", category: "media", date: "2026-07-17", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜一人用 AI 產出翻 10 倍，全公司卻沒跟上？Claude Code 創始人揭「AI 採用 5 階地圖」，看懂你卡在哪",
+        en: "Bnext｜One person 10× their output with AI but the company can't keep up? Claude Code founder's 'AI-adoption 5-stage map' shows where you're stuck",
+      },
+      summary: {
+        zh: "Claude Code 創始人 Boris Cherny 提出「AI 採用 5 階地圖」，從第 0 階（限制存取）到第 4 階（AI 原生、自主管理數千個代理）；每一階都須辨識瓶頸並建立對應護欄，晉級關鍵在於制度性變革而非單純增加使用量。個人生產力的躍升若缺乏系統與治理，並不會自動擴散到整個組織；成效應以「創造的價值」而非 token 消耗量衡量，越高階越需要制度信任與決策速度。對 AI 導入與數位轉型研究而言，這推翻了「導入是隨工具普及而線性推進」的假設，凸顯組織變革、制度信任與流程再設計與技術能力同等關鍵。",
+        en: "Claude Code founder Boris Cherny proposes an 'AI-adoption 5-stage map', from Stage 0 (gated access) to Stage 4 (AI-native, autonomously managing thousands of agents), where each stage requires identifying bottlenecks and installing matching guardrails — and progression hinges on institutional change rather than more usage. Individual productivity leaps don't automatically scale organization-wide without systems and governance; success should be measured by value created rather than token consumption, and higher stages demand greater institutional trust and decision speed. For AI-adoption and digital-transformation research it challenges the assumption that adoption advances linearly with tool proliferation, underscoring that organizational change, institutional trust, and process redesign matter as much as technical capability.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91541/claude-code-ai-adoption-5-stages",
+    },
+    {
+      id: "n-bnext-20260717-3", category: "media", date: "2026-07-17", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜非工程師，怎麼建立你的 AI Agent？他實戰後建議：先「反向拆解工作流」！",
+        en: "Bnext｜Not an engineer? How to build your own AI Agent — his hands-on advice: start by 'reverse-decomposing the workflow'",
+      },
+      summary: {
+        zh: "文章提出非工程師也能上手的 AI Agent 建構法：先定義最終產出，再反向逐步推導每一步所需的輸入；並釐清「工具（Tools，讓 AI 能執行寄信等動作）」與「技能（Skills，教 AI 如何完成特定任務）」的差異。與其只修正錯誤輸出，不如找出工作流在哪裡斷裂並加上驗證關卡。對 AI 導入與知識工作研究的意涵是：把 AI 代理開發從寫程式門檻轉向系統化的流程設計，讓非技術人員也能參與；而以 ROI（省下的時間 vs. 維護成本）為判準，意味企業應優先針對高頻、耗時的任務策略性導入，而非全面鋪開。",
+        en: "The article lays out an AI-Agent building method non-engineers can use: define the final output first, then work backward to derive the inputs each step needs, while distinguishing 'Tools' (letting AI take actions like sending email) from 'Skills' (teaching AI how to complete a specific task). Rather than merely fixing wrong outputs, find where the workflow breaks and add verification checkpoints. For AI-adoption and knowledge-work research the implication is that agent development shifts from a coding barrier to systematic workflow design that non-technical staff can join, and that an ROI lens (time saved vs. maintenance cost) means firms should adopt agents strategically for high-frequency, time-intensive tasks rather than comprehensively.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91536/nuu6s466mbr9vtkjbvmm",
+    },
+    {
+      id: "n-bnext-20260722-1", category: "media", date: "2026-07-22", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Claude Cowork 推「Record a skill」新功能！3 步驟複製你的工作流程，把 SOP 變 AI 技能庫",
+        en: "Bnext｜Claude Cowork's new 'Record a Skill': three steps to clone your workflow and turn SOPs into an AI skill library",
+      },
+      summary: {
+        zh: "Anthropic 在 Claude Cowork 推出「Record a Skill」，讓使用者只要一邊操作、一邊口述講解，AI 就能把整段工作流程錄製並自動轉為可重複使用、可在團隊間共享的技能，不必再寫複雜指令或程式碼。此舉大幅降低非技術員工把下載報表、資料輸入、填表等重複性工作自動化的門檻，把個人的內隱 SOP 轉化為組織層級的 AI 技能資產。對知識管理與 AI 導入研究而言，這把導入焦點從提示工程移向「工作流錄製與知識封裝」，並提出技能版本治理與內隱知識外化的新課題。",
+        en: "Anthropic's new 'Record a Skill' in Claude Cowork lets users demonstrate a workflow by screen-recording it while narrating aloud, and the AI automatically turns the whole process into a reusable, team-shareable skill — no complex instructions or code required. It sharply lowers the barrier for non-technical staff to automate repetitive tasks like downloading reports, data entry, and form-filling, converting an individual's tacit SOP into an organization-level AI skill asset. For knowledge-management and AI-adoption research, it shifts the adoption focus from prompt engineering toward 'workflow recording and knowledge encapsulation', raising fresh questions about skill version governance and externalizing tacit knowledge.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91585/claude-cowork-record-a-skill",
+    },
+    {
+      id: "n-bnext-20260722-2", category: "media", date: "2026-07-22", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜ChatGPT Work 怎麼用？丟進會議紀錄，它自動幫你把目標、風險寫成一份簡報",
+        en: "Bnext｜How to use ChatGPT Work: drop in meeting notes and it drafts a slide deck of goals and risks",
+      },
+      summary: {
+        zh: "文章實測 ChatGPT 的 Work 功能：使用者只要上傳會議紀錄、搭配一段模板化提示，就能自動生成含目標、里程碑、利害關係人、期限與風險的結構化簡報。作者強調 AI 負責資訊彙整，但專業人員仍須提供策略脈絡並在交付前查核正確性。對知識工作與企業 AI 代理研究而言，這是「從指定步驟到指定成果」介面轉移的具體示範，凸顯 AI 降低行政負擔的同時，人機協作的品質仍繫於人類的脈絡輸入與最終把關。",
+        en: "The article road-tests ChatGPT's Work feature: users upload meeting notes with a templated prompt, and it automatically generates a structured deck covering objectives, milestones, stakeholders, deadlines, and risks. It stresses that while AI handles information synthesis, professionals must still supply strategic context and verify accuracy before delivery. For knowledge-work and enterprise-AI-agent research, it is a concrete demonstration of the interface shift from 'specifying steps to specifying outcomes', underscoring that even as AI cuts administrative burden, the quality of human-AI collaboration still rests on human context input and final oversight.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91563/chatgpt-work-meeting-notes-presentation",
+    },
+    {
+      id: "n-bnext-20260722-3", category: "media", date: "2026-07-22", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Kimi K3 引爆美國 AI 封殺論戰！OpenAI 主管喊「AI 共產主義」，為何被批扼殺創新？",
+        en: "Bnext｜Kimi K3 ignites a U.S. AI-ban debate: an OpenAI exec cries 'AI communism' — why the backlash?",
+      },
+      summary: {
+        zh: "中國新創月之暗面開源強大的 Kimi K3 模型，在美國掀起激烈論戰：OpenAI 策略主管 Dean Ball 警告免費強模型會嚇退創投、走向「只有政府養得起 AI」的『AI 共產主義』；但多位知名創投與專家反駁，限制開源反而扼殺創新，指封閉源公司是以政府監管為競爭武器。報導並指川普政府擬透過法規壓力與經濟制裁限制中國 AI 模型。對 AI 治理與商業策略研究而言，這是「開源 vs. 閉源」路線之爭與國家安全、產業競爭如何交織的清楚切片。",
+        en: "Chinese startup Moonshot AI's release of the powerful open-source Kimi K3 model sparked a fierce U.S. debate: OpenAI strategist Dean Ball warned that freely available strong models could scare off venture capital and lead to 'AI communism' where only governments can afford AI development, while prominent VCs and experts countered that restricting open source actually stifles innovation, accusing closed-source firms of wielding government regulation as a competitive weapon. The piece notes the Trump administration reportedly plans to curb Chinese AI models via regulatory pressure and economic sanctions. For AI-governance and business-strategy research, it is a clear slice of how the open-vs-closed-source contest interweaves with national security and industry competition.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91580/kimi-k3-open-source-ai-us-ban-debate",
+    },
+    {
+      id: "n-bnext-20260721-1", category: "media", date: "2026-07-21", pinned: false, tags: ["ai", "neuro"],
+      title: {
+        zh: "數位時代｜越用 AI 越怕自己變笨？它答得漂亮時反問「這一句」，偷學工程師的解題心法",
+        en: "Bnext｜Afraid AI is making you dumber? Ask this one follow-up when it nails an answer — steal the engineer's problem-solving method",
+      },
+      summary: {
+        zh: "文章反對把 AI 當「自動販賣機」被動索取答案，主張當 AI 給出漂亮解法時反問「你是怎麼推導出這個想法的？」，藉此把單一答案轉為可內化的思考框架。不同 AI 系統體現不同工程哲學，逆向拆解其推理邏輯能培養後設認知，把外包思考轉為「認知學徒制」。對認知科學、學習與人機互動研究而言，這提供了緩解「AI 依賴導致智能萎縮」疑慮的具體操作法，把互動焦點從取得結果移到習得可遷移的解題能力。",
+        en: "The article rejects treating AI as a 'vending machine' for passively dispensed answers, urging users to ask 'How did you derive this idea?' when AI produces an excellent solution, turning a single answer into an internalizable thinking framework. Different AI systems embody distinct engineering philosophies, and reverse-engineering their reasoning builds metacognition, converting outsourced cognition into a 'cognitive apprenticeship.' For cognitive-science, learning, and human-AI-interaction research, it offers a concrete practice to counter fears of AI-induced intellectual atrophy, shifting the interaction focus from obtaining results to acquiring transferable problem-solving competence.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91562/ai-follow-up-question-reasoning",
+    },
+    {
+      id: "n-bnext-20260727-1", category: "media", date: "2026-07-27", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜別再給 AI 寫範例！Anthropic 揭 Claude 5 世代新規，CLAUDE.md 與 Skills 怎麼寫才聰明？",
+        en: "Bnext｜Stop feeding AI examples: Anthropic's new Claude 5 rules for writing smarter CLAUDE.md and Skills",
+      },
+      summary: {
+        zh: "Anthropic 大幅翻新對 Claude 5 世代的提示準則：從 Claude Code 移除逾 80% 系統提示卻無明顯效能下降，證明「過度約束」反而損害模型推理。與其寫死規則與大量範例，不如提供更清楚的介面、漸進式資訊載入與高保真參考素材（如 HTML 原型）；CLAUDE.md 應精簡至約 200 行，只保留專案特有規則與非顯而易見的陷阱，其餘讓 AI 自行發掘。對知識管理與 AI 導入研究而言，這標誌從「指令控制」轉向「授權信任」的協作範式，也提醒團隊把知識封裝焦點從鉅細靡遺的操作手冊移向獨特觀點與版本治理。",
+        en: "Anthropic has overhauled its prompting guidance for the Claude 5 generation: it removed over 80% of Claude Code's system prompts with no measurable performance decline, showing that 'over-constraining' actually impairs model reasoning. Rather than hard-coding rules and abundant examples, users should provide clearer interfaces, progressive information loading, and high-fidelity reference materials (like HTML prototypes); CLAUDE.md should shrink to ~200 lines, keeping only project-specific rules and non-obvious pitfalls while letting AI discover the rest. For knowledge-management and AI-adoption research, it marks a collaboration paradigm shift from directive control to empowerment and trust, and a reminder to refocus knowledge encapsulation from exhaustive manuals toward distinctive viewpoints and version governance.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91623/claude-5-context-engineering-guide",
+    },
+    {
+      id: "n-bnext-20260727-2", category: "media", date: "2026-07-27", pinned: false, tags: ["ai"],
+      title: {
+        zh: "數位時代｜Graph Engineering 是什麼？迴圈工程、Harness Engineering⋯5 種 AI 工程術語差異一次看懂",
+        en: "Bnext｜What is Graph Engineering? The five AI-engineering terms — loop, harness, and more — explained",
+      },
+      summary: {
+        zh: "文章梳理 AI 工程從優化單一提示走向編排複雜工作流的演進脈絡——Prompt Engineering→Context Engineering→Harness Engineering→Loop Engineering→Graph Engineering，每一層都在前一層基礎上疊加，以應付更複雜的任務。Graph Engineering 即「事先把 AI 要做的事排成一張清楚的流程圖」，讓工作可平行執行、自動回復並透明追蹤成本，其三原則為單一任務步驟、明確交接規則與細緻進度紀錄。對 AI 導入與知識工作研究而言，這標誌企業從單一代理輔助邁向多代理協調的成熟階段，並凸顯任務一旦超出單一 AI 能力，就需要治理框架來控管成本與維持可稽核性。",
+        en: "The article traces AI engineering's evolution from optimizing a single prompt to orchestrating complex workflows — Prompt Engineering → Context Engineering → Harness Engineering → Loop Engineering → Graph Engineering — with each layer building on the last to handle more complex tasks. Graph Engineering means 'arranging what the AI must do into a clear flowchart in advance', enabling parallel execution, automatic recovery, and transparent cost tracking, guided by three principles: single-task steps, clear handoff rules, and meticulous progress logging. For AI-adoption and knowledge-work research, it signals a maturation phase from single-agent assistance to multi-agent coordination, underscoring that once tasks exceed a single AI's capability, governance frameworks are needed to control cost and maintain auditability.",
+      },
+      image: "",
+      url: "https://www.bnext.com.tw/article/91632/graph-engineering-ai-agent",
+    },
   ],
 };
