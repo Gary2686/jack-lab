@@ -7,6 +7,7 @@
  *   id, type, year, topics:[topicId], featured(bool),
  *   title{zh,en}, authors{zh,en}, venue{zh,en}, detail{zh,en}(卷期頁/期間/地點),
  *   doi, url, abstract{zh,en}(可省略 optional)
+ *   award{zh,en}(可省略 optional，例：最佳論文提名 / Best Paper Nominee)
  * ========================================================================== */
 window.DATA = window.DATA || {};
 
@@ -403,6 +404,31 @@ window.DATA.publications = {
       venue: { zh: "Information & Management", en: "Information & Management" },
       detail: { zh: "SSCI, 45(4), 203-210", en: "SSCI, 45(4), 203-210" },
       doi: "10.1016/j.im.2008.01.006", url: "",
+    },
+    {
+      id: "c-amcis-2026-ai-as-teammate", type: "conference", year: 2026, topics: ["ai", "team"], featured: true,
+      award: { zh: "AMCIS 2026 最佳論文提名", en: "AMCIS 2026 Best Paper Nominee" },
+      title: { zh: "AI as Teammate in Human\u2013AI Collaboration: A Literature Review of Interaction Structures and Affordances", en: "AI as Teammate in Human\u2013AI Collaboration: A Literature Review of Interaction Structures and Affordances" },
+      authors: { zh: "Gary Yu-Ho Yeh, Yuting Cheng, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu", en: "Gary Yu-Ho Yeh, Yuting Cheng, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu" },
+      venue: { zh: "Americas Conference on Information Systems (AMCIS) 2026", en: "Americas Conference on Information Systems (AMCIS) 2026" },
+      detail: { zh: "Paper 10 (SIG CNOW), Nevada, USA", en: "Paper 10 (SIG CNOW), Nevada, USA" },
+      doi: "", url: "https://aisel.aisnet.org/amcis2026/sigcnow/sigcnow/10/",
+    },
+    {
+      id: "c-amcis-2026-paradoxical-leadership", type: "conference", year: 2026, topics: ["ai", "team"], featured: false,
+      title: { zh: "Unpacking Paradoxical Leadership in Digital Transformation: How Different Leadership Logics Shape Transformation Effectiveness", en: "Unpacking Paradoxical Leadership in Digital Transformation: How Different Leadership Logics Shape Transformation Effectiveness" },
+      authors: { zh: "Gary Yu-Ho Yeh, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu", en: "Gary Yu-Ho Yeh, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu" },
+      venue: { zh: "Americas Conference on Information Systems (AMCIS) 2026", en: "Americas Conference on Information Systems (AMCIS) 2026" },
+      detail: { zh: "Nevada, USA", en: "Nevada, USA" },
+      doi: "", url: "",
+    },
+    {
+      id: "c-amcis-2026-ai-presenter-older-adults", type: "conference", year: 2026, topics: ["ai", "neuro"], featured: false,
+      title: { zh: "From Cues to Engagement: How AI Presenter Design Drives Older Adults\u2019 Health Learning via Affective and Cognitive Credibility", en: "From Cues to Engagement: How AI Presenter Design Drives Older Adults\u2019 Health Learning via Affective and Cognitive Credibility" },
+      authors: { zh: "Chao-Min Chiu, Hsiang-Lan Cheng, Jack Shih-Chieh Hsu, Gary Yu-Ho Yeh", en: "Chao-Min Chiu, Hsiang-Lan Cheng, Jack Shih-Chieh Hsu, Gary Yu-Ho Yeh" },
+      venue: { zh: "Americas Conference on Information Systems (AMCIS) 2026", en: "Americas Conference on Information Systems (AMCIS) 2026" },
+      detail: { zh: "Paper 8 (SIG Health), Nevada, USA", en: "Paper 8 (SIG Health), Nevada, USA" },
+      doi: "", url: "https://aisel.aisnet.org/amcis2026/sig_health/sig_health/8/",
     },
     {
       id: "c-amcis-2025-relative-deprivation", type: "conference", year: 2025, topics: ["security"], featured: true,

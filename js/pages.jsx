@@ -806,6 +806,7 @@ window.JL = window.JL || {};
           <span className="rounded-md bg-navy/90 text-white px-2 py-0.5 text-[11px] font-semibold">{typeObj ? t(typeObj.label) : p.type}</span>
           <span className="text-xs font-semibold text-slate-400">{p.year}</span>
           {p.featured ? <span className="rounded-md bg-amber-100 text-amber-700 px-2 py-0.5 text-[11px] font-semibold inline-flex items-center gap-1"><Icon name="sparkles" size={11} />{ctx.lang === "zh" ? "精選" : "Featured"}</span> : null}
+          {p.award ? <span className="rounded-md bg-amber-500 text-white px-2 py-0.5 text-[11px] font-semibold inline-flex items-center gap-1"><Icon name="award" size={11} />{t(p.award)}</span> : null}
         </div>
         <h3 className="font-semibold text-navy leading-snug">{t(p.title)}</h3>
         <div className="mt-1.5 text-sm text-slate-500">{t(p.authors)}</div>

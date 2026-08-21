@@ -15,6 +15,22 @@ window.DATA.awards = {
   ],
   items: [
     {
+      id: "a-amcis-2026-best-paper-nominee",
+      type: "honor",
+      year: 2026,
+      title: {
+        zh: "AMCIS 2026 最佳論文提名（Best Paper Nominee）",
+        en: "AMCIS 2026 Best Paper Nominee",
+      },
+      recipient: { zh: "Gary Yu-Ho Yeh, Yuting Cheng, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu", en: "Gary Yu-Ho Yeh, Yuting Cheng, Jack Shih-Chieh Hsu, Hsiang-Lan Cheng, Chao-Min Chiu" },
+      org: { zh: "Americas Conference on Information Systems (AMCIS) 2026", en: "Americas Conference on Information Systems (AMCIS) 2026" },
+      desc: {
+        zh: "論文〈AI as Teammate in Human\u2013AI Collaboration: A Literature Review of Interaction Structures and Affordances〉獲 AMCIS 2026 大會列入最佳論文提名名單（SIG CNOW 議程軌）。",
+        en: "The paper \"AI as Teammate in Human\u2013AI Collaboration: A Literature Review of Interaction Structures and Affordances\" was selected for the AMCIS 2026 Best Paper Nominees list (SIG CNOW track).",
+      },
+      image: "",
+    },
+    {
       id: "a-hsu-sbir-115",
       type: "honor",
       year: 2026,
